@@ -6,17 +6,17 @@
 This this a documentation for a new version of the module which is not released yet!
 Contact: **@kolomiieys (_telegram_)** for more info.
 
-## to Get Started
+## Get Started
 
 1. Include the script in the HTML between tags `<head> </head>`
-2. Then call init method `window.AIHelpsModule.init` and send in is this method settings, see [Property Settings](#setting).
-3. Then call open method `window.AIHelpsModule.open` you can see module on own site. If you want close module call `window.AIHelpsModule.close`, More informations about method, see [AIHelpsModule methods](#AIHelpsModule).
+2. Then call `init` method `window.AIHelpsModule.init` and send in this method settings, see [Property Settings](#setting).
+3. Next call `open` method `window.AIHelpsModule.open` you can see module on own site. If you want to close module call `window.AIHelpsModule.close`, More informations about method, see [AIHelpsModule methods](#AIHelpsModule).
 
 ## AIHelpsModule methods <a name="AIHelpsModule"></a>
 
 ### AIHelpsModule.init
 
-This method needed to initialization [settings](#setting) to the module. You can send [settings](#setting) as the argument in this method. The other methods will not be work if you first do not call this method.
+This method is needed to initialization [settings](#setting) to the module. You can send [settings](#setting) as the argument in this method. The other methods will not be work if you first do not call this method.
 
 Example use:
 

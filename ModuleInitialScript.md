@@ -26,6 +26,7 @@ AIHelpsModule.init({
   buttonMargin: [50, 50, 50, 50],
   buttonColor: "pink",
   buttonText: "Online Booking",
+});
 ```
 
 ### AIHelpsModule.open

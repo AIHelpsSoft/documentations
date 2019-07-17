@@ -1,9 +1,9 @@
 # AIHelps init script
 
-## Preword
+## Prewords
 
-This this a documentation for a new version of the module which is not released
-yet! Contact: **@kolomiieys (_telegram_)** for more info.
+This this a documentation for a new version of the module which is **not released
+yet!** Contact: **@kolomiieys (_telegram_)** for more info.
 
 ## to Get Started
 
@@ -35,8 +35,8 @@ import { init } from "https://beautyprosoftware.com/b";
 init({
   database: 503953 /** your database code. this value is required */,
   color: "#a7a7d7",
-  buttonPosition: "bottom_right",
-  buttonText: "Click me!",
+  position: "bottom_right",
+  text: "Click me!",
   designTheme: "normal",
   onOpen: () => console.log("module open"),
   onClose: () => console.log("module close"),
@@ -82,18 +82,18 @@ closeModule();
 The setting is an object this object send in init method, see table below
 properties settings.
 
-| Property       |         Type         |                                              Values                                              | Description                                                                                                    |
-| -------------- | :------------------: | :----------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------- |
-| code           |        string        |                                        code your database                                        | This own code your base **_is Required_**.                                                                     |
-| elementId      |        string        |                                         your element id                                          | Element id on which click then script does display module if **elementId not set**, the script add own button. |
-| buttonPosition |        string        | `${top \| bottom \| right \| left} ${top \| bottom \| right \| left}` for example: `"top right"` | Position button on the site                                                                                    |
-| buttonText     |        string        |                                            any string                                            | Text on button                                                                                                 |
-| buttonColor    |         HEX          |                 `#6F3BF5 \| #0052F1 \| #F55C3B \| #F53BEE \| #4DC602 \| #CEA206`                 | Color button                                                                                                   |
-| onOpen         |       function       |                                           any function                                           | Callback function when the module will be open.                                                                |
-| onClose        |       function       |                                           any function                                           | Callback function when the module will be close.                                                               |
-| professional   |        string        |                                         id professional                                          | Set a selected professional                                                                                    |
-| services       | `string \| [string]` |                                           id services                                            | Set a selected services                                                                                        |
-| location       |        string        |                                           id location                                            | Set a selected location                                                                                        |
-| enabled        |       boolean        |                                         `true \| false`                                          | enabled                                                                                                        |
-| designTheme    |        string        |                                    `soft \| normal \| strong`                                    | designTheme                                                                                                    |
-| designColor    |         HEX          |                 `#6F3BF5 \| #0052F1 \| #F55C3B \| #F53BEE \| #4DC602 \| #CEA206`                 | designColor                                                                                                    |
+| Property     |         Type         |                                              Values                                              | Description                                                                                                    |
+| ------------ | :------------------: | :----------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------- |
+| database     |        string        |                                        code your database                                        | This own code your base **_is Required_**.                                                                     |
+| elementId    |        string        |                                         your element id                                          | Element id on which click then script does display module if **elementId not set**, the script add own button. |
+| position     |        string        | `${top \| bottom \| right \| left} ${top \| bottom \| right \| left}` for example: `"top right"` | Position button on the site                                                                                    |
+| text         |        string        |                                            any string                                            | Text on button                                                                                                 |
+| color        |         HEX          |                 `#6F3BF5 \| #0052F1 \| #F55C3B \| #F53BEE \| #4DC602 \| #CEA206`                 | Color button                                                                                                   |
+| onOpen       |       function       |                                           any function                                           | Callback function when the module will be open.                                                                |
+| onClose      |       function       |                                           any function                                           | Callback function when the module will be close.                                                               |
+| professional |        string        |                                         id professional                                          | Set a selected professional                                                                                    |
+| services     | `string \| [string]` |                                           id services                                            | Set a selected services                                                                                        |
+| location     |        string        |                                           id location                                            | Set a selected location                                                                                        |
+| enabled      |       boolean        |                                         `true \| false`                                          | enabled                                                                                                        |
+| designTheme  |        string        |                                    `soft \| normal \| strong`                                    | designTheme                                                                                                    |
+| designColor  |         HEX          |                 `#6F3BF5 \| #0052F1 \| #F55C3B \| #F53BEE \| #4DC602 \| #CEA206`                 | designColor                                                                                                    |

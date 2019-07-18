@@ -11,7 +11,7 @@ yet!** Contact: **@kolomiieys (_telegram_)** for more info.
    `<body> </body>` tags
 2. The first you need to import the init method from ES module like this
    ```js
-   import { init } from "https://beautyprosoftware.com/b";
+   import { init } from "https://beautyprosoftware.com/init/index.js";
    ```
 3. Then call init method `init()` and send in is this method settings, see
    [Property Settings](#setting).
@@ -30,7 +30,7 @@ not be work if you first don't call this method.
 Example use:
 
 ```js
-import { init } from "https://beautyprosoftware.com/b";
+import { init } from "https://beautyprosoftware.com/init/index.js";
 
 init({
   database: 503953 /** your database code. this value is required */,
@@ -50,7 +50,7 @@ init({
 Example use:
 
 ```js
-import { init, openModule } from "https://beautyprosoftware.com/b";
+import { init, openModule } from "https://beautyprosoftware.com/init/index.js";
 
 init({
   /** ... */
@@ -67,7 +67,7 @@ openModule();
 Example use:
 
 ```js
-import { init, closeModule } from "https://beautyprosoftware.com/b";
+import { init, closeModule } from "https://beautyprosoftware.com/init/index.js";
 
 init({
   /** ... */

@@ -55,7 +55,7 @@ import { init } from "https://beautyprosoftware.com/online-booking-init/index.js
 init({
   database: 503953 /** your database code. this value is required */,
   color: "#a7a7d7",
-  position: "bottom_right",
+  position: "bottom right",
   text: "Click me!",
   designTheme: "normal",
   onOpen: () => console.log("module open"),

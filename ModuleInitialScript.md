@@ -2,24 +2,24 @@
 
 ## Prewords
 
-This this a documentation for a new version of the module which is **not released
-yet!** Contact: **@kolomiieys (_telegram_)** for more info.
+This documentation describes actions needed to install AIHelps online module on your site.
+If you have any questions, feel free to contact **@kolomiieys (_telegram_)** for more info.
 
-## to Get Started
+## Get Started
 
 1. All scripts are inserted in HTML between tags `<head> </head>` or between
    `<body> </body>` tags
-2. The first you need to import the init method from ES module like this
+2. The first you need to import `init` method from ES module like this
    ```js
    import { init } from "https://beautyprosoftware.com/online-booking-init/index.js";
    ```
-3. Then call init method `init()` and send in is this method settings, see
-   [Property Settings](#setting).
-4. Then call open method `openModule()` you can see module on own site. If you
-   want close module call `closeModule()`, More informations about method, see
+3. Call init method `init()` (on page start) and send init settings, see
+   [Property Settings](#settings).
+4. Module will create its own button or will be attached to some element by id, so will automatically be opened/closed. You can
+   manually open or close module from your code, calling `openModule()` or `closeModule()` respectively. for more information about methods, see
    [AIHelpsModule methods](#AIHelpsModule).
 
-for example:
+For example:
 
 ```html
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ for example:
       import { init } from "https://beautyprosoftware.com/online-booking-init/index.js";
 
       init({
-        database: 503953,
+        database: 503953
       });
     </script>
   </body>
@@ -41,31 +41,31 @@ for example:
 
 ## AIHelpsModule methods <a name="AIHelpsModule"></a>
 
-### Init
+### init()
 
-This method needed to initialization [settings](#setting) to the module. You can
-send [settings](#setting) as the argument in this method. The other methods will
-not be work if you first don't call this method.
+This method is needed to initialize module [settings](#settings). You can
+send [settings](#settings) as the argument in this method. Other methods will
+not work until this method called.
 
-Example use:
+Example usage:
 
 ```js
 import { init } from "https://beautyprosoftware.com/online-booking-init/index.js";
 
 init({
-  database: 503953 /** your database code. this value is required */,
+  database: 503953 /** your database code, this value is required */,
   color: "#a7a7d7",
   position: "bottom right",
   text: "Click me!",
   designTheme: "normal",
   onOpen: () => console.log("module open"),
-  onClose: () => console.log("module close"),
+  onClose: () => console.log("module close")
 });
 ```
 
-### openModule
+### openModule()
 
-This function can be called after the init method and use to show the module.
+This function can be called to show module manually (call after init method).
 
 Example use:
 
@@ -79,13 +79,12 @@ init({
   /** ... */
 });
 
-/** You can call this method before the init method */
 openModule();
 ```
 
-### closeModule
+### closeModule()
 
-This function can be called after the init method and use to hide the module.
+This function can be called to hide module manually (call after init method).
 
 Example use:
 
@@ -99,29 +98,29 @@ init({
   /** ... */
 });
 
-/** You can call this method before the init method */
 closeModule();
 ```
 
-## Properties Settings <a name="setting"></a>
+## Settings <a name="settings"></a>
 
-The setting is an object this send in init method, see table below
-properties settings.
+Settings is an object with settings, provided to `init` method. List of all possible settings provided in table below.
 
-| Property       |         Type         |                                              Values                                              | Description                                                                                                                                                                                        |
-| -------------- | :------------------: | :----------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| database       |        string        |                                        code your database                                        | This own code your base **_is Required_**.                                                                                                                                                         |
-| elementId      |        string        |                                         your element id                                          | Element id on which click then the script does display module if **elementId not set**, the script added own button.                                                                               |
-| position       |        string        | `${top \| bottom \| right \| left} ${top \| bottom \| right \| left}` for example: `"top right"` | Position own button on the site. Doesn't work if you set elementId                                                                                                                                 |
-| text           |        string        |                                            any string                                            | Text on own button. Doesn't work if you set elementId                                                                                                                                              |
-| color          |         HEX          |                 `#6F3BF5 \| #0052F1 \| #F55C3B \| #F53BEE \| #4DC602 \| #CEA206`                 | Color button. Doesn't work if you set elementId                                                                                                                                                    |
-| onOpen         |       function       |                                           any function                                           | Callback function when the module will be open.                                                                                                                                                    |
-| onClose        |       function       |                                           any function                                           | Callback function when the module will be close.                                                                                                                                                   |
-| professional   |        string        |                                         id professional                                          | Set a selected professional                                                                                                                                                                        |
-| services       | `string \| [string]` |                                           id services                                            | Set a selected services                                                                                                                                                                            |
-| location       |        string        |                                           id location                                            | Set a selected location                                                                                                                                                                            |
-| enabled        |       boolean        |                                         `true \| false`                                          | This property use when you need to enabled or disabled Online Module                                                                                                                               |
-| isNotCloseable |       boolean        |                                         `true \| false`                                          | If this property has true then module show on start and cannot be closed. Default false                                                                                                            |
-| designTheme    |        string        |                                    `soft \| normal \| strong`                                    | DesignTheme                                                                                                                                                                                        |
-| designColor    |         HEX          |                 `#6F3BF5 \| #0052F1 \| #F55C3B \| #F53BEE \| #4DC602 \| #CEA206`                 | DesignColor                                                                                                                                                                                        |
-| modulePosition |        string        |                                    `center \| right \| left`                                     | Module appearance position doesn't recommend to use because of the appearance determined by position property. You can use this property when you want to place the module in a non-standard place |
+Only parameter `database` is required, all other parameters are optional.
+
+| Property       |         Type         |                                              Values                                              |          Default value         |Description                                                                                                                                                                                        |
+| -------------- | :------------------: | :----------------------------------------------------------------------------------------------: | :----------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| database       |        string        |                                        database code                                        | no default value, property is **required** |Your database code. This parameter is **required**.|
+| elementId      |        string        |                                         element id                                 |  null        | Id of element, click on which should open module. If parameter not set, script will display own "Book now!" button.                                                                               |
+| position       |        string        | `${top \| bottom \| right \| left} ${top \| bottom \| right \| left}` for example: `"top right"`| `bottom right` | "Book now!" button position on page. Have no sense if you set elementId.                                                                                                                               |
+| text           |        string        |                                            any string                                 | `Онлайн-запись`           | "Book now!" button text. Have no sense if you set elementId.                                                                                                                                            |
+| color          |         HEX          |                 `#6F3BF5 \| #0052F1 \| #F55C3B \| #F53BEE \| #4DC602 \| #CEA206`        |  `#6F3BF5`       | "Book now!" button color. Have no sense if you set elementId.                                                                                                                                                    |
+| onOpen         |       function       |                                           any function                                | null           | Callback function to call on module open.                                                                                                                                                    |
+| onClose        |       function       |                                           any function                                | null           | Callback function to call on module close.                                                                                                                                                   |
+| professional   |        string        |                                         professional id                               | null           | Provide default professional for booking (will be automatically preselected in online module)                                                                                                                                                                        |
+| services       | `string \| [string]` |                                           services id                                 | empty array    | Provide default list of services for booking (will be automatically preselected in online module)                                                                                                                                                                       |
+| location       |        string        |                                           location id                                 | null           | Provide location for booking (by default all locations will be available and location select page will be shown in case more than one location available in chain)                                                                                                                                                                       |
+| enabled        |       boolean        |                                         `true \| false`                               | `true`           | Set to `false` to temporary disable online module.                                                                  |
+| closeable |       boolean        |                                         `true \| false`                                    | `true`      | In case module is shown full screen (on mobile devices) - if module has separate "close" button to return to site.                    |
+| designTheme    |        string        |                                    `soft \| normal \| strong`                         | `soft`           | Online module theme                                                                                                                                                                         |
+| designColor    |         HEX          |                 `#6F3BF5 \| #0052F1 \| #F55C3B \| #F53BEE \| #4DC602 \| #CEA206`      | `#6F3BF5`           | Online module color                                                                                                                                                                                        |
+| modulePosition |        string        |                                    `left \| center \| right \| auto`                          | `auto`           | Online module position when module open (left side of screen, right side of screen, screen center). If `auto` is set: if "Book now!" button is shown, module will be shown left or right depending on `position` property; otherwise (`elementId` is set) module will be shown on the right side of screen. You can use this property if you want to place the module in a non-standard position. |

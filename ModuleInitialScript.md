@@ -7,7 +7,7 @@ If you have any questions, feel free to contact **@kolomiieys (_telegram_)** for
 
 ## Get Started
 
-1. All scripts are inserted in HTML between tags `<head> </head>` or between
+1. Include script `<script type="module">...</script>` don't forget set `type="module"`. All scripts are inserted in HTML between tags `<head> </head>` or between
    `<body> </body>` tags
 2. The first you need to import `init` method from ES module like this
    ```js

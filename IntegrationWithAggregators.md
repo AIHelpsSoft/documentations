@@ -1,8 +1,5 @@
 # Integration with beauty/dental services aggregators (Tutorial)
 
-TODO: check `Integration via API` after finish with Grammarly
-TODO: set http formatting
-
 There are some requests to AI Helps for integrating Beauty Pro/Denta Pro products with services aggregators. We made this tutorial to simplify the connecting process and collect all corresponding information in one place.
 
 If you have any questions, feel free to contact the group **[API AIHELPS](https://t.me/joinchat/EVNM_kgTp_iDmHv0Z-1npg)** in Telegram for more info.
@@ -11,12 +8,12 @@ If you have any questions, feel free to contact the group **[API AIHELPS](https:
 
 The easiest way to allow the booking to Beauty Pro/Denta Pro from your site: just show our online module on your site page.
 
-You can see example module: https://beautyprosoftware.com/b/503953 (**TODO: get demo database from sales**)
+You can see the module https://beautyprosoftware.com/b/295974 as an example.
 
 Pros:
 + takes 5 minutes to implement
 + no setup work with AI Helps needed, you can do it by yourselves
-+ no additional agreements needed from salon/clinic
++ minimal efforts needed from salon/clinic
 
 Cons:
 - client select service, professional, free time inside the module, you can't make common services list for all salons/clinics in this way
@@ -39,7 +36,9 @@ To show the online module on your page, just insert the next script in your page
     </script>
 ```
 
-Client id can be received from the client or can be taken from the client module, running on the client's site, Facebook or Instagram page.
+Ask the salon/clinic for client id. It can be found in Beauty Pro/Denta Pro on Settings page => Location settings => Location code (6 digits, big letters).
+If needed, AI Helps technical support can help the client to get the client id.
+Try to avoid situations when you found client id in some way and connect his online module on your aggregator without his agreement - clients don't like someone running booking to their salons/clinics on external resources without their confirmation.
 
 There are many options to interact with the module: open/close it manually (do not attach to some element) or track open/close events, control module position and color theme, specify certain services/professionals to book. You can see detailed information about AI Helps init script setup here: https://github.com/AIHelpsSoft/documentations/blob/master/ModuleInitialScript.md
 
@@ -49,15 +48,15 @@ This method is much harder and can take days to implement but gives you all data
 
 You communicate with AI Helps API (full API documentation is available at https://api.aihelps.com).
 
-First, you register your application in AI Helps application registry, providing information information about your company and contacts and receive application ID & secret needed for next steps. Registration is one simple API call and response is automatical (no verification process). This step should be made only once.
+First, you register your application in AI Helps application registry, providing information about your company, contacts and receive application ID & secret needed for the next steps. Registration is one simple API call and response is automatical (no verification process). This step should be made only once.
 
-Next step: for each client database (either salon or clinic) you want to get access, you need to receive access token. Access grant request should be sent and client either grants access or refuse from Beauty Pro/Denta Pro application. If granted, you will receive access token for access to specific client daabase. This step should be done for each your client.
+Next step: for each client database (either salon or clinic) you want to get access, you need to receive an access token. Access grant request should be sent and the client either grants access or refuse inside Beauty Pro/Denta Pro application. If granted, you will receive access token for access to a specific client database. This step should be done for each of your clients.
 
-After you have access token, you can make API requests to get list of services, professionals, free time and make booking. Possible scenarios will be described later in details.
+After you have an access token, you can make API requests to get a list of services, professionals, free time and make a booking. Possible scenarios will be described later in detail.
 
 ## Register your application
 
-First you need to do is to register your application. To do this, make following request:
+First, you need to do is to register your application. To do this, make the following request:
 
 ```http
 POST https://api.aihelps.com/v1/applications?fields=application_id,application_secret
@@ -69,20 +68,24 @@ POST https://api.aihelps.com/v1/applications?fields=application_id,application_s
   "application_url": "bestsalons.com",
   "developer_name": "Best Salons Solutions",
   "contact_email": "dev@bestsalons.com",
-  "scope": "clients_module",
+  "scope":
+  [
+    "clients_module",
+    "client_login"
+  ],
   "grant_access_url": "bestsalons.com/access/{database_code}"
 }
 ```
 
 Most fields are self-explanatory.
-Application name and URL, developer name will be shown to salon/clinic when access will be asked. Contact email will not be shown to clients and needed to communicate with application owner/developer.
+Application name and URL, the developer name will be shown to the salon/clinic when access will be asked. A contact email will not be shown to clients and needed to communicate with the application owner/developer.
 
-Scope defines rights application will have in clients database. `clients_module` was made to fit all needs for online booking, connecting aggregator and similar tasks (get services, professionals, free time and client login - used to make an appointment). Other available scopes: `reports` - read only access for all clients data and `full` - read/change all clients database gives much more information than needed and probably most clients will refuse to give you access to all their data.
+The scope defines rights that application will have in clients database. `clients_module` was made to fit all needs for online booking, connecting aggregator and similar tasks (get services, professionals, free time), `client_login` - used to make an appointment. These two scopes needed for our scenario. Other available scopes: `reports` - read-only access for all client's data and `full` - read/change all clients database; gives much more information than needed and probably most clients will refuse to give you access to all their data.
 
-`grant_access_url` - URL on your site which will receive notifications about clients granted access to their data. Will described in next chapter.
+`grant_access_url` - URL on your site which will receive notifications about clients granted access to their data. Will be described in the next chapter.
 
-Server response would be following:
-```
+Server response would be the following:
+```json
 {
     "id": "9245f5b4-d66e-483c-b7c4-fd55f9677bb3"
     "application_id": "5330336c-143a-415a-b220-fc9932bc029d",
@@ -90,38 +93,40 @@ Server response would be following:
 }
 ```
 
-Save `application_id` & `application_id` in secure place - they will be needed to request access token for client database.
+Save `application_id` & `application_secret` in a secure place - they will be needed to request an access token for the client database.
 
-More details about application registration can be found at: https://aihelps.docs.apiary.io/#reference/applications/application/register-new-application-account
+More details about application registration can be found at https://aihelps.docs.apiary.io/#reference/applications/application/register-new-application-account
 
 ## Request access token for client database
 
-On this step we assume you already has `application_id` & `application_id` (if not, see previous chapter) and now want to receive access to some clients database. This step should be repeated for each salon/clinic you want to receive access.
+On this step, we assume you already have `application_id` & `application_secret` (if not, see the previous chapter) and now want to receive access to some client database. This step should be repeated for each salon/clinic you want to receive access.
 
-To make access request to some clients database, you need to know AI Helps client code - 6-digit number, representing salon/clinic. This number can be found:
-* in Beauty Pro/Denta Pro software as Settings -> Location settings -> Location code 
-* on salon/clinic site, Facebook or Instagram page, where AI Helps online module is installed - in page source in module script client code is used
-* in AI Helps support - we can provide client code by salon/clinic name and location, phone, site or some requisites (requisites to uniquely identify location between others)
+To make an access request to some clients database, you need to know AI Helps client code - 6-digit number, representing salon/clinic.
+Ask the salon/clinic for client id. It can be found in Beauty Pro/Denta Pro on Settings page => Location settings => Location code (6 digits, big letters).
+If needed, AI Helps technical support can help the client to get the client id.
+Try to avoid situations when you found client id in some way and connect his online module on your aggregator without his agreement - clients don't like someone running booking to their salons/clinics on external resources without their confirmation.
+
+So, in this scenario, unlike just placing the online module on your page, client code (not so private information indeed), the client should confirm access by action. This is crucial for clients as they stay confident about access to their data.
 
 When you know client code, access request can be made:
 
-```
+```http
 GET https://api.aihelps.com/v1/auth/database?application_id=a47cbc05-5ce6-4551-9456-2855b52a17f0&application_secret=a3db644a-907a-4da2-bcdd-bc9f7068237d&database_code=123456
 ```
 
-Normally you should receive answer:
+Normally you should receive an answer:
 
-```
+```json
 {
   "status": "pending"
 }
 ```
 
-meaning that we are waiting confirmation from someone of salon/clinic persons, who have `owner` (full) access to Beauty Pro/Denta Pro.
+meaning that we are waiting for confirmation from someone of salon/clinic persons, who have `owner` (full) access to Beauty Pro/Denta Pro.
 
-Such owner needs to login into desktop or application, go to Settings->Marketplace, select your application and press Grant access. After person grants access, you will receive notification on `grant_access_url` url (GET request without body, access token not sent straight to this url for security reasons), described earlier in application settings. When you receive such notification, repeat grant access request (all parameters same):
+Such owner needs to login to a desktop application, go to Settings page => General Settings => Marketplace, select your application and press Grant access. After person grants access, you will receive a notification on `grant_access_url` URL (GET request without body, the access token is not sent straight to this URL for security reasons), described earlier in application settings. When you receive such notification, repeat grant access request (all parameters same):
 
-```
+```http
 GET https://api.aihelps.com/v1/auth/database?application_id=a47cbc05-5ce6-4551-9456-2855b52a17f0&application_secret=a3db644a-907a-4da2-bcdd-bc9f7068237d&database_code=123456
 ```
 
@@ -131,35 +136,37 @@ You will receive access token:
   "server": 1,
   "access_token": "a71923bd-84c5-49a3-a7fb-a0825e26bbe4",
   "database": "123456",
-  "scope": [
-    "clients_module"
+  "scope":
+  [
+    "clients_module",
+    "client_login"
   ],
   "expires_at": "2039-06-01T00:00:00.000Z"
 }
 
-Access token, that will be needed for next requests is `access_token` (each clients database will need its own access token). Save it in secure place.
-You will receive token for 20 years so there is no need to worry about token expiration.
+Access token, that will be needed for next requests is `access_token` (each client database will need its own access token). Save it in a secure place.
+You will receive a token for 20 years, so there is no need to worry about token expiration.
 
-Next important parameter is server - it contains server number where client database is stored. Servers are distributed around the globe, you can make requests to any server (and they will respond correctly), but requesting database through different server will take much more time. So, accessing clients database, make requests to next API server:
+The next important parameter is server - it contains a server number where the client database is stored. Servers are distributed around the globe, you can make requests to any server (and they will respond correctly), but requesting database through the different server will take much more time. So, accessing the clients database, make requests to the next API server:
 * https://api.aihelps.com if `server` is 1
-* https://api{server}.aihelps.com (for example https://api3.aihelps.com) if `server` is greater than 1
+* https://api{server}.aihelps.com (for example https://api3.aihelps.com ) if `server` is greater than 1
 
 ## Request access token for client database after application published
 
-If all things going OK, you already connected at least 10 clients and keep going, we can make your application public. We check your application details once more (application details can't be changed for published application), select countries for which application will be published (or worldwide) and publish it. After that anyone using application can see your application in the Marketplace and grant access without your access request. You receive notification and can make request to get access token.
+If all things going OK, you already connected at least 10 clients and keep going, we can make your application public. We check your application details once more (application details can't be changed for published application), select countries for which application will be published (or worldwide) and publish it. After that, anyone using the application can see your application in the Marketplace and grant access without your access request. You receive notification and can request to get access token.
 
-In this case no need to search for client code - you just ask client to grant access in Marketplace and receive access token.
-If you receive many notifications with different client codes at once and get lost which code belongs to which client, you can get location name (or names of all locations in chain for networks) making request to locations endpoint:
+In this case no need to search for client code - you just ask the client to enter Marketplace and grant access to your application - and access token will be yours.
+If you receive many notifications with different client codes at once and get lost which code belongs to which client, you can get location name (or names of all locations in the chain for networks) request locations endpoint:
 
-```
+```http
 GET https://api.aihelps.com/v1/locations?fields=name
 
-Authorization:Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
+Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
 ```
 
-You will receive smth. like:
+You will receive something like:
 
-```
+```json
 [
   {
     "id": "2a0516e3-ddc9-432c-80e4-8d5f5e97cce3",
@@ -178,19 +185,19 @@ You will receive smth. like:
 
 ## Get services list
 
-First you need to receive is list of services provided by salon/clinic.
+First, you need to receive a list of services, provided by the salon/clinic.
 
-Make request to `/services` endpoint, providing access token in Authorization header for database you want to get data:
+Request `/services` endpoint, providing access token in Authorization header for the database you want to get data:
 
-```
+```http
 GET https://api.aihelps.com/v1/services/tree?fields=name,description,duration,gender,location_prices&categories_fields=name&public=true&has_professional_price=true&archive=false
 
-Authorization:Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
+Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
 ```
 
-In this example we requested non-archive (archive services can't be sold any more) public services (allowed to booked by clients themself, usually all services) that have price for at least one professional (and skipping services like tanning, where no professional needed).
+In this example, we requested non-archive (archive services can't be sold any more) public services (allowed to booked by clients themself, usually all services) that have a price for at least one professional (skipping services like tanning, where no professionals needed).
 
-```
+```json
 {
     "id": null,
     "name": "",
@@ -255,18 +262,18 @@ In this example we requested non-archive (archive services can't be sold any mor
 }
 ```
 
-All services are grouped in categories. Categories are objects with next fields:
+All services are grouped into categories. Categories are objects with next fields:
 - `id` - category id (not needed in our scenario)
 - `name` - category name
 - `categories` - child categories for current category
 - `items` - services located in this category
-Categories and services are presented in hierarchical view. Root is base category with null `id` and without name.
+Categories and services are presented in a hierarchical view. The root is a base category with null `id` and without a name.
 
-Each service has next fields:
+Each service has the next fields:
 - `id` - service id (will be used for booking)
 - `name` - services name
 - `description` - optional service description (with basic HTML formatting)
-- `duration` - service duration in minutes
+- `duration` - service duration, in minutes
 - `gender` (`both`/`male`/`female`) - client gender for current service
 - `location_prices` - prices for current service for different professionals and employees (service price can differ in different locations and for different professionals)
   + `location` - location, for which price is given, see section [Working with chains (networks)](#chains) for details
@@ -274,23 +281,23 @@ Each service has next fields:
   + `price` - service price
   + `staff_price` - service price for staff under some conditions, not needed in our scenario
 
-There is no such thing as common catalog of services, each client in his database creates it's own services and services structure, you should connect them to some sort of your services catalog manually or with help of some sort of AI - if you need common list of services between all your salons/clinics.
+There is no such thing as a common catalog of services, each client in his database creates its own services and services structure, you should connect them to some sort of your services catalog manually or with help of some sort of AI - if you need a common list of services between all your salons/clinics.
 
 ## Get professionals list
 
-Next thing you need is professionals list with their positions.
+The next thing you need is professionals list with their positions.
 
 Get all possible professional positions:
 
-```
+```http
 GET https://api.aihelps.com/v1/positions?fields=name&role=professional
 
-Authorization:Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
+Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
 ```
 
-Result will be something like this (you need name for each position id received in services or professionals lists):
+The result will be something like this (you need a name for each position id, received in services or professionals lists):
 
-```
+```json
 [
     {
         "id": "04c5daec-2c11-4ce9-b00d-03a03d50356f",
@@ -303,17 +310,17 @@ Result will be something like this (you need name for each position id received 
 ]
 ```
 
-Get list of all non-archive (archive professionals can't provide any services) public professionals (allowed to booked by clients themself):
+Get the list of all non-archive (archive professionals can't provide any services) public professionals (allowed for booking by clients themself):
 
-```
+```http
 GET https://api.aihelps.com/v1/employees?fields=name,positions&role=professional&archive=false&public=true
 
-Authorization:Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
+Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
 ```
 
-Result will be something like this:
+The result will be something like this:
 
-```
+```json
 [
   {
     "id": "88d4d8c0-3830-5b07-7bfe-b80f0650b9f3",
@@ -333,30 +340,30 @@ Result will be something like this:
 ]
 ```
 
-Please take into account that one professional can belong to several positions. So certain professional can provide certain service if they have at least one common position (service can has several positions, professional has several positions).
+Please take into account that one professional can belong to several positions. So certain professionals can provide certain services if they have at least one common position (service can have several positions, professional can have several positions).
 
 ## Get professionals free time
 
-On this step you already know services and professionals.
+On this step, you already know services and professionals.
 
-One more thing you need to know before booking client - time which is available for booking, equal to employee free time (API forbids booking one time block for one employee with two overlapping appointments).
+One more thing you need to know before booking client - time available for booking, equal to employee free time (API forbids booking one employee with two overlapping appointments).
 
-So, this endpoint returns you free time for all professionals for certain time range:
+So, this endpoint returns free time for all professionals for certain time range:
 
-```
+```http
 GET https://api.aihelps.com/v1/employees/free_time?from=2019-01-01T10:00:00.000Z&to=2019-01-03T14:30:00.000Z&duration=120&step=30m
 
-Authorization:Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
+Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
 ```
 
 `duration` and `step` needs to be explained:
-result will be returned as list of date/time for each day for each professional. Each date/time is free for booking for certain professional for at least `duration` minutes (pass total selected services duration in this fied to be sure endpoint returns date/time where enough time for all selected services). `duration` is any number greater than 0. `step` represent frequency of date/times available, in minutes, possible values: 10m, 15m, 20m, 30m, 60m, 90m, 120m, 150m, 180m, auto.
+the result will be returned as a list of dates/times for each day for each professional. Each date/time is free for booking for certain professional for at least `duration` minutes (pass total selected services duration in this field to be sure endpoint returns date/time where enough time for all selected services). `duration` is any number greater than 0. `step` represent frequency of date/times available, in minutes, possible values: 10m, 15m, 20m, 30m, 60m, 90m, 120m, 150m, 180m, auto.
 
-So, if `duration` = 90 and `step` = 30m and professional has free time from 10:00 till 13:00, endpoint will return: "10:00", "10:30", "11:00" and "11:30".
+So, if `duration` = 90 and `step` = 30m and professional has free time from "10:00" till "13:00", endpoint will return: "10:00", "10:30", "11:00" and "11:30".
 
-You will receive free time in next format:
+You will receive free time in the next format:
 
-```
+```json
 {
   "88d4b305-e198-f02c-2743-cca9390c631c": {			// employee id
     "2019-01-01": [									// day
@@ -385,29 +392,29 @@ You will receive free time in next format:
 }
 ```
 
-You also can optionally specify professionals for which you want to get free time (filter out all other professionals + can be quicker than free time for all professionals):
+You also can optionally specify professionals for which you want to get free time (filter out all other professionals; this can be quicker than free time for all professionals):
 
-```
-https://api.aihelps.com/v1/employees/free_time?from=2019-01-01T10:00:00.000Z&to=2019-01-03T14:30:00.000Z&duration=120&step=30m&professionals=88d4b305-e198-f02c-2743-cca9390c631c&location=a7dd57e5-c495-46d4-b54d-753061d355a0
+```http
+GET https://api.aihelps.com/v1/employees/free_time?from=2019-01-01T10:00:00.000Z&to=2019-01-03T14:30:00.000Z&duration=120&step=30m&professionals=88d4b305-e198-f02c-2743-cca9390c631c&location=a7dd57e5-c495-46d4-b54d-753061d355a0
 
-Authorization:Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
+Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
 ```
 
 ## Working with chains (networks) <a name="chains"></a>
 
-Several words should be said about databases where chain of several locations works. For example, beauty salon chain have 5 different locations with common clients list, but different employees and different prices for services in different locations (sometimes happens that some service has price and can be sold not in every location).
+Several words should be said about databases where a chain of several locations works. For example, the beauty salon chain has 5 different locations with common clients list, but different employees and different prices for services in different locations (sometimes happens that some service has a price and can be sold not in every location).
 
-So in this case you should get all locations 
+So, in this case, you should get all the locations:
 
-```
+```http
 GET https://api.aihelps.com/v1/locations?fields=name
 
-Authorization:Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
+Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
 ```
 
-You will receive smth. like:
+You will receive something like:
 
-```
+```json
 [
   {
     "id": "2a0516e3-ddc9-432c-80e4-8d5f5e97cce3",
@@ -424,21 +431,21 @@ You will receive smth. like:
 ]
 ```
 
-Client selects certain location and then you get service prices and employees free time just for that location.
+The client selects a certain location and then you get service prices and employees' free time just for that location.
 
 ## Timezones
 
-While getting employee free time and creating appointment requires working with date/time, so question with time zones rises. For some cases it's obvious: you aggregate clients inside one country with one time zone so for all your salons/clinics you always know correct timezone and time is common for all your aggregator. In more complex cases you need to know timezone for each database and even for each location (yes, locations with different timezones can be stored in one database). Timezones are represented in TZData format (all browsers are using), so no issues with receiving current time zone or working with time zones should happen. For each location you can get actual timezone:
+While getting employee free time and creating an appointment requires working with date/time, so the question with time zones rises. In some cases it's obvious: you aggregate clients inside one country with one time zone so for all your salons/clinics you always know the correct timezone and time is common for all your aggregator. In more complex cases you need to know timezone for each database and even for each location (yes, locations with different timezones can be stored in one database). Timezones are represented in the TZData format (all browsers are using), so no issues with receiving the current time zone or working with time zones should happen. For each location you can get actual timezone:
 
-```
+```http
 GET https://api.aihelps.com/v1/locations?fields=name,timezone
 
-Authorization:Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
+Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received access token is here
 ```
 
-You will receive smth. like:
+You will receive something like:
 
-```
+```json
 [
   {
     "id": "2a0516e3-ddc9-432c-80e4-8d5f5e97cce3",
@@ -460,54 +467,56 @@ You will receive smth. like:
 
 ## Client login
 
-Now you have all information: selected services, professional, appointment start time and duration. Now we can select client and save appointment.
+Now you have all the information: selected services, professional, appointment start time and duration. Now we can select the client and save an appointment.
 
 There are two ways:
-1) *not recommended* - if you have `full` scope, you can get all clients list search them by name, phone or other requisites, add new if needed. But salons/clinics do not eager to share their clients databases with aggregator services, thus chances you'll have `full` scope for your application is close to zero. So, second way...
-2) with `client_login` scope, you can simulate client log in by phone: you provide client phone number, sms with one-time code is sent to this code and you have limited number of attempts to enter this code. After succesfull code enter you will receive client access token for existing client (if phone number is found) or new client will be created and his token will be returned. With that token you can change client details and manage his appointments. So, client should enter code for booking but all sides are confident about security.
+1) *not recommended* - if you have `full` scope, you can get all clients list, search them by name, phone or other requisites, add new client if needed. But salons/clinics do not eager to share their client's databases with aggregator services, thus chances you'll have `full` scope for your application is close to zero. So, second way...
+2) with `client_login` scope, you can make the client login by phone: you provide a client phone number, SMS with one-time code is sent to this code and you have a limited number of attempts to enter this code. After a successful code enter, you will receive client access token for existing client (if the phone number is found) or new client will be created and his token will be returned. With that token, you can change client details and manage his appointments. So, the client should enter code for booking but all sides are confident about security.
 
-So, let's describe second case. You have phone number and want to receive client access token.
+So, let's describe the second case. You have a phone number and want to receive a client access token.
 
-Receiving client's token is 2-step process (or even 3-step for new clients). On first step client provides his phone number and you send him sms with random-generated code using this method (code is 4 digits, generated by server and not visible via API for security reasons):
+Receiving the client's token is a 2-step process (or even 3-step for new clients). On first step client provides his phone number and API sends him SMS with random-generated code using this method (code is 4 digits, generated by the server and not visible outside API for security reasons):
 
-```
+```http
 GET https://api.aihelps.com/v1/auth/client?application_id=a47cbc05-5ce6-4551-9456-2855b52a17f0&database_code=123456&phone=18005551234
 ```
 
-Client phone number should be in international format (digits only), do net set database access token in Authorization header for this request. Response:
+Client phone number should be in international format (digits only), Authorization header not needed for this request.
 
-```
+Response:
+
+```json
 {
   "auth_id": "91d14822-9150-4ba7-8adc-a20d9507a811"
 }
 ```
 
-If sms sent succesfully, method will return `auth_id`, that will be needed to finish receiving client's token. After client receives code in sms you can make next step:
+If SMS sent successfully, the method will return `auth_id`, that will be needed to finish receiving the client's token. After the client receives code in SMS, you can make the next step:
 
-```
+```http
 GET https://api.aihelps.com/v1/auth/client?auth_id=91d14822-9150-4ba7-8adc-a20d9507a811&code=8664
 ```
 
-Several restrictions exists on this step:
-+ Time between steps 1 and 2 should be less than 2 hours (auth_id expires in two hours).
-+ After 20 wrong codes, auth_id becomes invalid.
+Several restrictions exist on this step:
++ Time between steps 1 and 2 should be less than 2 hours (`auth_id` expires in two hours).
++ After 20 wrong codes, `auth_id` becomes invalid.
 
 There are 3 possible outcomes here:
 + code is wrong - 401 error will be returned with description (please note, that number of tries is limited)
 + code is correct - client token (and refresh token) will be generated and returned (along with client id)
-+ code is correct but phone not exists in database - error 404 returned
++ code is correct but the phone does not exist in the database - error 404 returned
 
-In last case you should ask client for more details - client firstname, lastname, e-mail, gender and location and pass them as parameters once again (properties can be empty but all should be passed) + pass `Content-Language` header:
+In last case you should ask the client for more details - client first name, last name, e-mail, gender and location and pass them as parameters once again to the same endpoint (properties can be empty, but all should be passed) + pass `Content-Language` header:
 
-```
+```http
 GET https://api.aihelps.com/v1/auth/client?auth_id=91d14822-9150-4ba7-8adc-a20d9507a811&code=8664&firstname=John&lastname=Brown&sex=Male&email=john%40gmail.com&location=dbc97829-9392-451c-a00d-331d4f8c5d91
 
 Content-Language: en
 ```
 
-In both cases you will receive access token smth. like this:
+In both cases, you will receive an access token, something like:
 
-```
+```json
 {
     "server": 1,
     "access_token": "f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4",
@@ -517,9 +526,9 @@ In both cases you will receive access token smth. like this:
 }
 ```
 
-This access token has same principles as database access token described earlier but two moments:
-1) `client_id` represents client id for existing or newly created client in database
-2) token will expire in 24 hours. Usually it's enough. But if you want to provide smooth user experience, you can store `refresh_token` and refresh it after expiration. Process is simple enough, details can be found at https://aihelps.docs.apiary.io/#reference/authorization/token-refresh/refresing-expired-token
+This access token has the same principles as database access token described earlier but two moments:
+1) `client_id` represents client id for existing or newly created client in the database
+2) token will expire in 24 hours. Usually, it's enough. But if you want to provide a smooth user experience, you can store `refresh_token` and refresh it after expiration. The process is simple enough, details can be found at https://aihelps.docs.apiary.io/#reference/authorization/token-refresh/refresing-expired-token
 
 Changing client requisites (name, phone, e-mail, etc.) is outside scope of this tutorial, if needed, check https://aihelps.docs.apiary.io/#reference/clients/client/update-client
 
@@ -527,11 +536,13 @@ Changing client requisites (name, phone, e-mail, etc.) is outside scope of this 
 
 So, you have all appointment details and client access token, you can make an appointment:
 
-```
+```http
 POST https://api.aihelps.com/v1/appointments
 
 Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
+```
 
+```json
 {
   "state": "planned",
   "date": "2018-01-01T10:00:00.000Z",
@@ -547,27 +558,29 @@ Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
 }
 ```
 
-Client field can be omitted, client automatically will be taken from client access token `client_id` field. `"clients_module": true` describes that appointment was made by client itself, not by receiptionist or other staff. `comments` can be any additional text.
+Client field can be omitted, the client automatically will be taken from client access token `client_id` field. `"clients_module": true` describes that appointment was made by the client itself, not by receptionist or other staff. `comments` can be any additional text.
 
-While creating appointment you should check for HTTP Status code 409 (Conflict) - this means that professional is busy at specified time (even for one second) - either overlapse with other appointments or appointment is outside employee work time. It can shows either problems in your code or sometimes other client book that time just between you select free time and made an appointment. No problems - show "Excuse me" dialog and ask client to select new appointment time.
+While creating an appointment, you should check for HTTP Status code 409 (Conflict) - this means that professional is busy at the specified time (even one-second overlap) - either overlaps with other appointments or your appointment is outside employee work time. This can happens either because of problems in your code or sometimes another client book that time just between you select a free time and made an appointment. No problems - show "Excuse me" dialog and ask the client to select a new appointment time.
 
 You will receive appointment id:
 
-```
+```json
 {
   "id": "3ab52942-da15-4a20-b14c-b8fca7e4bf1a"
 }
 ```
 
-According to program settings, client will receive smses about succesfull booking and later notification several hours before visit start.
+According to program settings, the client will receive SMSes about successful booking and later notification several hours before the visit start.
 
 If you need to change some details, call request with fields that should be changed:
 
-```
+```http
 PUT https://api.aihelps.com/v1/appointments/3ab52942-da15-4a20-b14c-b8fca7e4bf1a
 
 Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
+```
 
+```json
 {
   "duration": 120,
   "services":
@@ -578,13 +591,15 @@ Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
 }
 ```
 
-If you need to cancel appointment:
+If you need to cancel the appointment:
 
-```
+```http
 PUT https://api.aihelps.com/v1/appointments/3ab52942-da15-4a20-b14c-b8fca7e4bf1a
 
 Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
+```
 
+```json
 {
   "state": "cancelled",
   "cancel_date": "2018-01-01T10:00:00.000Z",
@@ -592,10 +607,14 @@ Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
 }
 ```
 
-You can delete appointment (but better to set appointment as cancelled so client history can be checked):
+You can delete appointment (but better to set the appointment as canceled, so client history can be verified):
 
-```
+```http
 DELETE https://api.aihelps.com/v1/appointments/3ab52942-da15-4a20-b14c-b8fca7e4bf1a
 
 Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
 ```
+
+That's all!
+
+If you have some questions, feel free to contact the group **[API AIHELPS](https://t.me/joinchat/EVNM_kgTp_iDmHv0Z-1npg)** in Telegram for more info.

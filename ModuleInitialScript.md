@@ -3,7 +3,7 @@
 ## Prewords
 
 This documentation describes actions needed to install AIHelps online module on your site.
-If you have any questions, feel free to contact **@kolomiieys (_telegram_)** for more info.
+If you have any questions, feel free to contact **@https://t.me/online_mod_AIHelps (_telegram_)** for more info.
 
 ## Get Started
 

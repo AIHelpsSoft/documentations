@@ -13,7 +13,7 @@ If you have any questions, feel free to contact **https://t.me/online_mod_AIHelp
    ```js
    import { init } from "https://beautyprosoftware.com/online-booking-init/index.js";
    ```
-3. Call init method `init()` (on page start) and send init settings, see
+3. Call init method like `init()` (on page start) and send init settings, see
    [Property Settings](#settings).
 4. Module will create its own button or will be attached to some element by id, so will automatically be opened/closed. You can
    manually open or close module from your code, calling `openModule()` or `closeModule()` respectively. for more information about methods, see

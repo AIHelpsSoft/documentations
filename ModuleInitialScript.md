@@ -13,7 +13,7 @@ If you have any questions, feel free to contact **https://t.me/online_mod_AIHelp
    ```js
    import { init } from "https://beautyprosoftware.com/online-booking-init/index.js";
    ```
-3. Call init method `init()` (on page start) and send init settings, see
+3. Call init method like `init()` (on page start) and send init settings, see
    [Property Settings](#settings).
 4. Module will create its own button or will be attached to some element by id, so will automatically be opened/closed. You can
    manually open or close module from your code, calling `openModule()` or `closeModule()` respectively. for more information about methods, see
@@ -110,7 +110,7 @@ Only parameter `database` is required, all other parameters are optional.
 | Property       |         Type         |                                              Values                                              |          Default value         |Description                                                                                                                                                                                        |
 | -------------- | :------------------: | :----------------------------------------------------------------------------------------------: | :----------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | database       |        string        |                                        database code                                        | no default value, property is **required** |Your database code. This parameter is **required**.|
-| elementId      |        string        |                                         element id                                 |  null        | Id of element, click on which should open module. If parameter not set, script will display own "Book now!" button.                                                                               |
+| elementId      |        string        |                                         element id or class name                                |  null        | Id of element or class of elements, click on which should open module. If parameter not set, script will display own "Book now!" button.                                                                               |
 | position       |        string        | `${top \| bottom \| right \| left} ${top \| bottom \| right \| left}` for example: `"top right"`| `bottom right` | "Book now!" button position on page. Have no sense if you set elementId.                                                                                                                               |
 | text           |        string        |                                            any string                                 | `Онлайн-запись`           | "Book now!" button text. Have no sense if you set elementId.                                                                                                                                            |
 | color          |         HEX          |                 `#6F3BF5 \| #0052F1 \| #F55C3B \| #F53BEE \| #4DC602 \| #CEA206`        |  `#6F3BF5`       | "Book now!" button color. Have no sense if you set elementId.                                                                                                                                                    |

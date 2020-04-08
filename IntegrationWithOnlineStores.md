@@ -46,7 +46,7 @@ The scope defines rights that application will have in client's database. `onlin
 Server response would be the following:
 ```json
 {
-    "id": "9245f5b4-d66e-483c-b7c4-fd55f9677bb3"
+    "id": "9245f5b4-d66e-483c-b7c4-fd55f9677bb3",
     "application_id": "5330336c-143a-415a-b220-fc9932bc029d",
     "application_secret": "eb5cb7df-356e-475f-8afb-2eebe63a37bb"
 }
@@ -172,20 +172,20 @@ In this example, we requested non-archive (archive products can't be sold any mo
                     "id": "88d60be6-fba7-49c0-3d28-066a5cb5f1b9",
                     "name": "Shampoo X",
                     "description": "Best for all hair types",
-					"location_prices": [
-					  {
-						"location": "88d60c1b-5ddd-a723-0312-ba0507cf5e92",
-						"price": 35
-					  }
-					],
-					"stocks": [
-						{
-							"storage": "88d419f7-17f3-d48b-00ca-aea77f0775df",
-							"quantity": 12,
-						}
-					],
-					"package_price_currency": "USD",
-					"can_sale_package": true
+                    "location_prices": [
+                      {
+                        "location": "88d60c1b-5ddd-a723-0312-ba0507cf5e92",
+                        "price": 35
+                      }
+                    ],
+                    "stocks": [
+                        {
+                            "storage": "88d419f7-17f3-d48b-00ca-aea77f0775df",
+                            "quantity": 12,
+                        }
+                    ],
+                    "package_price_currency": "USD",
+                    "can_sale_package": true
                 }
             ]
         },
@@ -201,22 +201,22 @@ In this example, we requested non-archive (archive products can't be sold any mo
                     "id": "88d60be6-fba7-49c0-3d28-066a5cb5f1b9",
                     "name": "Gel X",
                     "description": "",
-					"location_prices": [
-					  {
-						"location": "88d60c1b-5ddd-a723-0312-ba0507cf5e92",
-						"price": 50
-					  }
-					],
-					"stocks": [
-						{
-							"storage": "88d419f7-17f3-d48b-00ca-aea77f0775df",
-							"quantity": 4,
-						}
-					],
-					"package_price_currency": "USD",
-					"can_sale_package": true
+                    "location_prices": [
+                      {
+                        "location": "88d60c1b-5ddd-a723-0312-ba0507cf5e92",
+                        "price": 50
+                      }
+                    ],
+                    "stocks": [
+                        {
+                            "storage": "88d419f7-17f3-d48b-00ca-aea77f0775df",
+                            "quantity": 4,
+                        }
+                    ],
+                    "package_price_currency": "USD",
+                    "can_sale_package": true
                 }
-			]
+            ]
         }                    
     ],
     "items":
@@ -230,6 +230,7 @@ All products are grouped into categories. Categories are objects with next field
 - `name` - category name
 - `categories` - child categories for current category
 - `items` - products located in this category
+
 Categories and products are presented in a hierarchical view. The root is a base category with null `id` and without a name.
 
 Each product has the next fields:
@@ -262,14 +263,14 @@ The result will be something like this:
     {
         "id": "04c5daec-2c11-4ce9-b00d-03a03d50356f",
         "name": "Stylists storage",
-		"location": "88d60c1b-5ddd-a723-0312-ba0507cf5e92",
-		"can_sale": false
+        "location": "88d60c1b-5ddd-a723-0312-ba0507cf5e92",
+        "can_sale": false
     },
     {
         "id": "e28ebfd0-f847-4c3f-b2a1-07f4257b0764",
         "name": "Showcase",
-		"location": "88d60c1b-5ddd-a723-0312-ba0507cf5e92",
-		"can_sale": true
+        "location": "88d60c1b-5ddd-a723-0312-ba0507cf5e92",
+        "can_sale": true
     }
 ]
 ```
@@ -311,7 +312,7 @@ The client selects a certain location (or you specify exact location in code) an
 
 ## Working with clients <a name="clients"></a>
 
-Before making a purchase you must decide, will the purchase will be connected to some client or no client will be attached to purchase.
+Before making a purchase you must decide, if the purchase will be connected to some client or no client will be attached to purchase.
 
 If you want to attach a purchase to the client, you need to find the corresponding client in the database by phone, e-mail, card number or other requisites.
 
@@ -379,12 +380,12 @@ Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received acce
 ```
 ```json
 {
-	"firstname": "Bob",
-	"lastname": "Black",
-	"gender": "male",
-	"phone": [
-		"+1 800 555 12 00"
-	]
+    "firstname": "Bob",
+    "lastname": "Black",
+    "gender": "male",
+    "phone": [
+        "+1 800 555 12 00"
+    ]
 }
 ```
 
@@ -392,7 +393,7 @@ Id of the new client will be returned:
 
 ```json
 {
-	"id": "f90a87cb-ef7f-444f-a05f-bf81ec055627"
+    "id": "f90a87cb-ef7f-444f-a05f-bf81ec055627"
 }
 ```
 
@@ -419,7 +420,7 @@ Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
     }
   ],
   "payments": [
-	{
+    {
       "deposit": 200
     },
     {
@@ -476,7 +477,7 @@ Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced // your received acce
 ]
 ```
 
-You can use accounts with types `bank` and `cashdesk` only for purchase operations (there are several other types).
+Only accounts with types `bank` and `cashdesk` are allowed for purchase operations (there are several other types).
 
 ## The End
 

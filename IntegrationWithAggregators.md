@@ -87,7 +87,7 @@ The scope defines rights that application will have in clients database. `client
 Server response would be the following:
 ```json
 {
-    "id": "9245f5b4-d66e-483c-b7c4-fd55f9677bb3"
+    "id": "9245f5b4-d66e-483c-b7c4-fd55f9677bb3",
     "application_id": "5330336c-143a-415a-b220-fc9932bc029d",
     "application_secret": "eb5cb7df-356e-475f-8afb-2eebe63a37bb"
 }
@@ -132,6 +132,7 @@ GET https://api.aihelps.com/v1/auth/database?application_id=a47cbc05-5ce6-4551-9
 
 You will receive access token:
 
+```json
 {
   "server": 1,
   "access_token": "a71923bd-84c5-49a3-a7fb-a0825e26bbe4",
@@ -143,6 +144,7 @@ You will receive access token:
   ],
   "expires_at": "2039-06-01T00:00:00.000Z"
 }
+```
 
 Access token, that will be needed for next requests is `access_token` (each client database will need its own access token). Save it in a secure place.
 You will receive a token for 20 years, so there is no need to worry about token expiration.
@@ -475,6 +477,8 @@ You usually have client phone and we propose to match clients via phone. So, fir
 
 ```http
 GET https://api.aihelps.com/v1/clients?phone=18005550123&fields=
+
+Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
 ```
 
 Please note that you should pass empty fields list - you do not have access to information about clients. You will receive one or several client ids (if found). If more than one client id returned for provided phone - take any (first one), this mean several clients has same number and you can't select client more precise.
@@ -484,15 +488,17 @@ But you will not be able to get this client fields later, change them or delete 
 
 ```http
 POST https://api.aihelps.com/v1/clients
+
+Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
 ```
 
 ```json
 {
   "firstname": "Peter",
   "middlename": "Ivanovych",
-  "lastname": "Black",
+  "lastname": "Brown",
   "gender": "male",
-  "birthday": "1990-01-01T00:00:00.000Z",
+  "birthday": "1990-01-01",
   "phone": "+1 800 555 0123",
   "email": "peter@gmail.com",
   "comment": "some comments"
@@ -561,7 +567,7 @@ While creating an appointment, you should check for HTTP Status code 409 (Confli
     }
 }
 ```
-Take existing appointment `id`, get all services, add yours and update services:
+Take existing appointment `id`, get all services:
 
 ```http
 GET https://api.aihelps.com/v1/appointments/74e85faf-de73-4fe6-9530-3af1dd7c1b34?fields=services
@@ -584,6 +590,8 @@ Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
   ]
 }
 ```
+
+Add yours and update services:
 
 ```http
 PUT https://api.aihelps.com/v1/appointments/74e85faf-de73-4fe6-9530-3af1dd7c1b34
@@ -618,7 +626,16 @@ Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
 }
 ```
 
-2) second situation - professional is busy at the specified time (even one-minute overlap) - either overlaps with other appointments or your appointment is outside employee work time. This can happens either because of problems in your code or sometimes another client book that time just between you select a free time and made an appointment. No problems - show "Excuse me" dialog and ask the client to select a new appointment time.
+2) second situation - professional is busy at the specified time (even one-minute overlap, `type` = "TIME_CONFLICT") - either overlaps with other appointments or your appointment is outside employee work time. This can happens either because of problems in your code or sometimes another client book that time just between you select a free time and made an appointment. No problems - show "Excuse me" dialog and ask the client to select a new appointment time.
+
+```json
+{
+    "status": 409,
+    "type": "TIME_CONFLICT",
+    "request": "a7dfb9a8-0383-4087-a1e6-606fc2bc714c",
+	...
+}
+```
 
 After succesfull booking you will receive appointment id:
 

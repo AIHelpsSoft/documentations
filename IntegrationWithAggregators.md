@@ -570,7 +570,7 @@ While creating an appointment, you should check for HTTP Status code 409 (Confli
 Take existing appointment `id`, get all services:
 
 ```http
-GET https://api.aihelps.com/v1/appointments/74e85faf-de73-4fe6-9530-3af1dd7c1b34?fields=services
+GET https://api.aihelps.com/v1/appointments/74e85faf-de73-4fe6-9530-3af1dd7c1b34?fields=services(start,duration,service,professional)
 
 Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
 ```

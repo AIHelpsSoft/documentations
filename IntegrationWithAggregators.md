@@ -526,6 +526,7 @@ Authorization: f4e6bdc1-58a9-4b2e-a06c-98ca194b2bf4
   "location": "8fe29e48-d5a5-4dcc-800e-80eb6e9cac5c",
   "client": "c07210d0-d956-4067-b9bd-ba1401a11df3",
   "comments": "",
+  "clientsModule": true,
   "services":
   [
 	{

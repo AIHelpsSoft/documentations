@@ -31,7 +31,7 @@ To show the online module on your page, just insert the next script in your page
       import { init } from "https://beautyprosoftware.com/online-booking-init/index.js";
       init({
         database: 503953,       // client id, you can get it from client or client online module
-        elementId: bookButton   // html element id, click on which should show online module
+        elementId: "bookButton"   // html element id, click on which should show online module
       });
     </script>
 ```

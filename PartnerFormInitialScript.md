@@ -7,4 +7,9 @@ If you have any questions, feel free to contact **https://t.me/joinchat/EVNM_kgT
 
 ## Get Started
 
-# In progress
+1. Include script `<script type="module">...</script>` don't forget set `type="module"`. All scripts are inserted in HTML between tags `<head> </head>` or between
+   `<body> </body>` tags
+2. The first you need to import `init` method from ES module like this
+   ```js
+   import { init } from "Here is link to script";
+   ```

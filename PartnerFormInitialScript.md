@@ -30,16 +30,16 @@ for more info.
      },
    });
    ```
-4. Then you need to check the devtools console, and if you didn't see any errors like this: </br>
+4. Then you need to check the devtools console, and if you don't see any errors like this: </br>
    <img src="https://raw.githubusercontent.com/AIHelpsSoft/documentations/master/images/partner_form_initial_script_img2.png" />
-   that's mean everything is good, and you have done a great job, thanks for use AIHelps solutions
+   this means everything is good, and you have done a great job, thanks for using AIHelps solutions
 
 ## Methods:
 
 #### Init
 
-This method just initialization the partner form for download program, receive as an argument
-[init props](#props). For import, this method see the code below:
+This method just initialization the partner form for the download program, receive as an argument
+[init props](#props). To import this method please see the code below:
 
 ```js
 import { init } from "Here is link to script";
@@ -48,7 +48,7 @@ import { init } from "Here is link to script";
 The props `partnerCode, emailFieldId, phoneFieldId, submitButtonId` **are required**. You can see
 all the [props](#props) in the table below.
 
-Example to use:
+Example:
 
 ```html
 <!DOCTYPE html>
@@ -81,18 +81,18 @@ Example to use:
 
 ## All init method props: <a name="props"></a>
 
-| Prop name      | Type                          | Description                                                                                                                                                  |
-| -------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| partnerCode    | five-digit number             | Partner code for new client. **Property is required**.                                                                                                       |
-| emailFieldId   | string                        | The id of email HTML Input Element. **Property is required**.                                                                                                |
-| phoneFieldId   | string                        | The id of phone number HTML Input Element. **Property is required**.                                                                                         |
-| submitButtonId | string                        | The id of submit HTML Button Element, clicking on which sends a request to the API and start downloading the program . **Property is required**.             |
-| nameFieldId    | string                        | The id of client name HTML Input Element.                                                                                                                    |
-| commentFieldId | string                        | The id of client comment HTML Input Element.                                                                                                                 |
-| companyFieldId | string                        | The id of client company HTML Input Element.                                                                                                                 |
-| programType    | [PROGRAM_TYPE](#program_type) | Program type to set what program you need to download. **By default set "Beauty Pro"**.                                                                      |
-| onSuccess      | function                      | The callback function called when the client successfully sended the form to API, gets the [OnSuccessType](#on_success_type) as an argument to the function. |
-| onError        | function                      | The callback function called when the client successfully sended the form to API, gets the [OnErrorType](#on_error_type) as an argument to the function.     |
+| Prop name      | Type                          | Description                                                                                                                                                               |
+| -------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| partnerCode    | five-digit number             | Partner code for new client. **Property is required**.                                                                                                                    |
+| emailFieldId   | string                        | The id of email HTML Input Element. **Property is required**.                                                                                                             |
+| phoneFieldId   | string                        | The id of phone number HTML Input Element. **Property is required**.                                                                                                      |
+| submitButtonId | string                        | The id of submitting HTML Button Element, clicking on which sends a request to the API, and start downloading the program. **Property is required.**                      |
+| nameFieldId    | string                        | The id of client name HTML Input Element.                                                                                                                                 |
+| commentFieldId | string                        | The id of client comment HTML Input Element.                                                                                                                              |
+| companyFieldId | string                        | The id of client company HTML Input Element.                                                                                                                              |
+| programType    | [PROGRAM_TYPE](#program_type) | Program type to set what program you need to download. **By default set "Beauty Pro"**.                                                                                   |
+| onSuccess      | function                      | The callback function called when the client has successfully sent the form to API gets as argument the [OnSuccessType](#on_success_type) as an argument to the function. |
+| onError        | function                      | The callback function called when the client has failed to send the form to API gets the [OnErrorType](#on_error_type) as an argument to the function.                    |
 
 ## Types:
 
@@ -112,18 +112,18 @@ This is specific string line one of `"Beauty Pro"`, `"Fitness Pro"`, `"Denta Pro
 | person       | string                        | Client name. **Can be undefined**.                                      |
 | comment      | string                        | Client comment. **Can be undefined**.                                   |
 | company      | string                        | Client company. **Can be undefined**.                                   |
-| timezone     | string                        | Client timezone.                                                        |
-| code         | number                        | Client data-base code. Six-digit number.                                |
+| timezone     | string                        | Client timezone in format `"Europe/Kiev"`.                              |
+| code         | number                        | Client data base code. Six-digit number.                                |
 | filename     | string                        | Program filename. **Can be undefined**.                                 |
 
 #### OnErrorType <a name="on_error_type"></a>
 
-| Prop name | Type                                    | Description                                                                      |
-| --------- | --------------------------------------- | -------------------------------------------------------------------------------- |
-| errorType | [SUBMIT_ERROR_TYPE](#submit_error_type) | Some error who's happened when send API request.                                 |
-| field     | HTMLInputElement                        | HTMLInputElement is from the field where error was happen. **Can be undefined**. |
-| fieldId   | string                                  | HTMLInputElement id where error was happen. **Can be undefined**.                |
-| value     | string                                  | Value from HTMLInputElement where error was happen. **Can be undefined**.        |
+| Prop name | Type                                    | Description                                                                            |
+| --------- | --------------------------------------- | -------------------------------------------------------------------------------------- |
+| errorType | [SUBMIT_ERROR_TYPE](#submit_error_type) | Some errors which appeared during sending API requests.                                |
+| field     | HTMLInputElement                        | HTMLInputElement is from the field where the error has happened. **Can be undefined**. |
+| fieldId   | string                                  | HTMLInputElement id where the error has happened. **Can be undefined**.                |
+| value     | string                                  | Value from HTMLInputElement where the error has happened. **Can be undefined**.        |
 
 ## Errors:
 
@@ -132,8 +132,8 @@ This is specific string line one of `"Beauty Pro"`, `"Fitness Pro"`, `"Denta Pro
 This is specific string line one of `"Wrong email"`, `"Wrong phone number"`,
 `"Internal server error"`.
 
-- `Wrong email` — Input email isn't valid
-- `Wrong phone number` — Input phone number isn't valid
+- `Wrong email` — Input email is invalid
+- `Wrong phone number` — Input phone number is invalid
 - `Internal server error` — During the sending request happened unexpected error
 
 #### Initialization props errors:

@@ -55,7 +55,7 @@ Example to use:
 <html lang="en">
   <head>
     <title>Parter Form Test Page</title>
-    <!-- ... slice code  ...  -->
+    <!-- ... snip ...  -->
     <script type="module">
       import { init } from "Here is link to script";
 
@@ -66,15 +66,15 @@ Example to use:
         emailFieldId: "email_id",
       });
     </script>
-    <!-- ... slice code  ...  -->
+    <!-- ... snip ...  -->
   </head>
   <body>
-    <!-- ... slice code  ...  -->
+    <!-- ... snip ...  -->
     <input type="tel" id="phone_id" placeholder="Phone Number" />
     <input type="email" id="email_id" placeholder="Email" />
 
     <button type="submit" id="submit_button_id">I'm button for submit</button>
-    <!-- ... slice code  ...  -->
+    <!-- ... snip ...  -->
   </body>
 </html>
 ```

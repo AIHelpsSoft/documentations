@@ -34,7 +34,7 @@ for more info.
    <img src="https://raw.githubusercontent.com/AIHelpsSoft/documentations/master/images/partner_form_initial_script_img2.png" />
    that's mean everything is good, and you have done a great job, thanks for use AIHelps solutions
 
-## Methods
+## Methods:
 
 #### Init
 
@@ -48,6 +48,37 @@ import { init } from "Here is link to script";
 The props `partnerCode, emailFieldId, phoneFieldId, submitButtonId` **are required**. You can see
 all the [props](#props) in the table below.
 
+Example to use:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Parter Form Test Page</title>
+    <!-- ... slice code  ...  -->
+    <script type="module">
+      import { init } from "Here is link to script";
+
+      init({
+        partnerCode: 12345,
+        phoneFieldId: "phone_id",
+        submitButtonId: "submit_button_id",
+        emailFieldId: "email_id",
+      });
+    </script>
+    <!-- ... slice code  ...  -->
+  </head>
+  <body>
+    <!-- ... slice code  ...  -->
+    <input type="tel" id="phone_id" placeholder="Phone Number" />
+    <input type="email" id="email_id" placeholder="Email" />
+
+    <button type="submit" id="submit_button_id">I'm button for submit</button>
+    <!-- ... slice code  ...  -->
+  </body>
+</html>
+```
+
 ## All init method props: <a name="props"></a>
 
 | Prop name      | Type                          | Description                                                                                                                                                  |
@@ -55,7 +86,7 @@ all the [props](#props) in the table below.
 | partnerCode    | five-digit number             | Partner code for new client. **Property is required**.                                                                                                       |
 | emailFieldId   | string                        | The id of email HTML Input Element. **Property is required**.                                                                                                |
 | phoneFieldId   | string                        | The id of phone number HTML Input Element. **Property is required**.                                                                                         |
-| submitButtonId | string                        | The id of submit HTML Button Element. **Property is required**.                                                                                              |
+| submitButtonId | string                        | The id of submit HTML Button Element, clicking on which sends a request to the API and start downloading the program . **Property is required**.             |
 | nameFieldId    | string                        | The id of client name HTML Input Element.                                                                                                                    |
 | commentFieldId | string                        | The id of client comment HTML Input Element.                                                                                                                 |
 | companyFieldId | string                        | The id of client company HTML Input Element.                                                                                                                 |
@@ -87,9 +118,33 @@ This is specific string line one of `"Beauty Pro"`, `"Fitness Pro"`, `"Denta Pro
 
 #### OnErrorType <a name="on_error_type"></a>
 
-| Prop name | Type             | Description                                                                                             |
-| --------- | ---------------- | ------------------------------------------------------------------------------------------------------- |
-| errorType | string           | This is specific string line one of `"Wrong email"`, `"Wrong phone number"`, `"Internal server error"`. |
-| field     | HTMLInputElement | HTMLInputElement is from the field where error was happen. **Can be undefined**.                        |
-| fieldId   | string           | HTMLInputElement id where error was happen. **Can be undefined**.                                       |
-| value     | string           | Value from HTMLInputElement where error was happen. **Can be undefined**.                               |
+| Prop name | Type                                    | Description                                                                      |
+| --------- | --------------------------------------- | -------------------------------------------------------------------------------- |
+| errorType | [SUBMIT_ERROR_TYPE](#submit_error_type) | Some error who's happened when send API request.                                 |
+| field     | HTMLInputElement                        | HTMLInputElement is from the field where error was happen. **Can be undefined**. |
+| fieldId   | string                                  | HTMLInputElement id where error was happen. **Can be undefined**.                |
+| value     | string                                  | Value from HTMLInputElement where error was happen. **Can be undefined**.        |
+
+## Errors:
+
+#### SUBMIT_ERROR_TYPE <a name="submit_error_type"></a>
+
+This is specific string line one of `"Wrong email"`, `"Wrong phone number"`,
+`"Internal server error"`.
+
+- `Wrong email` — Input email isn't valid
+- `Wrong phone number` — Input phone number isn't valid
+- `Internal server error` — During the sending request happened unexpected error
+
+#### Initialization props errors:
+
+| Type of Error                 | Description |
+| ----------------------------- | ----------- |
+| PropsIsUndefined              |             |
+| PropsIsNotObject              |             |
+| PropPartnerCodeIsInvalid      |             |
+| PropPhoneFieldIdIsUndefined   |             |
+| PropSubmitButtonIdIsUndefined |             |
+| PropEmailFieldIdIsUndefined   |             |
+| CannotFindHTMLElement         |             |
+| WrongPropType                 |             |

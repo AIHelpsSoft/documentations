@@ -1,10 +1,10 @@
-# AIHelps parther form init script
+# AIHelps parter form init script
 
 ## Prewords:
 
-This documentation describes actions needed to install AIHelps parther form on your site. If you
-have any questions, feel free to contact **https://t.me/joinchat/EVNM_kgTp_iDmHv0Z-1npg
-(_telegram_)** for more info.
+This documentation describes actions needed to install AIHelps parter form on your site. If you have
+any questions, feel free to contact _[telegram group](https://t.me/joinchat/EVNM_kgTp_iDmHv0Z-1npg)_
+for more info.
 
 ## Get Started:
 
@@ -30,6 +30,23 @@ have any questions, feel free to contact **https://t.me/joinchat/EVNM_kgTp_iDmHv
      },
    });
    ```
+4. Then you need to check the devtools console, and if you didn't see any errors like this: </br>
+   <img src="https://raw.githubusercontent.com/AIHelpsSoft/documentations/master/images/partner_form_initial_script_img2.png" />
+   that's mean everything is good, and you have done a great job, thanks for use AIHelps solutions
+
+## Methods
+
+#### Init
+
+This method just initialization the partner form for download program, receive as an argument
+[init props](#props). For import, this method see the code below:
+
+```js
+import { init } from "Here is link to script";
+```
+
+The props `partnerCode, emailFieldId, phoneFieldId, submitButtonId` **are required**. You can see
+all the [props](#props) in the table below.
 
 ## All init method props: <a name="props"></a>
 
@@ -73,6 +90,6 @@ This is specific string line one of `"Beauty Pro"`, `"Fitness Pro"`, `"Denta Pro
 | Prop name | Type             | Description                                                                                             |
 | --------- | ---------------- | ------------------------------------------------------------------------------------------------------- |
 | errorType | string           | This is specific string line one of `"Wrong email"`, `"Wrong phone number"`, `"Internal server error"`. |
-| field     | HTMLInputElement | HTMLInputElement is from the field where happened error. **Can be undefined**.                          |
-| fieldId   | string           | HTMLInputElement id where happened error. **Can be undefined**.                                         |
-| value     | string           | Value from HTMLInputElement where happened error. **Can be undefined**.                                 |
+| field     | HTMLInputElement | HTMLInputElement is from the field where error was happen. **Can be undefined**.                        |
+| fieldId   | string           | HTMLInputElement id where error was happen. **Can be undefined**.                                       |
+| value     | string           | Value from HTMLInputElement where error was happen. **Can be undefined**.                               |

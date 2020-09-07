@@ -30,7 +30,8 @@ for more info.
      },
    });
    ```
-4. Then you need to check the devtools console, and if you don't see any errors like this: </br>
+4. Then you need to check the devtools console, and if you don't see any
+   [errors](#initialization_props_errors) like this: </br>
    <img src="https://raw.githubusercontent.com/AIHelpsSoft/documentations/master/images/partner_form_initial_script_img2.png" />
    this means everything is good, and you have done a great job, thanks for using AIHelps solutions
 
@@ -136,7 +137,7 @@ This is specific string line one of `"Wrong email"`, `"Wrong phone number"`,
 - `Wrong phone number` — Input phone number is invalid
 - `Internal server error` — During the sending request happened unexpected error
 
-#### Initialization props errors:
+#### Initialization props errors <a name="initialization_props_errors"></a>
 
 | Type of Error                 | Description |
 | ----------------------------- | ----------- |

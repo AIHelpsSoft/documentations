@@ -12,7 +12,7 @@ for more info.
    are inserted in HTML between tags `<head> </head>` or between `<body> </body>` tags
 2. The first you need to import `init` method from ES module like this
    ```js
-   import { init } from "Here is link to script";
+   import { init } from "https://beautyprosoftware.com/partner-from-init/index.js";
    ```
 3. Next step is you need to call the init method with custom [props](#props) for example:
    ```js
@@ -43,7 +43,7 @@ This method just initialization the partner form for the download program, recei
 [init props](#props). To import this method please see the code below:
 
 ```js
-import { init } from "Here is link to script";
+import { init } from "https://beautyprosoftware.com/partner-from-init/index.js";
 ```
 
 The props `partnerCode, emailFieldId, phoneFieldId, submitButtonId` **are required**. You can see
@@ -58,7 +58,7 @@ Example:
     <title>Parter Form Test Page</title>
     <!-- ... snip ...  -->
     <script type="module">
-      import { init } from "Here is link to script";
+      import { init } from "https://beautyprosoftware.com/partner-from-init/index.js";
 
       init({
         partnerCode: 12345,

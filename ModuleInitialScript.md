@@ -80,7 +80,7 @@ import {
 } from "https://beautyprosoftware.com/online-booking-init/index.js";
 
 init({
-  /** ... */
+  /** snip */
 });
 
 openModule();
@@ -99,7 +99,7 @@ import {
 } from "https://beautyprosoftware.com/online-booking-init/index.js";
 
 init({
-  /** ... */
+  /** snip */
 });
 
 closeModule();

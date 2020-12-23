@@ -2,25 +2,34 @@
 
 ## Prewords
 
-This documentation describes actions needed to set up GA (It's Google analytics below we will called it like this) from Online module.
+This documentation described actions needed to set up GA (_It's Google analytics below we will called it like this_) from Online module.
 If you have any questions, feel free to contact _[telegram group](https://t.me/joinchat/EVNM_kgTp_iDmHv0Z-1npg)_ for more info.
+
+## Preparing
+
+1. You need to have GA account how to get it [see here by the link](https://support.google.com/analytics/answer/10089681?hl=ru&ref_topic=9143232)
+2. Also you need CRM and Configured Online Module
 
 ## Get Started:
 
-1. Go to your CRM
+1. Go to your CRM, select the _settings section -> online module settings_
+2. Select _"Размещение в интернете"_
    <img src="https://raw.githubusercontent.com/AIHelpsSoft/documentations/master/images/how_to_use_analytics_from_online_module_img1.jpg" />
-2.
+3. Then find the _analytics section_ and set up the GA token. You able to figure out how to get it [by link](https://support.google.com/analytics/answer/9310895)
+   <img src="https://raw.githubusercontent.com/AIHelpsSoft/documentations/master/images/how_to_use_analytics_from_online_module_img3.jpg" />
 
-## Events
+Described all events in [table below](#events)
+
+## Events <a name="events"></a>
 
 | [Event] Name           | Args                   | Description                                                                                 |
 | ---------------------- | ---------------------- | ------------------------------------------------------------------------------------------- |
 | [send] new appointment | `clientId` type string | Send it when client has booked new appointment, **clientId** - it's client id from your CRM |
 
----
-
 If you want added new events or added new features
 please report it in this repository or [at AI Helps telegram group](https://t.me/joinchat/EVNM_kgTp_iDmHv0Z-1npg).
+
+---
 
 If you notice an error or some documentation doesn't match the execution behavior the programs,
 please report the issues in this repository or [at AI Helps telegram group](https://t.me/joinchat/EVNM_kgTp_iDmHv0Z-1npg).

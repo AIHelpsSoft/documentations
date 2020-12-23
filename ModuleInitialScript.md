@@ -25,16 +25,20 @@ For example:
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- ... snip ...  -->
     <title>Online Booking</title>
+    <!-- ... snip ...  -->
   </head>
   <body>
-    <script type="module">
+     <!-- ... snip ...  -->
+     <script type="module">
       import { init } from "https://beautyprosoftware.com/online-booking-init/index.js";
 
       init({
         database: 503953,
       });
     </script>
+    <!-- ... snip ...  -->
   </body>
 </html>
 ```
@@ -76,7 +80,7 @@ import {
 } from "https://beautyprosoftware.com/online-booking-init/index.js";
 
 init({
-  /** ... */
+  /** snip */
 });
 
 openModule();
@@ -95,7 +99,7 @@ import {
 } from "https://beautyprosoftware.com/online-booking-init/index.js";
 
 init({
-  /** ... */
+  /** snip */
 });
 
 closeModule();

@@ -22,9 +22,9 @@ Described all events in [table below](#events)
 
 ## Events <a name="events"></a>
 
-| Event Category | Event Action      | Event Label            | Description                                                                                 |
-| -------------- | ----------------- | ---------------------- | ------------------------------------------------------------------------------------------- |
-| `Appointment`  | `new appointment` | `clientId` type string | Send it when client has booked new appointment, **clientId** - it's client id from your CRM |
+| Event Category | Event Action | Event Label                      | Description                                                                                 |
+| -------------- | ------------ | -------------------------------- | ------------------------------------------------------------------------------------------- |
+| `Appointment`  | `New`        | `clientId` client id in database | Send it when client has booked new appointment, **clientId** - it's client id from your CRM |
 
 If you want added new events or added new features
 please report it in this repository or [at AI Helps telegram group](https://t.me/joinchat/EVNM_kgTp_iDmHv0Z-1npg).

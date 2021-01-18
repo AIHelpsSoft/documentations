@@ -30,8 +30,8 @@ For example:
     <!-- ... snip ...  -->
   </head>
   <body>
-     <!-- ... snip ...  -->
-     <script type="module">
+    <!-- ... snip ...  -->
+    <script type="module">
       import { init } from "https://beautyprosoftware.com/online-booking-init/index.js";
 
       init({
@@ -128,3 +128,7 @@ Only parameter `database` is required, all other parameters are optional.
 | designTheme    |        string        |                                    `soft \| normal \| strong`                                    |                   `soft`                   | Online module theme                                                                                                                                                                                                                                                                                                                                                                               |
 | designColor    |         HEX          |                 `#6F3BF5 \| #0052F1 \| #F55C3B \| #F53BEE \| #4DC602 \| #CEA206`                 |                 `#6F3BF5`                  | Online module color                                                                                                                                                                                                                                                                                                                                                                               |
 | modulePosition |        string        |                                `left \| center \| right \| auto`                                 |                   `auto`                   | Online module position when module open (left side of screen, right side of screen, screen center). If `auto` is set: if "Book now!" button is shown, module will be shown left or right depending on `position` property; otherwise (`elementId` is set) module will be shown on the right side of screen. You can use this property if you want to place the module in a non-standard position. |
+
+## Analytics <a name="settings"></a>
+
+If you want to receive analytics event from Online Module you can read how to do it by the _[link](https://github.com/AIHelpsSoft/documentations/blob/master/HowToUseAnalyticsFromOnlineModule.md)_

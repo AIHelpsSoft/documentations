@@ -43,6 +43,8 @@ For example:
 </html>
 ```
 
+You can see the demo by the [link](https://aihelps-om-test-init-script.netlify.app/)
+
 ## AIHelpsModule methods <a name="AIHelpsModule"></a>
 
 ### init()

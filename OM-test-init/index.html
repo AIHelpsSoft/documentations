@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+    <style>
+      .center {
+        justify-content: center;
+        display: flex;
+      }
+
+      .marginTop {
+        margin: 8px 0px;
+      }
+
+      .marginCenter {
+        margin: 0px 20vw;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .flex {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .buttonContainer {
+        display: flex;
+        margin-top: 8px;
+        justify-content: center;
+      }
+
+      .button {
+        margin: 8px;
+      }
+    </style>
+
+    <script type="module">
+      import { init } from "https://beautyprosoftware.com/online-booking-init/index.js";
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("buttonId").onclick = () => {
+          const props = {};
+
+          const database = document.getElementById("database").value;
+          const elementId = document.getElementById("elementId").value;
+          const position = document.getElementById("position").value;
+          const text = document.getElementById("text").value;
+          const color = document.getElementById("color").value;
+          const enabled = document.getElementById("enabled").checked;
+          const designTheme = document.getElementById("designTheme").value;
+          const designColor = document.getElementById("designColor").value;
+
+          const professional = document.getElementById("professional").value;
+          const services = document.getElementById("services").value;
+          const location = document.getElementById("location").value;
+
+          if (database != "") props.database = database;
+          if (designTheme != "") props.designTheme = designTheme;
+          if (designColor != "") props.designColor = designColor;
+          if (elementId != "") props.elementId = elementId;
+          if (position != "") props.position = position;
+          if (text != "") props.text = text;
+          if (color != "") props.color = color;
+          if (professional != "") props.professional = professional;
+          if (services != "") props.services = services;
+          if (location != "") props.location = location;
+          props.enabled = enabled;
+
+          if (window.app) window.app.$destroy();
+
+          window.app = init(props);
+        };
+      });
+    </script>
+  </head>
+  <body>
+    <h1 class="center">This page for test init script - AIHelps</h1>
+    <h2 class="center">
+      Documentation for init script is &nbsp
+      <a
+        href="https://github.com/AIHelpsSoft/documentations/blob/master/ModuleInitialScript.md"
+        target="_blank"
+        >here</a
+      >
+    </h2>
+
+    <div class="container marginCenter">
+      <div class="flex">
+        <div class="container">
+          <label class="marginTop" for="database">
+            <span>database</span>
+            <input
+              type="text"
+              id="database"
+              value="503953"
+              placeholder="&nbsp;"
+            />
+          </label>
+          <label class="marginTop" for="elementId">
+            <span>elementId</span>
+            <input type="text" id="elementId" placeholder="&nbsp;" />
+          </label>
+          <label class="marginTop" for="position">
+            <span>position</span>
+            <input
+              type="text"
+              id="position"
+              value="bottom right"
+              placeholder="&nbsp;"
+            />
+          </label>
+          <label class="marginTop" for="text">
+            <span>text</span>
+            <input type="text" id="text" placeholder="&nbsp;" />
+          </label>
+          <label class="marginTop" for="color">
+            <span>color</span>
+            <input type="text" id="color" placeholder="&nbsp;" />
+          </label>
+          <label class="marginTop" for="location">
+            <span>location</span>
+            <input type="text" id="location" placeholder="&nbsp;" />
+          </label>
+        </div>
+        <div class="container">
+          <label class="marginTop" for="enabled">
+            <span>enabled</span>
+            <input type="checkbox" id="enabled" checked placeholder="&nbsp;" />
+          </label>
+          <label class="marginTop" for="designTheme">
+            <span>designTheme</span>
+            <input type="text" id="designTheme" placeholder="&nbsp;" />
+          </label>
+          <label class="marginTop" for="designColor">
+            <span>designColor</span>
+            <input type="text" id="designColor" placeholder="&nbsp;" />
+          </label>
+          <label class="marginTop" for="professional">
+            <span>professional</span>
+            <input type="text" id="professional" placeholder="&nbsp;" />
+          </label>
+          <label class="marginTop" for="services">
+            <span>services</span>
+            <input type="text" id="services" placeholder="&nbsp;" />
+          </label>
+        </div>
+      </div>
+
+      <div class="buttonContainer">
+        <button id="buttonId">
+          Apply
+        </button>
+      </div>
+
+      <h3 class="center">Test Buttons</h3>
+      <div class="buttonContainer">
+        <button class="button" id="test">
+          This button have id "test"
+        </button>
+        <button class="button" id="online-book">
+          This button have id "online-book"
+        </button>
+
+        <button class="button">
+          I have class button
+        </button>
+        <button class="button">
+          I have class button
+        </button>
+        <button class="button">
+          I have class button
+        </button>
+        <button class="button">
+          I have class button
+        </button>
+        <button class="button">
+          I have class button
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

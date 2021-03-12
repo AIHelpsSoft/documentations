@@ -82,18 +82,20 @@ Example:
 
 ## All init method props: <a name="props"></a>
 
-| Prop name      | Type                          | Description                                                                                                                                                               |
-| -------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| partnerCode    | five-digit number             | Partner code for new client. **Property is required**.                                                                                                                    |
-| emailFieldId   | string                        | The id of email HTML Input Element. **Property is required**.                                                                                                             |
-| phoneFieldId   | string                        | The id of phone number HTML Input Element. **Property is required**.                                                                                                      |
-| submitButtonId | string                        | The id of submitting HTML Button Element, clicking on which sends a request to the API, and start downloading the program. **Property is required.**                      |
-| nameFieldId    | string                        | The id of client name HTML Input Element.                                                                                                                                 |
-| commentFieldId | string                        | The id of client comment HTML Input Element.                                                                                                                              |
-| companyFieldId | string                        | The id of client company HTML Input Element.                                                                                                                              |
-| programType    | [PROGRAM_TYPE](#program_type) | Program type to set what program you need to download. **By default set "Beauty Pro"**.                                                                                   |
-| onSuccess      | function                      | The callback function called when the client has successfully sent the form to API gets as argument the [OnSuccessType](#on_success_type) as an argument to the function. |
-| onError        | function                      | The callback function called when the client has failed to send the form to API gets the [OnErrorType](#on_error_type) as an argument to the function.                    |
+| Prop name       | Type                          | Description                                                                                                                                                               |
+| --------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| partnerCode     | five-digit number             | Partner code for new client. **To skip partnerCode** you need to set noPartnerCode to `true`.                                                                             |
+| emailFieldId    | string                        | The id of email HTML Input Element. **Property is required**.                                                                                                             |
+| phoneFieldId    | string                        | The id of phone number HTML Input Element. **Property is required**.                                                                                                      |
+| submitButtonId  | string                        | The id of submitting HTML Button Element, clicking on which sends a request to the API, and start downloading the program. **Property is required.**                      |
+| downloadProgram | boolean                       | Will be to download program or not. Default set to `true`. If you want to **disable download** just set this property to `false`.                                         |
+| noPartnerCode   | boolean                       | **If you want to skip partner code** just set it to `true`. **By default set** `false`.                                                                                   |
+| nameFieldId     | string                        | The id of client name HTML Input Element.                                                                                                                                 |
+| commentFieldId  | string                        | The id of client comment HTML Input Element.                                                                                                                              |
+| companyFieldId  | string                        | The id of client company HTML Input Element.                                                                                                                              |
+| programType     | [PROGRAM_TYPE](#program_type) | Program type to set what program you need to download. **By default set "Beauty Pro"**.                                                                                   |
+| onSuccess       | function                      | The callback function called when the client has successfully sent the form to API gets as argument the [OnSuccessType](#on_success_type) as an argument to the function. |
+| onError         | function                      | The callback function called when the client has failed to send the form to API gets the [OnErrorType](#on_error_type) as an argument to the function.                    |
 
 ## Types:
 

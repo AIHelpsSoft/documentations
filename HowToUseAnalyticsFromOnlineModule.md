@@ -38,7 +38,7 @@ If you want to integrate with another analytics system, you need to use `onAnaly
 Example of first argument:
 <img src="https://raw.githubusercontent.com/AIHelpsSoft/documentations/master/images/first-argument-onAnalyticsEvent.jpg" />
 
-For example let's try to integrate with _[amplitude](https://amplitude.com/)_:
+For example integrate with _[amplitude](https://amplitude.com/)_:
 
 ```js
 // initialize the client

@@ -36,7 +36,7 @@ If you want to integrate with another analytics system, you need to use `onAnaly
 `onAnalyticsEvent` calls when new analytics event appears, the first argument in this callback functions is payload data for analytics event.
 
 Example of first argument:
-![first argument of onAnalyticsEvent](https://github.com/AIHelpsSoft/documentations/blob/master/first-argument-onAnalyticsEvent.jpg)
+<img src="https://raw.githubusercontent.com/AIHelpsSoft/documentations/master/images/first-argument-onAnalyticsEvent.jpg" />
 
 For example let's try to integrate with _[amplitude](https://amplitude.com/)_:
 

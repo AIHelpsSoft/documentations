@@ -13240,7 +13240,7 @@ If not detected, country and city can be empty string.</p>
   <article class="action-card type-def-card" id="type-identifier">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-identifier" class="permalink" aria-hidden="true">#</a> <code>identifier</code></h3>
-    <p class="prose muted">Named type alias.</p>
+    <p class="prose muted">Opaque string id (typically a UUID) used to reference entities such as clients, locations, services, and products throughout the API.</p>
   </div>
   <div class="action-machine">
     <div class="subsection-title">Base</div>
@@ -13250,7 +13250,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-url">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-url" class="permalink" aria-hidden="true">#</a> <code>url</code></h3>
-    <p class="prose muted">Named type alias.</p>
+    <p class="prose muted">Absolute URL string for web links, redirects, or callbacks (e.g. application or integration endpoints).</p>
   </div>
   <div class="action-machine">
     <div class="subsection-title">Base</div>
@@ -13260,7 +13260,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-phone">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-phone" class="permalink" aria-hidden="true">#</a> <code>phone</code></h3>
-    <p class="prose muted">Named type alias.</p>
+    <p class="prose muted">Phone number in string form; format should match what the API and connected apps expect for SMS or dialer use.</p>
   </div>
   <div class="action-machine">
     <div class="subsection-title">Base</div>
@@ -13270,7 +13270,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-country">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-country" class="permalink" aria-hidden="true">#</a> <code>country</code></h3>
-    <p class="prose muted">Named type alias.</p>
+    <p class="prose muted">Country identifier string (code or name) for addresses, tax, or locale defaults—see field descriptions on endpoints that accept it.</p>
   </div>
   <div class="action-machine">
     <div class="subsection-title">Base</div>
@@ -13280,7 +13280,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-currency">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-currency" class="permalink" aria-hidden="true">#</a> <code>currency</code></h3>
-    <p class="prose muted">Named type alias.</p>
+    <p class="prose muted">Currency code string (commonly ISO 4217) for monetary amounts on prices, payments, and reports.</p>
   </div>
   <div class="action-machine">
     <div class="subsection-title">Base</div>
@@ -13290,7 +13290,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-language">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-language" class="permalink" aria-hidden="true">#</a> <code>language</code></h3>
-    <p class="prose muted">Named type alias.</p>
+    <p class="prose muted">Language/locale tag (e.g. <code>en</code>) for <code>Content-Language</code> headers and fields like <code>text_in_different_languages</code>.</p>
   </div>
   <div class="action-machine">
     <div class="subsection-title">Base</div>
@@ -13300,7 +13300,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-datetime">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-datetime" class="permalink" aria-hidden="true">#</a> <code>datetime</code></h3>
-    <p class="prose muted">Named type alias.</p>
+    <p class="prose muted">Instant in ISO-8601 form with timezone (UTC with <code>Z</code> suffix in examples), used for bookings, expirations, and audit timestamps.</p>
   </div>
   <div class="action-machine">
     <div class="subsection-title">Base</div>
@@ -13310,7 +13310,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-color">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-color" class="permalink" aria-hidden="true">#</a> <code>color</code></h3>
-    <p class="prose muted">Named type alias.</p>
+    <p class="prose muted">Color value string for UI or print theming (hex, name, or system-specific format as required by the field that references it).</p>
   </div>
   <div class="action-machine">
     <div class="subsection-title">Base</div>
@@ -13320,7 +13320,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-section">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-section" class="permalink" aria-hidden="true">#</a> <code>section</code></h3>
-    <p class="prose muted">Named type alias.</p>
+    <p class="prose muted">Documentation-only grouping label in schema tables (e.g. <code>SUM FIELDS:</code> in <code>item</code>); not a separate payload shape by itself.</p>
   </div>
   <div class="action-machine">
     <div class="subsection-title">Base</div>
@@ -13330,7 +13330,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-rangedate">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-rangedate" class="permalink" aria-hidden="true">#</a> <code>rangedate</code></h3>
-    <p class="prose muted">Named type alias.</p>
+    <p class="prose muted">Encoded date-range string for filters and reporting; exact encoding follows the endpoint or field that accepts it (often paired start/end).</p>
   </div>
   <div class="action-machine">
     <div class="subsection-title">Base</div>
@@ -13340,7 +13340,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-image">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-image" class="permalink" aria-hidden="true">#</a> <code>image</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Media reference for photos or logos; concrete fields may be supplied by upload or asset endpoints even though this reference lists no properties.</p>
   </div>
   <div class="action-machine">
     <p><em>No fields</em></p>
@@ -13349,7 +13349,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-address">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-address" class="permalink" aria-hidden="true">#</a> <code>address</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Structured postal address: city, street, building and apartment identifiers, and numeric postal (ZIP) code.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>city</code></td><td><code>string</code></td><td></td><td></td><td>city</td></tr><tr><td><code>street</code></td><td><code>string</code></td><td></td><td></td><td>street</td></tr><tr><td><code>building</code></td><td><code>number</code></td><td></td><td></td><td>building number</td></tr><tr><td><code>apartment</code></td><td><code>string</code></td><td></td><td></td><td>apartment number</td></tr><tr><td><code>postal_code</code></td><td><code>number</code></td><td></td><td></td><td>postal code (ZIP)</td></tr></tbody></table>
@@ -13358,7 +13358,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-item">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-item" class="permalink" aria-hidden="true">#</a> <code>item</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Single line on a sale or ticket: pricing and quantity, discounts and promotions, plus type-specific blocks for services, products, groups, cards, certificates, tips, and rounding.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>SUM FIELDS:</code></td><td><code>section</code></td><td></td><td></td><td></td></tr><tr><td><code>original_price</code></td><td><code>number</code></td><td></td><td></td><td>original price for sale item according to location price (read only)</td></tr><tr><td><code>price</code></td><td><code>number</code></td><td></td><td></td><td>if receptionist can raise price for client, `price` can be bigger than `original_price`</td></tr><tr><td><code>quantity</code></td><td><code>number</code></td><td></td><td></td><td>item quantity (default 1), can be changed if `can_change_quantity=true` and new value greater than zero and not bigger then `max_quantity`</td></tr><tr><td><code>can_change_quantity</code></td><td><code>boolean</code></td><td></td><td></td><td>if `quantity` can be changed (read only)</td></tr><tr><td><code>max_quantity</code></td><td><code>number</code></td><td></td><td></td><td>if `quantity` can be changed, defines what max value can be set (read only)</td></tr><tr><td><code>sum</code></td><td><code>number</code></td><td></td><td></td><td>final sum for item which is calculated as `price`*`quantity` minus discount, if appliable (read only)</td></tr><tr><td><code>DISCOUNT FIELDS:</code></td><td><code>section</code></td><td></td><td></td><td></td></tr><tr><td><code>card_discount</code></td><td><code>identifier</code></td><td></td><td></td><td>identifier of client card, if discount is appliable</td></tr><tr><td><code>one_time_discount</code></td><td><code>one_time_discount</code></td><td></td><td></td><td>information about one-time discount, as input parameter can be just number with discount sum</td></tr><tr><td><code>promotion</code></td><td><code>identifier</code></td><td></td><td></td><td>promotion id (if match promotion with condition, will be set automatically, otherwise id of any promotion can be provided)</td></tr><tr><td><code>free_of_charge</code></td><td><code>boolean</code></td><td></td><td></td><td>this sale item will be sold free of charge (discount 100%)</td></tr><tr><td><code>DESCRIPTIVE FIELDS:</code></td><td><code>section</code></td><td></td><td></td><td></td></tr><tr><td><code>name</code></td><td><code>string</code></td><td></td><td></td><td>sale item name, callculated automatically depending on sale item type (read only)</td></tr><tr><td><code>comments</code></td><td><code>string</code></td><td></td><td></td><td>additional comments about sale item</td></tr><tr><td><code>clients_module</code></td><td><code>boolean</code></td><td></td><td></td><td>if client booked via clients module/app by himself (true) or was booked by receptionist (false)</td></tr><tr><td><code>receptionist</code></td><td><code>identifier</code></td><td></td><td></td><td>id of receptionist, who processing the ticket</td></tr><tr><td><code>appointment_receptionist</code></td><td><code>identifier</code></td><td></td><td></td><td>id of receptionist, who booked client</td></tr><tr><td><code>appointment_create_date</code></td><td><code>datetime</code></td><td></td><td></td><td>booking date/time</td></tr><tr><td><code>SERVICE FIELDS:</code></td><td><code>section</code></td><td></td><td></td><td></td></tr><tr><td><code>service</code></td><td><code>identifier</code></td><td></td><td></td><td>service to purchase (required field for purchasing service)</td></tr><tr><td><code>professinal</code></td><td><code>identifier</code></td><td></td><td></td><td>professinal which will provide service (can be null if service can be provided without professional)</td></tr><tr><td><code>assistant</code></td><td><code>identifier</code></td><td></td><td></td><td>if service can be provided with assistant; otherwise field ignored</td></tr><tr><td><code>recommended_professional</code></td><td><code>identifier</code></td><td></td><td></td><td>in case one professional recommends visit another professional; this fields represents who recommended, not to whom</td></tr><tr><td><code>calendar_date</code></td><td><code>datetime</code></td><td></td><td></td><td>date/time when service will be provided</td></tr><tr><td><code>duration</code></td><td><code>number</code></td><td></td><td></td><td>time in minutes will be spent to provide service</td></tr><tr><td><code>hall</code></td><td><code>identifier</code></td><td></td><td></td><td>hall where service will be provided</td></tr><tr><td><code>materials</code></td><td><code>material</code></td><td></td><td></td><td>materials will be used; if not provided, default materials will be used</td></tr><tr><td><code>appointment</code></td><td><code>identifier</code></td><td></td><td></td><td>appointment id [Appointments](#appointments)</td></tr><tr><td><code>by_certificate</code></td><td><code>identifier</code></td><td></td><td></td><td>certificate id, if service will be paid by certificate</td></tr><tr><td><code>PRODUCT FIELDS:</code></td><td><code>section</code></td><td></td><td></td><td></td></tr><tr><td><code>product</code></td><td><code>identifier</code></td><td></td><td></td><td>product to purchase (required field for purchasing product)</td></tr><tr><td><code>storage</code></td><td><code>identifier</code></td><td></td><td></td><td>storage where product will be taken (required field for purchasing product)</td></tr><tr><td><code>quantity_type</code></td><td><code>quantitytype</code></td><td></td><td></td><td>in which units `quantity` field is calculated (please mention product should have possibility to be sold in such units)</td></tr><tr><td><code>GROUP FIELDS:</code></td><td><code>section</code></td><td></td><td></td><td></td></tr><tr><td><code>lesson</code></td><td><code>identifier</code></td><td></td><td></td><td>lesson client is going to (required field for purchasing group)</td></tr><tr><td><code>trial</code></td><td><code>boolean</code></td><td></td><td></td><td>if client visit to lesson is trial one (possibility depends on program options but can be done only once)</td></tr><tr><td><code>CARD FIELDS:</code></td><td><code>section</code></td><td></td><td></td><td></td></tr><tr><td><code>card</code></td><td><code>identifier</code></td><td></td><td></td><td>card to purchase (required field for purchasing card)</td></tr><tr><td><code>activation</code></td><td><code>datetime</code></td><td></td><td></td><td>date of card activation (card period start) or null if card should be not activated</td></tr><tr><td><code>delayed_payments</code></td><td><code>array[delayed_payment]</code></td><td></td><td></td><td>if not full card sum should be payed at once, contains list of dates and sums to pay; sum of all payments should match `sum` field; otherwise null</td></tr><tr><td><code>group</code></td><td><code>identifier</code></td><td></td><td></td><td>if card requires selecting group on card sale, one should be provided</td></tr><tr><td><code>card_number</code></td><td><code>number</code></td><td></td><td></td><td>if card stock activated, for each card type there is a list of available cards and on purchase operation card number that will be sold should be provided; this number should be available and not sold yet</td></tr><tr><td><code>CERTIFICATE FIELDS:</code></td><td><code>section</code></td><td></td><td></td><td></td></tr><tr><td><code>certificate</code></td><td><code>identifier</code></td><td></td><td></td><td>certificate to purchase (required field for purchasing certificate)</td></tr><tr><td><code>TIPS FIELDS:</code></td><td><code>section</code></td><td></td><td></td><td></td></tr><tr><td><code>tips</code></td><td><code>number</code></td><td></td><td></td><td>tips to leave for professional (required field for tips sale item type)</td></tr><tr><td><code>professional</code></td><td><code>string</code></td><td></td><td></td><td>professional who will receive tips (required field for tips sale item type)</td></tr><tr><td><code>ROUNDING FIELDS:</code></td><td><code>section</code></td><td></td><td></td><td></td></tr><tr><td><code>rounding</code></td><td><code>number</code></td><td></td><td></td><td>ticket rounding sum, calculated automatically if rounding is on, provided value ignored (required field for rounding sale item type)</td></tr><tr><td><code>SALE FIELDS:</code></td><td><code>section</code></td><td></td><td></td><td></td></tr><tr><td><code>id</code></td><td><code>identifier</code></td><td></td><td></td><td>id of created sale on succesfull sale operation (read only)</td></tr></tbody></table>
@@ -13367,7 +13367,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-delayed-payment">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-delayed-payment" class="permalink" aria-hidden="true">#</a> <code>delayed_payment</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Installment slice when selling a card: calendar date when a portion of the total is due and the amount for that installment.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>date</code></td><td><code>datetime</code></td><td></td><td>2017-01-01T00:00:00.000Z</td><td>date of delayed payment</td></tr><tr><td><code>sum</code></td><td><code>number</code></td><td></td><td></td><td>payment sum</td></tr></tbody></table>
@@ -13376,7 +13376,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-one-time-discount">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-one-time-discount" class="permalink" aria-hidden="true">#</a> <code>one_time_discount</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Manual discount on a line: monetary cap (<code>sum</code>), maximum percent, and free-text <code>reason</code> for receipts or audits.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>sum</code></td><td><code>number</code></td><td></td><td></td><td>discount sum</td></tr><tr><td><code>max_percent</code></td><td><code>number</code></td><td></td><td></td><td>discount max percent</td></tr><tr><td><code>reason</code></td><td><code>string</code></td><td></td><td></td><td>discount reason</td></tr></tbody></table>
@@ -13385,7 +13385,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-material">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-material" class="permalink" aria-hidden="true">#</a> <code>material</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Consumable line for a service: which product is drawn from which storage and in what quantity (defaults apply if omitted on the parent item).</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>product</code></td><td><code>identifier</code></td><td></td><td></td><td>product id</td></tr><tr><td><code>storage</code></td><td><code>identifier</code></td><td></td><td></td><td>id of storage where product should be taken</td></tr><tr><td><code>quantity</code></td><td><code>number</code></td><td></td><td></td><td>product quantity</td></tr></tbody></table>
@@ -13394,7 +13394,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-payment">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-payment" class="permalink" aria-hidden="true">#</a> <code>payment</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">One tender on a checkout: choose account, deposit draw, bonus spend, company account, or certificate (with <code>sum</code> where the method requires an explicit amount).</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>account</code></td><td><code>identifier</code></td><td></td><td></td><td>client will pay money to specified account (bank, cashdesk etc.), field contains account id, amount should be in `sum` field</td></tr><tr><td><code>deposit</code></td><td><code>number</code></td><td></td><td></td><td>client will withdraw money from his deposit, field contains money to be withdrawn</td></tr><tr><td><code>bonus</code></td><td><code>number</code></td><td></td><td></td><td>client will use accumulated bonus money, field contains money to be used</td></tr><tr><td><code>company</code></td><td><code>identifier</code></td><td></td><td></td><td>client will pay money from company account (company deposit), field contains company id, amount should be in `sum` field</td></tr><tr><td><code>certificate</code></td><td><code>identifier</code></td><td></td><td></td><td>client will use certificate, field contains certificate id, amount should be in `sum` field</td></tr><tr><td><code>sum</code></td><td><code>number</code></td><td></td><td></td><td>sum to be paid (for `account`, `company` or `certificate` types)</td></tr></tbody></table>
@@ -13403,7 +13403,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-text-in-different-languages">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-text-in-different-languages" class="permalink" aria-hidden="true">#</a> <code>text_in_different_languages</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Localized copy: each property key is a language code (examples show English and French); add other locales the same way when the API returns or accepts them.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>en</code></td><td><code>string</code></td><td></td><td></td><td>text in English</td></tr><tr><td><code>fr</code></td><td><code>string</code></td><td></td><td></td><td>text in French</td></tr></tbody></table>
@@ -13412,7 +13412,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-geoposition">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-geoposition" class="permalink" aria-hidden="true">#</a> <code>geoposition</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Geographic point as string <code>latitude</code> and <code>longitude</code> (WGS-84 style values) for maps, distance, or check-in features.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>latitude</code></td><td><code>string</code></td><td></td><td></td><td>latitude of specific position</td></tr><tr><td><code>longitude</code></td><td><code>string</code></td><td></td><td></td><td>longitude of specific position</td></tr></tbody></table>
@@ -13421,7 +13421,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-filter">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-filter" class="permalink" aria-hidden="true">#</a> <code>filter</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Scope for card discounts or bonuses: <code>all</code> when every item matches, or additional boolean properties keyed by item/category id for granular inclusion.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>all</code></td><td><code>boolean</code></td><td></td><td></td><td>if filter applied for all items (default is `true`)</td></tr><tr><td><code>87d63709-c3dd-4469-991a-0e8d7994e07e</code></td><td><code>boolean</code></td><td></td><td></td><td>if filter applied for item or category, represented by item or category id</td></tr></tbody></table>
@@ -13430,7 +13430,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-discount-details">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-discount-details" class="permalink" aria-hidden="true">#</a> <code>discount_details</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Per–sale-item discount stats: total and remaining visit quantities plus the effective discount percent (0–100, where 100 is free).</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>total_quantity: `visits` (discount_quantity)</code></td><td><code>string</code></td><td></td><td></td><td>total number of discounted visits</td></tr><tr><td><code>left_quantity: `visits` (discount_quantity)</code></td><td><code>string</code></td><td></td><td></td><td>number of discounted visits left</td></tr><tr><td><code>discount</code></td><td><code>number</code></td><td></td><td></td><td>discount percent, from 0 to 100 (100 means totally free)</td></tr></tbody></table>
@@ -13439,7 +13439,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-discount-details-list">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-discount-details-list" class="permalink" aria-hidden="true">#</a> <code>discount_details_list</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Map of discount breakdowns: <code>all</code> applies to every item of a type; other keys are item or category ids, each mapped to a <code>discount_details_info</code> object.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>all</code></td><td><code>discount_details_info</code></td><td></td><td></td><td>discount details for all items of specified type</td></tr><tr><td><code>87d63709-c3dd-4469-991a-0e8d7994e07e</code></td><td><code>discount_details_info</code></td><td></td><td></td><td>discount details for specific item or category, represented by item or category id</td></tr></tbody></table>
@@ -13448,7 +13448,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-card-discounts-info">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-card-discounts-info" class="permalink" aria-hidden="true">#</a> <code>card_discounts_info</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">How a membership card reduces price across catalogs: separate <code>discount_details_list</code> trees for services, products, groups, and linked cards.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>services</code></td><td><code>discount_details_list</code></td><td></td><td></td><td>discounts for services proposed by card</td></tr><tr><td><code>products</code></td><td><code>discount_details_list</code></td><td></td><td></td><td>discounts for products proposed by card</td></tr><tr><td><code>groups</code></td><td><code>discount_details_list</code></td><td></td><td></td><td>discounts for groups proposed by card</td></tr><tr><td><code>cards</code></td><td><code>discount_details_list</code></td><td></td><td></td><td>discounts for other cards proposed by card</td></tr></tbody></table>
@@ -13457,7 +13457,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-bonus-details">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-bonus-details" class="permalink" aria-hidden="true">#</a> <code>bonus_details</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Earn rule: bonus percent (0–100) together with a <code>filter</code> that limits which purchasable items accumulate that bonus.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>percent</code></td><td><code>number</code></td><td></td><td></td><td>bonus percent, from 0 to 100</td></tr><tr><td><code>filter</code></td><td><code>filter</code></td><td></td><td></td><td>filter on items which are applied for bonus</td></tr></tbody></table>
@@ -13466,7 +13466,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-card-bonus-info">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-card-bonus-info" class="permalink" aria-hidden="true">#</a> <code>card_bonus_info</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Card-wide bonus ladders: one <code>bonus_details_info</code> subtree each for services, products, groups, other cards, and certificates.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>services</code></td><td><code>bonus_details_info</code></td><td></td><td></td><td>bonus for services proposed by card</td></tr><tr><td><code>products</code></td><td><code>bonus_details_info</code></td><td></td><td></td><td>bonus for products proposed by card</td></tr><tr><td><code>groups</code></td><td><code>bonus_details_info</code></td><td></td><td></td><td>bonus for groups proposed by card</td></tr><tr><td><code>cards</code></td><td><code>bonus_details_info</code></td><td></td><td></td><td>bonus for other cards proposed by card</td></tr><tr><td><code>certificates</code></td><td><code>bonus_details_info</code></td><td></td><td></td><td>bonus for other cards proposed by card</td></tr></tbody></table>
@@ -13475,7 +13475,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-accumulated-level">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-accumulated-level" class="permalink" aria-hidden="true">#</a> <code>accumulated_level</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">One tier in cumulative spend: spend ceiling (<code>sum</code>) and the discount or bonus <code>percent</code> active once that tier is reached (omit <code>sum</code> to end the ladder).</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>sum</code></td><td><code>number</code></td><td></td><td></td><td>level end sum (if no `sum` field - no next level)</td></tr><tr><td><code>percent</code></td><td><code>number</code></td><td></td><td></td><td>percent at current level, from 0 to 100</td></tr></tbody></table>
@@ -13484,7 +13484,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-accumulate-items">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-accumulate-items" class="permalink" aria-hidden="true">#</a> <code>accumulate_items</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Per-catalog inclusion masks for accumulation: each of services, products, groups, cards, and certificates carries a <code>filter_info</code> describing what counts toward spend.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>services</code></td><td><code>filter_info</code></td><td></td><td></td><td>filter applied for services</td></tr><tr><td><code>products</code></td><td><code>filter_info</code></td><td></td><td></td><td>filter applied for products</td></tr><tr><td><code>groups</code></td><td><code>filter_info</code></td><td></td><td></td><td>filter applied for groups</td></tr><tr><td><code>cards</code></td><td><code>filter_info</code></td><td></td><td></td><td>filter applied for cards</td></tr><tr><td><code>certificates</code></td><td><code>filter_info</code></td><td></td><td></td><td>filter applied for certificates</td></tr></tbody></table>
@@ -13493,7 +13493,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-locationprice">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-locationprice" class="permalink" aria-hidden="true">#</a> <code>locationprice</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Price row for a venue: location (and optional position) ids with regular <code>price</code> and internal <code>staff_price</code> for the same offering.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>location</code></td><td><code>identifier</code></td><td></td><td>dd9114c8-439c-40a9-a784-04885f7fedab</td><td>location id</td></tr><tr><td><code>position</code></td><td><code>identifier</code></td><td></td><td>dd9114c8-439c-40a9-a784-04885f7fedab</td><td>position id</td></tr><tr><td><code>price</code></td><td><code>number</code></td><td></td><td></td><td>price on this location</td></tr><tr><td><code>staff_price</code></td><td><code>number</code></td><td></td><td></td><td>staff price</td></tr></tbody></table>
@@ -13502,7 +13502,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-accumulate-schema">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-accumulate-schema" class="permalink" aria-hidden="true">#</a> <code>accumulate_schema</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Full accumulation program: ordered <code>accumulated_level</code> steps, what counts toward spend (<code>accumulate_from</code>), what benefits apply to (<code>apply_to</code>), plus localized explanations.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>schema</code></td><td><code>array[accumulated_level]</code></td><td></td><td></td><td>list of accumulation levels</td></tr><tr><td><code>accumulate_from:   (accumulate_items)</code></td><td><code>string</code></td><td></td><td></td><td>items from which sum is accumulated</td></tr><tr><td><code>accumulate_from_detailed</code></td><td><code>string</code></td><td></td><td></td><td>localized description of filter accumulate_from</td></tr><tr><td><code>apply_to:   (accumulate_items)</code></td><td><code>string</code></td><td></td><td></td><td>items to which discount/bonus can be applied</td></tr><tr><td><code>apply_to_detailed</code></td><td><code>string</code></td><td></td><td></td><td>localized description of filter apply_to</td></tr></tbody></table>
@@ -13511,7 +13511,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-accumulated-percent">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-accumulated-percent" class="permalink" aria-hidden="true">#</a> <code>accumulated_percent</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Runtime progress snapshot: spend accumulated so far, current tier percent, and how much more spend unlocks <code>next_percent</code> at <code>next_level</code>.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>accumulated_sum</code></td><td><code>number</code></td><td></td><td></td><td>sum already accumulated</td></tr><tr><td><code>percent</code></td><td><code>number</code></td><td></td><td></td><td>current discount/bonus percent (according to `accumulated_sum`)</td></tr><tr><td><code>next_level</code></td><td><code>number</code></td><td></td><td></td><td>accumulated sum for reaching next level</td></tr><tr><td><code>next_percent</code></td><td><code>number</code></td><td></td><td></td><td>discount/bonus percent on next level</td></tr></tbody></table>
@@ -13520,7 +13520,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-location-info">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-location-info" class="permalink" aria-hidden="true">#</a> <code>location_info</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Compact branch record: id, human-readable name, city, and street address string for pickers and printed documents.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>identifier</code></td><td></td><td>96e7b6c7-1813-4719-8676-544b1488637e</td><td>location id</td></tr><tr><td><code>name</code></td><td><code>string (ABC Salon NY Brooklyn)</code></td><td></td><td>ABC Salon NY Brooklyn</td><td>location name</td></tr><tr><td><code>city</code></td><td><code>string (New York)</code></td><td></td><td>New York</td><td>location city</td></tr><tr><td><code>address</code></td><td><code>string (2818 Foster Ave)</code></td><td></td><td>2818 Foster Ave</td><td>location address</td></tr></tbody></table>
@@ -13529,7 +13529,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-database-info">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-database-info" class="permalink" aria-hidden="true">#</a> <code>database_info</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Salon (database) overview: numeric <code>id</code> matches database codes in auth flows, display <code>name</code>, and nested <code>locations</code> for that tenant.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>number</code></td><td></td><td></td><td>database code</td></tr><tr><td><code>name</code></td><td><code>string (ABC Salon NY)</code></td><td></td><td>ABC Salon NY</td><td>database name</td></tr><tr><td><code>locations</code></td><td><code>array[location_info]</code></td><td></td><td></td><td>list of locations in database</td></tr></tbody></table>
@@ -13538,7 +13538,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-user-contact">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-user-contact" class="permalink" aria-hidden="true">#</a> <code>user_contact</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Contact channel for a user profile: <code>user_contact_type</code>, the phone or email string, and whether it has been <code>verified</code>.</p>
   </div>
   <div class="action-machine">
     <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><code>user_contact_type</code></td><td></td><td></td><td>contact type</td></tr><tr><td><code>contact</code></td><td><code>string (18005550123)</code></td><td></td><td>18005550123</td><td>contact number/e-mail</td></tr><tr><td><code>verified</code></td><td><code>boolean</code></td><td></td><td></td><td>if contact is verified</td></tr></tbody></table>
@@ -13547,7 +13547,7 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-schedule">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-schedule" class="permalink" aria-hidden="true">#</a> <code>schedule</code></h3>
-    <p class="prose muted">Object schema (named type).</p>
+    <p class="prose muted">Named type for working hours or appointment patterns in domain models; this reference page lists no scalar fields—see endpoints that embed schedule payloads for the live shape.</p>
   </div>
   <div class="action-machine">
     <p><em>No fields</em></p>

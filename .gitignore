@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Allow git to traverse directories (needed for nested paths)
+!*/
+
+# Allow these files at repo root
+!/.gitignore
+!/index.html
+!/API_DOCUMENTATION.md

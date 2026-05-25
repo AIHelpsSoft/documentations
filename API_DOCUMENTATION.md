@@ -1871,7 +1871,7 @@ locations are not disappeared after payment was not made for specific location, 
     + timezone (string) - Location timezone (in TZ database format). Max length is 100 characters
     + active (boolean) - If location is active (has valid license).
 
-### Get all locations [GET /locations{?fields}]
+### Get all locations [GET /locations{?fields,active}]
 
 **Authorization:** `Database`, `Employee`
 
@@ -1879,6 +1879,7 @@ locations are not disappeared after payment was not made for specific location, 
 
 + Parameters
     + fields: `name,category,code,city,street,phone,geo_position,timezone,active` (array[string], required) - list of fields to return (separated by comma).
+    + active: true (boolean, optional) - if to show only active/non-active locations.
 
 + Request
 
@@ -2244,10 +2245,10 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
     + categories_names: `Often client` (array[string]) - list of client categories names (read only)
     + first_visit: `2018-01-01:13:00:00.000Z` (datetime) - client first visit date and time (read only). `1799-12-31:00:00.000Z` if no visit yet
         + Default: `1799-12-31:00:00.000Z`
-    + first_visit_description: `yesterday` (datetime) - client first visit date text description (read only)
+    + first_visit_description: `yesterday` (string) - client first visit date text description (read only)
     + last_visit: `2018-01-01:13:00:00.000Z` (datetime) - client last visit date and time (read only). `1799-12-31:00:00.000Z` if no visit yet
         + Default: `1799-12-31:00:00.000Z`
-    + last_visit_description: `yesterday` (datetime) - client last visit date text description (read only)
+    + last_visit_description: `yesterday` (string) - client last visit date text description (read only)
     + feedback (object) - information about client feedback (date, text, ratings)
         + date: `2018-01-01:13:00:00.000Z` (datetime) - feedback date
         + text: `cool` (string) - feedback text
@@ -2258,7 +2259,7 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
     + do_not_send_sms_notification: false (boolean) - do not get appointment notifications via SMS
     + do_not_send_sms_promotion: false (boolean) - do not get promotions and news via sms
     + do_not_send_email: false (boolean) - do not get any emails
-    + createDate: '2018-03-01T00:00:00.000Z' (date) - date & time client created
+    + create_date: '2018-03-01T00:00:00.000Z' (date) - date & time client created
     + deposit_client: '0b646349-e7be-4179-97bd-c7155caab990' (identifier) - if client uses deposit of another client (instead of his own), id of that client
     + referral_source: `0b646349-e7be-4179-97bd-c7155caab990` (identifier) - client referral source (Google, flyers, friends, etc.)
     + referral_source_name: `flyers` (string) - referral source name
@@ -2270,7 +2271,7 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
             + `nocard`            
             + `former`
             + `refused`
-    + comment: `VIP client` (string) - customer note. Max length is 15728640 characters
+    + comments: `VIP client` (string) - customer note. Max length is 15728640 characters
     + archive: false (boolean) - if client was archived and can't be used in new sales
         + Default: `false`
     + professional: '0b646349-e7be-4179-97bd-c7155caab990' (identifier) - id of employee chosen for this client
@@ -2279,10 +2280,10 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
 
 **Authorization:** `Database`, `Employee`
 
-**Scope:** `full`, `online_store` (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comment fields), `reports`, `services_aggregator` (only name, firstname, middlename, lastname, gender, birthday, card_number, email, photo_exists, photo, postal_code, city, street, building, phone fields and only with phone or email filter), `client_access_token` (only with filter client)
+**Scope:** `full`, `online_store` (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comments fields), `reports`, `services_aggregator` (only name, firstname, middlename, lastname, gender, birthday, card_number, email, photo_exists, photo, postal_code, city, street, building, phone fields and only with phone or email filter), `client_access_token` (only with filter client)
 
 + Parameters
-    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,createDate,deposit_client,referral_source,referral_source_name,status,comment,archive,professional` (array[string], required) - list of fields to return (separated by comma).
+    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional` (array[string], required) - list of fields to return (separated by comma).
     + location: `0799e1bc-86eb-4e0f-82e2-98dfe2cd55f9` (identifier, optional) - get clients who enabled in location
     + phone: `+355 (55) 255 55 55` (string, optional) - get only client(s) with given phone (several phones can be separated by comma)
     + email: `abc@gmail.com` (string, optional) - get only client(s) with given email (several emails can be separated by comma)
@@ -2339,7 +2340,7 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
                     "referral_source": null,
                     "referral_source_name": "",
                     "status": "potential",
-                    "comment": "VIP status",
+                    "comments": "VIP status",
                     "archive": false
                 },
                 {
@@ -2376,7 +2377,7 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
                     "referral_source": "5382f467-a034-440c-bc7f-3dac9b2c8191",
                     "referral_source_name": "flyers",
                     "status", "potential",
-                    "comment": null,
+                    "comments": null,
                     "archive": false,
                     "professional": "5382f467-a034-440c-bc7f-3dac9b2c8191"
                 }
@@ -2386,11 +2387,11 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
 
 **Authorization:** `Database`, `Employee`
 
-**Scope:** `full`,`online_store` (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comment fields),`reports`,`client_access_token` (but id field should match client id, `me` can be used instead of id)
+**Scope:** `full`,`online_store` (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comments fields),`reports`,`client_access_token` (but id field should match client id, `me` can be used instead of id)
 
 + Parameters
     + id: `be0b6712-e680-42a7-8b99-b6b2d9fcb1fe` (identifier, required) - id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)
-    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,createDate,deposit_client,referral_source,referral_source_name,status,comment,archive,professional` (array[string], required) - list of fields to return (separated by comma).
+    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional` (array[string], required) - list of fields to return (separated by comma).
 
 + Request
 
@@ -2440,7 +2441,7 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
                 "referral_source": "5382f467-a034-440c-bc7f-3dac9b2c8191",
                 "referral_source_name": "flyers",
                 "status", "potential",
-                "comment": "VIP status",
+                "comments": "VIP status",
                 "archive": false,
                 "professional": "5382f467-a034-440c-bc7f-3dac9b2c8191"
             }
@@ -2449,10 +2450,10 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
 
 **Authorization:** `Database`, `Employee`
 
-**Scope:** `full`, `online_store` (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comment fields), `services_aggregator` (only firstname, middlename, lastname, gender, birthday, card_number, phone, email, comment fields)
+**Scope:** `full`, `online_store` (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comments fields), `services_aggregator` (only firstname, middlename, lastname, gender, birthday, card_number, phone, email, comments fields)
 
 + Parameters
-    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,createDate,deposit_client,referral_source,referral_source_name,status,comment,archive,professional` (array[string], optional) - list of fields to return (separated by comma)
+    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional` (array[string], optional) - list of fields to return (separated by comma)
 
 + Request
 
@@ -2486,7 +2487,7 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
 
 + Parameters
     + id: `be0b6712-e680-42a7-8b99-b6b2d9fcb1fe` (identifier, required) - id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)
-    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,createDate,deposit_client,referral_source,referral_source_name,status,comment,archive,professional` (array[string], optional) - list of fields to return (separated by comma)
+    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional` (array[string], optional) - list of fields to return (separated by comma)
 
 + Request
 
@@ -3282,7 +3283,7 @@ Some of them can login to program, some not. All employees are grouped into posi
     + photo: `https://api.aihelps.com/v1/images/696320/0b646349-e7be-4179-97bd-c7155caab93b/photo` (string) - URL for getting a photo (readonly)
     + positions: '0b646349-e7be-4179-97bd-c7155caab990' (array[identifier]) - position ids
     + position_names: 'Receptionist' (array[string]) - position names
-    + roles: 'professional' (enum[string]) - unique role names
+    + roles: 'professional' (array[string]) - unique role names
         + Members
             + owner
             + administrator
@@ -3306,16 +3307,16 @@ Some of them can login to program, some not. All employees are grouped into posi
     + schedules (array[object], optional) - all info about employee schedule in different locations
         + `location`: `dd9114c8-439c-40a9-a784-04885f7fedab` (identifier) - location id, see [Locations](#locations)
         + `schedule`: `e661288c-3457-429a-ab06-5071ca1708c7` (identifier) - predefined schedule id
-        + `start_date`: `2018-08-09T00:00:00.000Z` (datetime) - schedule start date
+        + `start_day`: `2018-08-09T00:00:00.000Z` (datetime) - schedule start date
     + all_locations: true (boolean) - if employee can access all locations information if true
     + default_appointment_duration: 120 (number) - typical duration for employee appointment for last month, if less than 10 appointments - 60 minutes is used (read only). Typical duration means one of [15, 30, 60, 90, 120, 180] minutes that covers 80% of last month durations.
     + feedback_count: 3 (number) - count of public feedbacks
     + average_feedback_rating: 4.25 (number) - average rating of public feedbacks
     + prepaymentRequired: false (boolean) - if booking for this employee requires prepayment
-    + comments: `Employee1` (string) - employee description with html tags for font styling. Max length is 65536 characters. Read only
+    + comments: `Employee1` (string) - employee description with html tags for font styling. Max length is 65536 characters
     + commentsPlainText: `Employee1` (string) - employee description as plain text
 
-### Get all employees [GET /employees{?fields,location,position,role,service,free_time,free_time_professionals,free_time_skip_appointments,archive,public,client_gender,archive_service,name}]
+### Get all employees [GET /employees{?fields,location,position,role,service,free_time,free_time_skip_appointments,archive,public,client_gender,archive_service,name}]
 
 **Authorization:** `Database`, `Employee`
 
@@ -3328,7 +3329,6 @@ Some of them can login to program, some not. All employees are grouped into posi
     + role: `professional` (array[string], optional) - get only employees of given role (several roles can be separated by comma)
     + service: `aad32c8c-1cb7-429a-ab06-5071c4debca3` (array[identifier], optional) - get only employees that can provide all given services (several services can be separated by comma)
     + `free_time`: `2018-11-29T19:30:00.000Z..2018-11-29T20:30:00.000Z` (string, optional) - get only employees who will be free at specified time range. If `location` filter is set, looks only at specified location (otherwise search in all).
-    + `free_time_professionals`: `71a98638-ef51-497a-88ae-8b4f1efaaa8b` (array[identifier], optional) - if free_time filter used, specifies professionals (one or many, several appointments can be separated by comma), for which free time will be calculated (if not set - for all)
     + `free_time_skip_appointments`: `bc4311b8-329c-40a9-a784-04cb5f7fe1aa` (array[identifier], optional) - if free_time filter used, specifies which appointments should be skipped checking (several appointments can be separated by comma) - skipped appointments will be treated as free time
     + archive: false (boolean, optional) - get only archive or none archive employees
     + public: false (boolean, optional) - get only public or non public employees
@@ -3690,7 +3690,7 @@ administrators can be grouped as top-administrators and normal administrators. E
 
 + Attributes
     + name: "Stylists" (string,required) - position name. Max length is 500 characters
-    + role: professional (enum[string]) - one of eight predefined employee categories. Default value is administrator
+    + role: professional (enum[string]) - one of eight predefined employee categories. Default value is professional
     + permissions: `PROFESSIONALS.EDIT_APPOINTMENTS_AND_CLIENTS` (array[enum]) - list of permissions, allowed to this position employees
         + Members
             + `RIGHT_1`
@@ -3698,7 +3698,7 @@ administrators can be grouped as top-administrators and normal administrators. E
             + `PROFESSIONALS.EDIT_APPOINTMENTS_AND_CLIENTS`
     + parent: `04c5daec-2c11-4ce9-b00d-03a03d50356f` (identifier) - id of parent category of the position
 
-### Get all positions [GET /positions{?fields}]
+### Get all positions [GET /positions{?fields,role}]
 
 **Authorization:** `Database`, `Employee`
 
@@ -3706,6 +3706,7 @@ administrators can be grouped as top-administrators and normal administrators. E
 
 + Parameters
     + fields: `name,role,permissions,parent` (array[string], required) - list of fields to return (separated by comma).
+    + role: `professional` (array[string], optional) - get only positions with given role (several roles can be separated by comma)
 
 + Request
 
@@ -3722,12 +3723,11 @@ administrators can be grouped as top-administrators and normal administrators. E
                     "id": "04c5daec-2c11-4ce9-b00d-03a03d50356f",
                     "name": "Stylists",
                     "role": "professional",
-                    "rights":
+                    "permissions":
                     [
                         "",
                         ""
-                    ],
-                    "id": "e28ebfd0-f847-4c3f-b2a1-07f4257b0764"
+                    ]
                 },
                 {
                     "id": "e28ebfd0-f847-4c3f-b2a1-07f4257b0764"
@@ -3757,77 +3757,6 @@ administrators can be grouped as top-administrators and normal administrators. E
             {
                 "id": "432c41bf-0cd7-4f13-83dd-a0c26ce29143",
             }
-
-### Create new position [POST /positions{?fields}]
-
-**Authorization:** `Database`, `Employee`
-
-**Scope:** `full`
-
-+ Parameters
-    + fields: `name,role,permissions,parent` (array[string], optional) - list of fields to return (separated by comma)
-
-+ Request
-
-    + Headers
-
-            Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced
-
-    + Body
-
-            {
-                "name": "Stylists",
-                "role": "professional"
-            }
-            
-+ Response 201 (application/json)
-
-    + Body
-
-            {
-                "id": "f1c7f635-dbf7-4e21-a970-4b1fd7514604"
-            }
-
-### Update position [PUT /positions/{id}{?fields}]
-
-**Authorization:** `Database`, `Employee`
-
-**Scope:** `full`
-
-+ Parameters
-    + id: `04c5daec-2c11-4ce9-b00d-03a03d50356f` (identifier, required) - id of position
-    + fields: `name,role,permissions,parent` (array[string], optional) - list of fields to return (separated by comma)
-
-+ Request
-
-    + Headers
-
-            Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced
-
-    + Body
-
-            {
-                "name": "Top stylists"
-            }
-            
-+ Response 204
-
-### Delete position [DELETE /positions/{id}]
-
-**Authorization:** `Database`, `Employee`
-
-**Scope:** `full`
-
-+ Parameters
-    + id: `04c5daec-2c11-4ce9-b00d-03a03d50356f` (identifier, required) - id of position
-
-+ Request
-
-    + Headers
-
-            Authorization: Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced
-
-+ Response 204
 
 ## Invitation codes [/employees/code]
 
@@ -5491,7 +5420,7 @@ Services usually provided by professionals, take some time to be done and usuall
     + id: `88d4b305-e198-f02c-2743-cca9390c6d9b` (identifier) - service id
     + name: `Compex` (string,required) - service name. Max length is 15000 characters
     + description: `washing head` (string) - service description with html tags for font styling. Max length is 65536 characters
-    + descriptionPlaintext: `washing head` (string) - service description as plain text (readonly)
+    + descriptionPlainText: `washing head` (string) - service description as plain text (readonly)
     + duration: 60 (number) - service duration (in minutes) (value greater than zero)
     + gender: `both` (enum[string]) - gender, for whom service is provided
         + Default: `both`
@@ -5516,14 +5445,14 @@ Services usually provided by professionals, take some time to be done and usuall
         + Default: `false`
     + prepaymentRequired: false (boolean) - if booking for this service requires prepayment
 
-### Get all services [GET /services{?fields,sex,public,position,has_professional_price,professional,client_gender,free_time,free_time_skip_appointments,location,archive,service_by_time}]
+### Get all services [GET /services{?fields,client_gender,public,position,has_professional_price,professional,free_time,free_time_skip_appointments,location,archive,service_by_time}]
 
 **Authorization:** `Database`, `Employee`
 
-**Scope:** `full`, `clients_module` (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, pricesInNativeCurrency fields), `reports`, `services_aggregator` (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, pricesInNativeCurrency fields)
+**Scope:** `full`, `clients_module` (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, location_prices_in_native_currency fields), `reports`, `services_aggregator` (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, location_prices_in_native_currency fields)
 
 + Parameter
-    + fields: `name,description,descriptionPlaintext,duration,gender,price_currency,no_professional_price,category,picture,pictureUrl,public,location_prices,halls,resources,color,article,barcode,with_assistant,service_by_time,department,archive` (array[string], required) - list of fields to return (separated by comma).
+    + fields: `name,description,descriptionPlainText,duration,gender,price_currency,no_professional_price,category,picture,pictureUrl,public,location_prices,halls,resources,color,article,barcode,with_assistant,service_by_time,department,archive` (array[string], required) - list of fields to return (separated by comma).
     + client_gender: `male` (enum[string], optional) - get only services for given gender
         + Members
             + male
@@ -5553,7 +5482,7 @@ Services usually provided by professionals, take some time to be done and usuall
                     "id": "88d60be6-fba7-49c0-3d28-066a5cb5f1b9",
                     "name": "Compex",
                     "description": "Complex service",
-                    "descriptionPlaintext": "Complex service",
+                    "descriptionPlainText": "Complex service",
                     "duration": 60,
                     "gender": "both",
                     "price_currency": "UAH",
@@ -5587,11 +5516,11 @@ Services usually provided by professionals, take some time to be done and usuall
 
 **Authorization:** `Database`, `Employee`
 
-**Scope:** `full`, `clients_module` (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, pricesInNativeCurrency), `reports`
+**Scope:** `full`, `clients_module` (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, location_prices_in_native_currency), `reports`
 
 + Parameters
     + id: `dd9114c8-439c-40a9-a784-04885f7fedab` (identifier, required) - service id
-    + fields: `name,description,descriptionPlaintext,duration,gender,price_currency,no_professional_price,category,picture,pictureUrl,public,location_prices,halls,resources,color,article,barcode,with_assistant,service_by_time,department,archive` (array[string], required) - list of fields to return (separated by comma).
+    + fields: `name,description,descriptionPlainText,duration,gender,price_currency,no_professional_price,category,picture,pictureUrl,public,location_prices,halls,resources,color,article,barcode,with_assistant,service_by_time,department,archive` (array[string], required) - list of fields to return (separated by comma).
     
 + Request
 
@@ -5607,7 +5536,7 @@ Services usually provided by professionals, take some time to be done and usuall
                 "id": "88d60be6-fba7-49c0-3d28-066a5cb5f1b9",
                 "name": "Compex",
                 "description": "Complex service",
-                "descriptionPlaintext": "Complex service",
+                "descriptionPlainText": "Complex service",
                 "duration": 60,
                 "gender": "both",
                 "price_currency": "UAH",
@@ -6379,6 +6308,8 @@ All information about products.
     + units: `ml` (enum[string]) - product measurement units
         + Default: `pcs`
         + Members
+            + `pcs`
+            + `ml`
             + `items`
             + `kg`
             + `g`
@@ -6407,11 +6338,8 @@ All information about products.
     + portionPriceInNativeCurrency: 60 (number) - if not null - price for product portion for current location, in database main (default) currency
     + unitPrice: 1 (number) - if not null - price for product unit for current location, in `unit_price_currency` currency (read only)
     + unitPriceInNativeCurrency: 12 (number) - if not null - price for product unit for current location, in database main (default) currency
-    + portion_quantity: 12 (number,required) - how many units contained in one portion (greater than zero, if the value set to 0 will be returned as null) 
-    + stocks (array) - product stocks at storages (hidden by default)
-        + (object)
-            + storage (identifier) - storage id
-            + quantity (number) - product quantity on this storage
+    + portion_quantity: 12 (number) - how many units contained in one portion (greater than zero, if the value set to 0 will be returned as null) 
+    + stocks (object) - product stocks at storages, keyed by storage id with quantity as value (e.g. `{"storage_id": quantity}`). Hidden by default
     + package_price_currency: `EUR` (string) - price currency for one package
     + portion_price_currency: `EUR` (string) - price currency for one portion
     + unit_price_currency: `EUR` (string) - price currency for one unit (ml, g, etc.)
@@ -6433,13 +6361,13 @@ All information about products.
     + count_as_cost_for_salary: true (boolean) - if current product as material is deducted from salasry while salary calculated for professionals
     + tax: 100 (number) - tax sum (value equals or greater than zero and value will be rounded to number with 2 digits after comma)
     + department: `d56e8215-d9dc-0e4c-8324-e3f5e7c3a09c` (identifier) - product department
-    + price_for_salary_calculation: 2000 (number,required) - if not null, custom price to be used in salary calculations (value can be returned as null)
+    + price_for_salary_calculation: 2000 (number) - if not null, custom price to be used in salary calculations (value can be returned as null)
     + payed_calculation: true (boolean) - if true, client pays separately for this product as a material in services
     + consignment_supplier: `216e3a05-ddc9-40ec-8432-7cce3f5e98d5` (identifier) - product supplier if consignment model selected for given product
     + archive: false (boolean) - if product was archived and can't be used in new sales
         + Default: `false`
 
-### Get all products [GET /products{?fields,archive}]
+### Get all products [GET /products{?fields,archive,name}]
 
 **Authorization:** `Database`
 
@@ -6448,6 +6376,7 @@ All information about products.
 + Parameter
     + fields: `name,description,category,picture,pictureUrl,vendor_code,barcode,volume,supply_price,supply_price_currency,supply_price_in_native_currency,units,location_prices,portion_quantity,stocks,package_price_currency,portion_price_currency,unit_price_currency,staff_package_price_currency,staff_portion_price_currency,staff_unit_price_currency,can_sale_package,can_sale_portion,can_sale_units,tare_weight,critical_quantity,requisites,is_receipt,product_receipts,count_as_cost_for_salary,tax,department,price_for_salary_calculation,payed_calculation,consignment_supplier,archive` (array[string], required) - list of fields to return (separated by comma).
     + archive: false (boolean, optional) - get only archived or non archived products
+    + name: `Cotton pads` (string, optional) - get only products with given name (several names can be separated by comma)
     
 + Request
 
@@ -6972,22 +6901,22 @@ Storage describes place where products are kept. In each location there can be s
 
 + Attributes
     + name: "Reception" (string,required) - storage name. Max length is 200 characters
-    + sale_unit_types: "Package" (enum[string]) - can sale types from storages
+    + saleUnitTypes: "package" (enum[string]) - can sale types from storages
         + Members
-            + Portion
-            + Units
-    + location: `bba7c7ab-3656-489b-b414-c8f872c96cf1` (identifier,required) - storage location. See [Location](#location)
+            + portion
+            + units
+    + location: `bba7c7ab-3656-489b-b414-c8f872c96cf1` (identifier) - storage location. See [Location](#location)
+    + productsFilter (object) - filter that describes which products should be presented
 
-### Get all storages [GET /storages{?fields,location,products_filter}]
+### Get all storages [GET /storages{?fields,location}]
     
 **Authorization:** `Database`, `Employee`
 
 **Scope:** `full`, `clients_module`, `online_store`, `reports`
 
 + Parameters
-    + fields: `name,sale_unit_types,location,products_filter` (array[string], required) - list of fields to return (separated by comma).
+    + fields: `name,saleUnitTypes,location,productsFilter` (array[string], required) - list of fields to return (separated by comma).
     + location: `12d4b305-e198-f02c-2743-cca93cb16baa` (array[identifier], optional) - get only storages in given location (several locations can be separated by comma)
-    + `products_filter`: `3f69b533-8288-4847-a7f0-ab4d71e598f6,3f69b533-8288-4847-a7f0-ab4d71e59c21;1,0` (filter_info) - Filter that describes which products should be presented.
 + Request
 
     + Headers
@@ -7002,21 +6931,21 @@ Storage describes place where products are kept. In each location there can be s
                 {
                     "id": "dd9114c8-439c-40a9-a784-04885f7fedab",
                     "name": "Reception",
-                    "sale_unit_types": [
-                    "Portion"
+                    "saleUnitTypes": [
+                    "portion"
                     ],
                     "location": "cb1c6ce2-c81f-4d70-ad31-8f627edb41e1",
-                    "products_filter": "none"
+                    "productsFilter": "none"
                 },
                 {
                     "id": "71668460-255c-491f-b4e6-90cea3f338a9",
                     "name": "Backbar",
-                    "sale_unit_types": [
-                    "Portion",
-                    "Package"
+                    "saleUnitTypes": [
+                    "portion",
+                    "package"
                     ],
                     "location": "cb1c6ce2-c81f-4d70-ad31-8f627edb41e1",
-                    "products_filter": "all"
+                    "productsFilter": "all"
                 }
             ]
             
@@ -7028,7 +6957,7 @@ Storage describes place where products are kept. In each location there can be s
 
 + Parameters
     + id: `bd98b869-2e5c-4e0d-be16-ce715a35c741` (identifier, required) - storage id
-    + fields: `name,sale_unit_types,location,products_filter` (array[string], required) - list of fields to return (separated by comma).
+    + fields: `name,saleUnitTypes,location,productsFilter` (array[string], required) - list of fields to return (separated by comma).
 
 + Request
 
@@ -7043,12 +6972,12 @@ Storage describes place where products are kept. In each location there can be s
             {
                 "id": "bb9114c8-439c-40a9-a784-04885f7fedaf",
                 "name": "Reception",
-                "sale_unit_types": [
-                "Portion",
-                "Package"
+                "saleUnitTypes": [
+                "portion",
+                "package"
                 ],
                 "location": "bb4c68e2-c81f-4d70-ad31-8f627ed9bcec",
-                "products_filter": "all"
+                "productsFilter": "all"
             }
 
 ### Create new storage [POST /storages{?fields}]
@@ -7058,7 +6987,7 @@ Storage describes place where products are kept. In each location there can be s
 **Scope:** `full`
 
 + Parameters
-    + fields: `name,location,products_filter` (array[string], optional) - list of fields to return (separated by comma)
+    + fields: `name,location,productsFilter` (array[string], optional) - list of fields to return (separated by comma)
 
 + Request
 
@@ -7071,7 +7000,7 @@ Storage describes place where products are kept. In each location there can be s
             {
                 "name": "Other",
                 "location": "bc520f6d-5c0e-4fc9-9768-c4e1af7fbf3c",
-                "products_filter": "none"
+                "productsFilter": "none"
             }
             
 + Response 201 (application/json)
@@ -7090,7 +7019,7 @@ Storage describes place where products are kept. In each location there can be s
 
 + Parameters
     + id: `dd9114c8-439c-40a9-a784-04885f7fedab` (identifier, required) - storage id
-    + fields: `name,sale_unit_types,location,products_filter` (array[string], optional) - list of fields to return (separated by comma)
+    + fields: `name,saleUnitTypes,location,productsFilter` (array[string], optional) - list of fields to return (separated by comma)
 
 + Request
 
@@ -7103,7 +7032,7 @@ Storage describes place where products are kept. In each location there can be s
             {
                 "name": "Main storage",
                 "location": "bc520f6d-5c0e-4fc9-9768-c4e1af7fbf3c",
-                "products_filter": "all"
+                "productsFilter": "all"
             }
             
 + Response 204
@@ -7438,7 +7367,6 @@ Different types of discount/bonus cards, clips, subscriptions, etc.
 + Attributes
     + name: `Gold` (string,required) - card name. Max length is 200 characters
     + description: `Gold card gives you the biggest possible discount in 10%` (string) - card detailed description. Max length is 15000 characters
-    + price: 0 (number) - card price (zero if card is free)
     + price_currency: `USD` (currency) - currency for card price; usually same as main currency for program - in that case price currency can be empty, but also can different
     + category: `b2a72d9a-aefb-4035-8720-8138dbd84c83` (identifier) - card category (cards can be grouped).
     + picture: `180ba3d7-8a74-4f76-8533-bf118a0e2022` (identifier) - ID of picture from `/pictures/` catalog
@@ -7460,11 +7388,13 @@ Different types of discount/bonus cards, clips, subscriptions, etc.
                     + `product`
                     + `group`
                     + `denture`
+                    + `card`
             + item: `b2a72d9a-aefb-4035-8720-8138dbd84c81` (identifier) - item/category id. Null means discount for all services/products/groups/dentures/certificates.
             + quantity_type: `unlimited` (enum[string]) - quantity type
                 + Members
                     + `visits`
                     + `quantity`
+                    + `unlimited`
             + quantity: 20.3 (number) - item quantity (valid only for `quantity_type` = 'quantity'), otherwise null
             + discount: 50 (number) - discount percent
     + availableCards: 1 (array[number]) - available numbers range for a card
@@ -7945,7 +7875,7 @@ Each client card has name (equal to `card` name), start and end dates.
 
 + Attributes
     + name: `Gold` (string,required) - card name. Max length is 500 characters
-    + client: `77a61323-b591-4490-9e88-3b5f30695b25` (string) - card owner (client)
+    + client: `77a61323-b591-4490-9e88-3b5f30695b25` (identifier) - card owner (client)
     + activated: `true` (boolean) - if card was activated (started)
     + start_date: `2018-03-01T00:00:00.000Z` (datetime, required) - card start date (or null if card was not activated)
     + end_date: `2018-08-01T00:00:00.000Z` (datetime) - card end date, `9999-01-01T00:00:00.000Z` if card is unlimited or null if card was not activated
@@ -7963,11 +7893,13 @@ Each client card has name (equal to `card` name), start and end dates.
                     + `product`
                     + `group`
                     + `denture`
+                    + `card`
             + item: `b2a72d9a-aefb-4035-8720-8138dbd84c81` (identifier) - item/category id. Null means discount for all services/products/groups/dentures/certificates.
             + quantity_type: `unlimited` (enum[string]) - quantity type
                 + Members
                     + `visits`
                     + `quantity`
+                    + `unlimited`
             + total_quantity: 20 (number) - total item quantity (valid only for `quantity_type` = 'quantity'), otherwise null
             + used_quantity: 5 (number) - used item quantity, always show actual number discount was used, for all `quantity_type`
             + left_quantity: 5 (number) - left item quantity (valid only for `quantity_type` = 'quantity'), otherwise null
@@ -7979,7 +7911,7 @@ Each client card has name (equal to `card` name), start and end dates.
                     + `service`
                     + `product`
                     + `group`
-                    + `denture`
+                    + `certificate`
             + percent: 10 (number) - bonus percent for item_type
             + filter (filter_info) - information about items current bonus applies to
             + filter_description: `all` (string) - localized description of filter
@@ -7988,7 +7920,7 @@ Each client card has name (equal to `card` name), start and end dates.
     + `accumulated_percent` (accumulated_percent) - information about current accumulated discount/bonus
     + `network_card` (boolean) - if a card is valuable in more than one locations in network
     + `all_locations_available` (boolean) - if a card is valuable for all locations in network
-    + `availableLocations` (array[identifier]) - list of all locations client card is available in
+    + `availableLocations` (array[identifier] | string) - list of all locations client card is available in, or `"all"` if available in all locations
     + `additionalCard` (boolean) - if a card is additional
     + `timeOfDay` (schedule) - description of time client card is active
     + `description`: `Bonus card` (string) - card description with html tags for font styling. Max length is 65536 characters
@@ -8400,7 +8332,6 @@ To simplify certificates management, certificates can be arranged in categories.
     + id: `748337fe-ac89-44a8-8f78-2046241d3271` (identifier) - category id
     + name: `Deposit certificates` (string,required) - category name. Max length is 500 characters
     + parent: `fa10a649-561d-4fa5-9f66-9c33fe8b94c1` (identifier) - parent category
-    + picture: `cb765c04-9ed8-4c33-ac64-5ddf5420b3ac` (identifier) - category picture id
     + archive: false (boolean) - if certificate category was archived and can't be used in new certificates
         + Default: `false`
 
@@ -8659,7 +8590,8 @@ Groups keep information about group, such as name, group schedule this group, lo
     + pictureUrl: `https://api.aihelps.com/v1/images/696320/3510c4ea-3451-4c77-a391-f4677135fc7f/picture` (string) - URL for getting a picture (readonly)
     + schedules (object) - schedule work professional for current group (field read only)
         + location: `d978322e-055c-43c7-bca3-beed1a07961c` (identifier) - id location, see [Locations](#locations)
-        + professional: `6a261cc2-2646-4b95-aa79-9d527085cfdc` (identifier) - id employee [Employee](#employees)
+        + trainers: `6a261cc2-2646-4b95-aa79-9d527085cfdc` (array[identifier]) - ids of employees [Employee](#employees)
+        + trainer_names: `John` (array[string]) - trainer names (read only)
     + public: true (boolean) - if group is available for online booking 
         Default: true
     + location_prices (array) - group prices for locations (each object in array defines prices for one location). See [Locations](#locations)
@@ -8700,7 +8632,7 @@ Groups keep information about group, such as name, group schedule this group, lo
                     [
                         {
                             "location": "88d48bd0-ac0d-ae7f-42ac-dddc77408d38",
-                            "professional": 
+                            "trainers": 
                             [
                                 "88d5933d-5d10-3650-74d8-4f87020a31eb"
                             ]
@@ -8733,7 +8665,7 @@ Groups keep information about group, such as name, group schedule this group, lo
                     [
                         {
                             "location": "88d48bd0-ac0d-ae7f-42ac-dddc77408d38",
-                            "professional": 
+                            "trainers": 
                             [
                                 "88d48be2-4a37-13d9-5bed-d7e15bd486ee"
                             ]
@@ -8788,7 +8720,7 @@ Groups keep information about group, such as name, group schedule this group, lo
                     [
                         {
                             "location": "88d48bd0-ac0d-ae7f-42ac-dddc77408d38",
-                            "professional": 
+                            "trainers": 
                             [
                                 "88d5933d-5d10-3650-74d8-4f87020a31eb"
                             ]
@@ -8973,7 +8905,7 @@ Each such `groupschedule` represents information about lessons start times, dura
                         "9e45d349-ee5c-4c37-8d80-866efe72dd8e",
                         "0e968a65-eb76-4966-90c7-d4744c4af333"
                     ],
-                    "professional_names": 
+                    "professionals_names": 
                     [
                         "Kevin",
                         "David"
@@ -10120,7 +10052,7 @@ Appointment services, products, cards, certificates and dentures can be updated 
         + (object)
             + denture: `13adf8fb-6304-4e1b-a036-1c092b9e82e0` (identifier,required) - card id
             + laboratory: `13adf8fb-6304-4e1b-a036-1c092b9e82e0` (identifier) - company id
-            + technican: `some text` (string) - string some
+            + technician: `some text` (string) - string some
             + comments: `some text for comment` (string) - string some
             + teeth: `6` (string, required) - teeth name
             + appointment: `13adf8fb-6304-4e1b-a036-1c092b91ca11` (identifier,required) - appointment id
@@ -10226,7 +10158,7 @@ Appointment services, products, cards, certificates and dentures can be updated 
             + text: `Comment text` (string) - text  
             
 
-### Get all appointments [GET /appointments{?fields,from,to,client,professional,location,state}]
+### Get all appointments [GET /appointments{?fields,from,to,client,employee,location,state}]
 
 **Authorization:** `Database`, `Employee`
 
@@ -10659,7 +10591,6 @@ Two moments to remember:
     + professional: `5acc652b-c762-4eda-983b-59cc86ea4481` (identifier) - profesional id (who provides services) (can be null)
     + professionalName: `3b0070ed-d302-4765-90f9-ce67a848d370` (string) - professional name (read only)
     + professionalPhone: `+38(063)1234567` (string) - professional phone (read only)
-    + professionalPhotoExists: true (boolean) -  if professional has a photo (read only)
     + assistant: `4357be34-aa4b-4711-8a4d-34b3059b5b43` (identifier) - assistant id (helps professional to provide services)
     + service: `4b244443-90d3-4182-918a-fe3ac4a03688` (identifier) - service id (can be null)
     + serviceName: `Service1` (string) - service name (read only)
@@ -10670,9 +10601,9 @@ Two moments to remember:
     + hallName: `Hall1` (string) - hall name
     + customMaterials: false (boolean) - materials can be taken from the service or from professional who provided the service
     + recommendedBy: `4b244443-90d3-4182-918a-e73c491bf6f2` (identifier) - who recommended service
-    + createDate: `2019-01-01T10:00:00.000Z` (datetime) - date and time appointment was created (in UTC)
+    + date: `2020-01-01` (datetime) - appointment date (read only). See [Appointments](#appointments)
     + appointment: `13adf8fb-6304-4e1b-a036-1c092b91cab11` (identifier,required) - appointment id. See [Appointments](#appointments)
-    + cancelReason: `Cancelled by admin` (string) - cancel reason forappointment (if it is cancelled), can be null, read only
+    + cancelReason: `Cancelled by admin` (string) - cancel reason for appointment (if it is cancelled), can be null, read only
     + state: `planned` (enum[string]) - state from appointment (read only). See [Appointments](#appointments)
     + client: `13adf8fb-6304-4e1b-a036-1c092b91cab11` (identifier) - client from appointment (read only). See [Clients](#clients)
     + clientName: `John Doe` (string) - client name (read only)
@@ -10684,14 +10615,14 @@ Two moments to remember:
     + `validations` (array) -  list of validations errors for appointment items. Read only. See more details in appointment description. To use this field, declare `force=true`, otherwise any item in this list will raise 400 error.
         + (object)
 
-### Get all appointments services [GET /appointments/services{?fields,from,to,client,professional,location,state}]
+### Get all appointments services [GET /appointments/services{?fields,from,to,client,professional,location}]
 
 **Authorization:** `Database`, `Employee`
 
 **Scope:** `full`, `reports`
 
 + Parameters
-    + fields: `start,duration,assistant,professional,professionalName,professionalPhone,professionalPhotoExists,service,price,serviceName,quantity,teeth,hall, hallName,customMaterials,recommendedBy,createDate,appointment,state,cancelReason,client,clientName,clientPhone,location,sale` (array[string], required) - list of fields to return (separated by comma)
+    + fields: `start,duration,assistant,professional,professionalName,professionalPhone,service,price,serviceName,quantity,teeth,hall,hallName,customMaterials,recommendedBy,date,appointment,state,cancelReason,client,clientName,clientPhone,location,sale` (array[string], required) - list of fields to return (separated by comma)
     + from: `2019-01-01T10:00:00.000Z` (datetime, optional) - get appointment services which starts at or after specified date
     + to: `2019-01-01T12:00:00.000Z` (datetime, optional) - get appointment services which starts before specified date
     + professional: `f43d9001-fb13-4511-8ca6-d75481e811d4` (identifier, optional) - get appointments only for given professional (several professionals can be separated by comma)
@@ -10717,13 +10648,12 @@ Two moments to remember:
                     "professional": "5acc652b-c762-4eda-983b-59cc86ea4481",
                     "professionalName": "Bob",
                     "professionalPhone": "+38(063)1234567",
-                    "professionalPhotoExists": true,
                     "service": "4b244443-90d3-4182-918a-fe3ac4a03688",
                     "price": 100,
                     "quantity": 2,
                     "hall": null,
                     "hallName": null,
-                    "createDate": "2019-01-01T10:00:00.000Z",
+                    "date": "2020-01-01",
                     "appointment": "4b244443-90d3-4182-918a-fe3ac4a0331b",
                     "cancelReason": "",
                     "state": "planned",
@@ -10741,13 +10671,12 @@ Two moments to remember:
                     "professional": "5acc652b-c762-4eda-983b-59cc86ea4481",
                     "professionalName": "3b0070ed-d302-4765-90f9-ce67a848d370",
                     "professionalPhone": "+38(063)1234567",
-                    "professionalPhotoExists": true,
                     "service": "3d2f87de-61fb-4f02-9d6c-93dc6a86fb6a",
                     "price": 100,
                     "quantity": 2,
                     "hall": null,
                     "hallName": null,
-                    "createDate": "2019-01-01T10:00:00.000Z",
+                    "date": "2020-01-01",
                     "state": "confirmed",
                     "client": "4b244443-90d3-4182-918a-fe3ac4a0dc11",
                     "clientName": "John Doe".
@@ -10765,7 +10694,7 @@ Two moments to remember:
 
 + Parameters
     + id: `5c05c7a4-74da-42e5-ac5d-dbc489748143` (identifier, required) - appointment id
-    + fields: `start,duration,assistant,professional,professionalName,professionalPhone,professionalPhotoExists,service,price,serviceName,quantity,teeth,hall, hallName,customMaterials,recommendedBy,createDate,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations` (array[string], required) - list of fields to return (separated by comma)
+    + fields: `start,duration,assistant,professional,professionalName,professionalPhone,service,price,serviceName,quantity,teeth,hall,hallName,customMaterials,recommendedBy,date,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations` (array[string], required) - list of fields to return (separated by comma)
     
 + Request
 
@@ -10784,11 +10713,10 @@ Two moments to remember:
                 "assistant": "4357be34-aa4b-4711-8a4d-34b3059b5b43",
                 "professional": "5acc652b-c762-4eda-983b-59cc86ea4481",
                 "professionalName": "Bob",
-                "professionalPhotoExists": true,
                 "service": "4b244443-90d3-4182-918a-fe3ac4a03688",
                 "quantity": 2,
                 "hall": null,
-                "createDate": "2019-01-01T10:00:00.000Z",
+                "date": "2020-01-01",
                 "state": "planned",
                 "client": "4b244443-90d3-4182-918a-fe3ac4a0dc11",
                 "location": "cb244443-90d3-4182-918a-fe3ac4a01311",
@@ -10809,7 +10737,7 @@ If found, error 409002 returned (list of intersected items also returned as `ano
 2. [SMS](#error-SMS), [SMS_AUTH](#error-SMS_AUTH) and [SMS_BALANCE](#error-SMS_BALANCE) - last step after saving updated appointment is sending notification smses to client and professional. Receiving these errors means save appointment operation successfully finished and stored in database, but notification smses was not sent (not so crucial to rollback appointment, but you should be notified).
 
 + Parameters
-    + fields: `start,duration,assistant,professional,professionalName,professionalPhone,professionalPhotoExists,service,price,serviceName,quantity,teeth,hall, hallName,customMaterials,recommendedBy,createDate,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations` (array[string], optional) - list of fields to return (separated by comma)
+    + fields: `start,duration,assistant,professional,professionalName,professionalPhone,service,price,serviceName,quantity,teeth,hall,hallName,customMaterials,recommendedBy,date,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations` (array[string], optional) - list of fields to return (separated by comma)
     + force: `true` (boolean, optional) - Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.
     + skipRequiredPrepayment: `false` (boolean, optional) - if true, prepayment is not required for services (in case required prepayment is configured).
 
@@ -10850,7 +10778,7 @@ If found, error 409002 returned (list of intersected items also returned as `ano
 
 + Parameters
     + id: `5c05c7a4-74da-42e5-ac5d-dbc489748143` (identifier, required) - appointment id
-    + fields: `start,duration,assistant,professional,professionalName,professionalPhone,professionalPhotoExists,service,price,serviceName,quantity,teeth,hall, hallName,customMaterials,recommendedBy,createDate,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations` (array[string], optional) - list of fields to return (separated by comma)
+    + fields: `start,duration,assistant,professional,professionalName,professionalPhone,service,price,serviceName,quantity,teeth,hall,hallName,customMaterials,recommendedBy,date,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations` (array[string], optional) - list of fields to return (separated by comma)
     + force: `true` (boolean, optional) - Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.
     + skipRequiredPrepayment: `false` (boolean, optional) - if true, prepayment is not required for services (in case required prepayment is configured).
     
@@ -10900,7 +10828,7 @@ Appointment is planned visit of a client for some date for one or several servic
     + product: `13adf8fb-6304-4e1b-a036-1c092b9e82e0` (identifier,required) - product id. See [Products](#products)
     + storage: `13adf8fb-6304-4e1b-a036-1c092b9e82e2` (identifier,required) - storage id. See [Storages](#storages)
     + quantity: 3 (number) - quantity's product (on default 1. Value equals or greater than zero)
-    + appointment_service: `13adf8fb-6304-4e1b-a036-1c092b91cfb11` (identifier,required) - appointment service id. See [Appointment services](#appointment_services)
+    + appointmentService: `13adf8fb-6304-4e1b-a036-1c092b91cfb11` (identifier,required) - appointment service id. See [Appointment services](#appointment_services)
     
 ### Get all appointments service product [GET /appointments/services/materials{?fields,from,to}]
 
@@ -10929,14 +10857,14 @@ Appointment is planned visit of a client for some date for one or several servic
                     "product": "d6d3d3d7-f6c6-46eb-a820-5a68f7ea1611",
                     "storage": "d6d3d3d7-f6c6-46eb-a820-5a68f7ea16aa",
                     "quantity": 2,
-                    "appointment_service": "f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a"
+                    "appointmentService": "f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a"
                 },
                 {
                     "date": "2019-01-02",
                     "product": "d6d3d3d7-f6c6-46eb-a820-5a68f7ea1bbb",
                     "storage": "d6d3d3d7-f6c6-46eb-a820-5a68f7ea1c1c",
                     "quantity": 2,
-                    "appointment_service": "cc827fb4-40e9-4a61-bad8-d24a1081c81c"
+                    "appointmentService": "cc827fb4-40e9-4a61-bad8-d24a1081c81c"
                 }
             ]
 
@@ -10948,7 +10876,7 @@ Appointment is planned visit of a client for some date for one or several servic
 
 + Parameters
     + id: `5c05c7a4-74da-42e5-ac5d-dbc489748143` (identifier, required) - appointment id
-    + fields: `date,product,storage,quantity,appointment_service` (array[string], required) - list of fields to return (separated by comma)
+    + fields: `date,product,storage,quantity,appointmentService` (array[string], required) - list of fields to return (separated by comma)
     
 + Request
 
@@ -10965,7 +10893,7 @@ Appointment is planned visit of a client for some date for one or several servic
                 "product": "d6d3d3d7-f6c6-46eb-a820-5a68f7ea1611",
                 "storage": "d6d3d3d7-f6c6-46eb-a820-5a68f7ea16aa",
                 "quantity": 2,
-                "appointment_service": "f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a"
+                "appointmentService": "f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a"
             }
 
 ### Create new appointment service product [POST /appointments/services/materials{?fields,force}]
@@ -10975,7 +10903,7 @@ Appointment is planned visit of a client for some date for one or several servic
 **Scope:** `full`
 
 + Parameters
-    + fields: `date,product,storage,quantity,appointment_service` (array[string], optional) - list of fields to return (separated by comma)
+    + fields: `date,product,storage,quantity,appointmentService` (array[string], optional) - list of fields to return (separated by comma)
     + force: `true` (boolean, optional) - Indicates that checking for time conflicts with another appointments, reserves and sales should be skipped.
 
 + Request
@@ -10990,7 +10918,7 @@ Appointment is planned visit of a client for some date for one or several servic
                 "product": "d6d3d3d7-f6c6-46eb-a820-5a68f7ea1611",
                 "storage": "d6d3d3d7-f6c6-46eb-a820-5a68f7ea16aa",
                 "quantity": 2,
-                "appointment_service": "f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a"
+                "appointmentService": "f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a"
             }
 
 + Response 201 (application/json)
@@ -11009,7 +10937,7 @@ Appointment is planned visit of a client for some date for one or several servic
 
 + Parameters
     + id: `5c05c7a4-74da-42e5-ac5d-dbc489748143` (identifier, required) - appointment id
-    + fields: `date,product,storage,quantity,appointment_service` (array[string], optional) - list of fields to return (separated by comma)
+    + fields: `date,product,storage,quantity,appointmentService` (array[string], optional) - list of fields to return (separated by comma)
     + force: `true` (boolean, optional) - Indicates that checking for time conflicts with another appointments, reserves and sales should be skipped.
     
 + Request
@@ -11024,7 +10952,7 @@ Appointment is planned visit of a client for some date for one or several servic
                 "product": "d6d3d3d7-f6c6-46eb-a820-5a68f7ea1611",
                 "storage": "d6d3d3d7-f6c6-46eb-a820-5a68f7ea16aa",
                 "quantity": 2,
-                "appointment_service": "f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a"
+                "appointmentService": "f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a"
             }
 
 + Response 204 (application/json)
@@ -11542,7 +11470,7 @@ Appointment is planned visit of a client for some date for one or several servic
     + date: `2020-01-01` (datetime) - appointment start date and time
     + denture: `13adf8fb-6304-4e1b-a036-1c092b9e82e0` (identifier,required) - card id
     + laboratory: `13adf8fb-6304-4e1b-a036-1c092b9e82e0` (identifier) - company id
-    + technican: `some text` (string) - technican information. Max length is 100 characters.
+    + technician: `some text` (string) - technician information. Max length is 100 characters.
     + professional: `13adf8fb-6304-4e1b-a036-1c092b9e82e0` (identifier) - installs dentures for clients
     + comments: `some text for comment` (string) - card comment. Max length is 65536 characters.
     + teeth: `6` (string, required) - teeth name. Max length is 100 characters.
@@ -11560,7 +11488,7 @@ Appointment is planned visit of a client for some date for one or several servic
 **Scope:** `full`, `reports`
 
 + Parameters
-    + fields: `date,denture,laboratory,technican,professional,comments,teeth,appointment,sale` (array[string], required) - list of fields to return (separated by comma)
+    + fields: `date,denture,laboratory,technician,professional,comments,teeth,appointment,sale` (array[string], required) - list of fields to return (separated by comma)
     + from: `2019-01-01T10:00:00.000Z` (datetime, optional) - get appointment denture cards which starts at or after specified date
     + to: `2019-01-01T12:00:00.000Z` (datetime, optional) - get appointment denture cards which starts before specified date
     
@@ -11579,7 +11507,7 @@ Appointment is planned visit of a client for some date for one or several servic
                     "date": "2020-01-01",
                     "denture": "cc827fb4-40e9-4a61-bad8-d24ac0c1c191",
                     "laboratory": "cc827fb4-40e9-4a61-bad8-d24ac0c2b1c2",
-                    "technican": "some text",
+                    "technician": "some text",
                     "professional": "cc827fb4-40e9-4a61-bad8-d24ac0c2b1v4",
                     "comments": "some text comments",
                     "teeth": "some teeth",
@@ -11590,7 +11518,7 @@ Appointment is planned visit of a client for some date for one or several servic
                     "date": "2020-01-01T10:10:10.000Z",
                     "denture": "cc827fb4-40e9-4a61-bad8-d24ac0c1cc92",
                     "laboratory": "cc827fb4-40e9-4a61-bad8-d24ac0c2b1c2",
-                    "technican": "some text",
+                    "technician": "some text",
                     "professional": "cc827fb4-40e9-4a61-bad8-d24ac0c2b1v5",
                     "comments": "some text comments",
                     "appointment": "cc827fb4-40e9-4a61-bad8-d24a1081c89b",
@@ -11606,7 +11534,7 @@ Appointment is planned visit of a client for some date for one or several servic
 
 + Parameters
     + id: `5c05c7a4-74da-42e5-ac5d-dbc489748143` (identifier, required) - appointment id
-    + fields: `date,denture,laboratory,technican,professional,comments,teeth,appointment,sale` (array[string], required) - list of fields to return (separated by comma)
+    + fields: `date,denture,laboratory,technician,professional,comments,teeth,appointment,sale` (array[string], required) - list of fields to return (separated by comma)
 
 + Request
 
@@ -11622,7 +11550,7 @@ Appointment is planned visit of a client for some date for one or several servic
                 "date": "2020-01-01T10:10:10.000Z",
                 "denture": "cc827fb4-40e9-4a61-bad8-d24ac0c1cc92",
                 "laboratory": "cc827fb4-40e9-4a61-bad8-d24ac0c2b1c2",
-                "technican": "some text",
+                "technician": "some text",
                 "professional": "cc827fb4-40e9-4a61-bad8-d24ac0c2b1v1",
                 "comments": "some text comments",
                 "teeth": "some teeth",
@@ -11637,7 +11565,7 @@ Appointment is planned visit of a client for some date for one or several servic
 **Scope:** `full`
 
 + Parameters
-    + fields: `date,denture,laboratory,technican,professional,comments,teeth,appointment,sale` (array[string], required) - list of fields to return (separated by comma)
+    + fields: `date,denture,laboratory,technician,professional,comments,teeth,appointment,sale` (array[string], required) - list of fields to return (separated by comma)
     + force: `true` (boolean, optional) - Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.
 
 + Request
@@ -11651,7 +11579,7 @@ Appointment is planned visit of a client for some date for one or several servic
             {
                 "denture": "cc827fb4-40e9-4a61-bad8-d24ac0c1cc92",
                 "laboratory": "cc827fb4-40e9-4a61-bad8-d24ac0c2b1c2",
-                "technican": "some text",
+                "technician": "some text",
                 "professional": "cc827fb4-40e9-4a61-bad8-d24ac0c2b1v2",
                 "comments": "some text comments",
                 "teeth": "some teeth",
@@ -11674,7 +11602,7 @@ Appointment is planned visit of a client for some date for one or several servic
 
 + Parameters
     + id: `5c05c7a4-74da-42e5-ac5d-dbc489748143` (identifier, required) - appointment card id
-    + fields: `date,denture,laboratory,technican,professional,comments,teeth,appointment,sale` (array[string], required) - list of fields to return (separated by comma)
+    + fields: `date,denture,laboratory,technician,professional,comments,teeth,appointment,sale` (array[string], required) - list of fields to return (separated by comma)
     + force: `true` (boolean, optional) - Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.
 
 + Request
@@ -11688,7 +11616,7 @@ Appointment is planned visit of a client for some date for one or several servic
             {
                 "denture": "cc827fb4-40e9-4a61-bad8-d24ac0c1cc92",
                 "laboratory": "cc827fb4-40e9-4a61-bad8-d24ac0c2b1c2",
-                "technican": "some text",
+                "technician": "some text",
                 "professional": "cc827fb4-40e9-4a61-bad8-d24ac0c2b1v3",
                 "comments": "some text comments",
                 "teeth": "some teeth",
@@ -12477,19 +12405,19 @@ Sales only for last 2 month are available. If you need to get earlier sales, you
     + name: `Gold card` (string) - service/product/group/card/certificate name
     + type (enum) - type sold 
         + Members
-            + service - service was sold
-            + product - product was sold
-            + card - card was sold
-            + certificate - certificate was sold
-            + group - one time group visit was sold
-            + tips - tips left for professional
-            + salary - salary paid to employee
-            + supplier - payment to supplier for products supply
-            + client_deposit - client put money on deposit or get from deposit
-            + company_deposit - company put money on deposit or get from deposit
-            + refund - refund money for client
-            + transfer - move money between accounts
-            + payment - some other expences/profits made
+            + Service - service was sold
+            + Product - product was sold
+            + Card - card was sold
+            + Certificate - certificate was sold
+            + Group - one time group visit was sold
+            + Tips - tips left for professional
+            + Salary - salary paid to employee
+            + Supplier - payment to supplier for products supply
+            + ClientDeposit - client put money on deposit or get from deposit
+            + CompanyDeposit - company put money on deposit or get from deposit
+            + Refund - refund money for client
+            + Transfer - move money between accounts
+            + Payment - some other expences/profits made
     + product_id: `c3cb7a99-22f2-4290-b33d-5f10cc5992d1` (identifier) - id of sold service, product, certificate, group or card.
     + client: `88d4b305-e198-f02c-2743-cca9390c6d9b` (identifier) - client id, see [Clients](#clients)
     + professional: `88d4b305-e198-f02c-2743-cca9390c6d9b` (identifier) - employee who provides service or group lesson, see [Employees](#employees)
@@ -12499,6 +12427,7 @@ Sales only for last 2 month are available. If you need to get earlier sales, you
     + quantity: 2 (number) - sale quantity
     + product_quantity_type: `package` (enum) - type of quantity
         + Members
+            + package
             + portion
             + units
     + receptionist: `4c99e293-6755-425d-b7aa-c5d125e65657` (identifier) - receptionist id
@@ -12512,8 +12441,8 @@ Sales only for last 2 month are available. If you need to get earlier sales, you
     + recommended: `19401352-c6da-45f9-8d15-0caae0ae7085` (identifier) - who recommended to buy service/product
     + appointment: `f9b01352-cbda-3cf1-c115-fa2a3cae2081` (identifier) - appointment id [Appointments](#appointments), which describes visit details
     + cancel: false (boolean) - if sale was cancelled
-    + cancelReason: `sick leave` (string) - the reason why receptionist cancelled the sale
-    + cancelDate: `2018-09-17T20:02:00.000Z` (datetime) - date when sale was cancelled
+    + cancel_reason: `sick leave` (string) - the reason why receptionist cancelled the sale
+    + cancel_date: `2018-09-17T20:02:00.000Z` (datetime) - date when sale was cancelled
     + payments (array) - information about all payments
         + (object)
             + account: `4c99e293-cbda-3cf1-c115-fa2f31ceb681` (identifier) - account id [Account](#accounts)
@@ -12534,7 +12463,7 @@ Sales only for last 2 month are available. If you need to get earlier sales, you
 **Scope:** `full`, `reports`
 
 + Parameter
-    + fields: `sale_date,calendar_date,duration,location,location2,type,name,client,professional,sum,quantity,product_quantity_type,product_id,product_name,receptionist,item_id,deposit_sum,deposit_client,discount_sum,discount_reason,client_card,client_card_discount,recommended,appointment,cancel,cancelReason,cancelDate,products` (array[string], required) - list of fields to return (separated by comma).
+    + fields: `sale_date,calendar_date,duration,location,location2,type,name,client,professional,sum,quantity,product_quantity_type,product_id,receptionist,item_id,deposit_sum,deposit_client,discount_sum,discount_reason,client_card,client_card_discount,recommended,appointment,cancel,cancel_reason,cancel_date,products` (array[string], required) - list of fields to return (separated by comma).
     + sale_date_from: `2018-09-16T21:02:00.000Z` (datetime, optional) - get only sales which was made at `sale_date_from` or later
     + sale_date_to: `2018-09-16T21:02:00.000Z` (datetime, optional) - get only sales which was made before `sale_date_from`
     + calendar_date_from: `2018-09-16T21:02:00.000Z` (datetime, optional) - get only sales which was scheduled to time `sale_date_from` or later
@@ -12582,8 +12511,8 @@ Sales only for last 2 month are available. If you need to get earlier sales, you
                 "recommended": null,
                 "appointment": "88d61289-34c6-0b1e-3b5f-a3f0bc1ce321",
                 "cancel": false,
-                "cancelReason": "",
-                "cancelDate": null,
+                "cancel_reason": "",
+                "cancel_date": null,
                 "payments": [],
                 "products":
                 [
@@ -12629,8 +12558,8 @@ Sales only for last 2 month are available. If you need to get earlier sales, you
                 "recommended": null,
                 "appointment": "88d61289-34c6-0b1e-3b5f-a3f0bc1ce322",
                 "cancel": true,
-                "cancelReason": "client didn't come",
-                "cancelDate": "2018-09-04T20:11:22.000Z",
+                "cancel_reason": "client didn't come",
+                "cancel_date": "2018-09-04T20:11:22.000Z",
                 "payments": [
                     {
                         "account": "88d60c1b-fee3-b8fb-0d12-cab54abbcfc1",
@@ -12650,7 +12579,7 @@ Sales only for last 2 month are available. If you need to get earlier sales, you
 
 + Parameters
     + id: `dd9114c8-439c-40a9-a784-04885f7fedab` (identifier, required) - id sale
-    + fields: `sale_date,calendar_date,duration,location,location2,type,name,client,professional,sum,quantity,product_quantity_type,product_id,product_name,receptionist,item_id,deposit_sum,deposit_client,discount_sum,discount_reason,client_card,client_card_discount,recommended,appointment,cancel,cancelReason,cancelDate,products` (array[string], required) - list of fields to return (separated by comma).
+    + fields: `sale_date,calendar_date,duration,location,location2,type,name,client,professional,sum,quantity,product_quantity_type,product_id,receptionist,item_id,deposit_sum,deposit_client,discount_sum,discount_reason,client_card,client_card_discount,recommended,appointment,cancel,cancel_reason,cancel_date,products` (array[string], required) - list of fields to return (separated by comma).
     
 + Request
 
@@ -12868,9 +12797,9 @@ Promotions allows to give discount to client based on set of rules.
 
 Get information about all promotions.
 
-**Authorization:** TODO
+**Authorization:** `Database`, `Employee`
 
-**Scope:** TODO
+**Scope:** `full`
 
 + Parameters
     + fields: `name,category,discount,sum,unlimitedTime,condition,description,descriptionOnReceipt,discountType,startDate,expireDate,archive` (array[string], required) - list of fields to return (separated by comma).
@@ -12908,9 +12837,9 @@ Get information about all promotions.
 
 Get information about promotion with specified id.
 
-**Authorization:** TODO
+**Authorization:** `Database`, `Employee`
 
-**Scope:** TODO
+**Scope:** `full`
 
 + Parameters
     + fields: `name,category,discount,sum,unlimitedTime,condition,description,descriptionOnReceipt,discountType,startDate,expireDate,archive` (array[string], required) - list of fields to return (separated by comma).
@@ -12944,9 +12873,9 @@ Get information about promotion with specified id.
 
 ### Create new promotion [POST /promotions{?fields}]
 
-**Authorization:** TODO
+**Authorization:** `Database`, `Employee`
 
-**Scope:** TODO
+**Scope:** `full`
 
 + Parameters
     + fields: `name,category,discount,sum,unlimitedTime,condition,description,descriptionOnReceipt,discountType,startDate,expireDate,archive` (array[string], optional) - list of fields to return (separated by comma).
@@ -12984,9 +12913,9 @@ Get information about promotion with specified id.
 
 ### Update promotion [PUT /promotions/{id}{?fields}]
 
-**Authorization:** TODO
+**Authorization:** `Database`, `Employee`
 
-**Scope:** TODO
+**Scope:** `full`
 
 + Parameters
     + id: `be0b6712-e680-42a7-8b99-b6b2d9fcb1fe` (identifier, required) - id of promotion to update.
@@ -13010,9 +12939,9 @@ Get information about promotion with specified id.
 
 ### Delete promotion [DELETE /promotions/{id}]
 
-**Authorization:** TODO
+**Authorization:** `Database`, `Employee`
 
-**Scope:** TODO
+**Scope:** `full`
 
 + Parameters
     + id: `cc903b03-ecaf-46d4-a030-bbfd1882f490` (identifier, required) - id of promotion to delete.
@@ -15589,9 +15518,9 @@ Content language header should be set for this method - text representation will
 ## `address` (object)
 - city (string) - city
 - street (string) - street 
-- building (number) - building number
+- building (string) - building number
 - apartment (string) - apartment number
-- postal_code (number) - postal code (ZIP)
+- postal_code (string) - postal code (ZIP)
 
 ## `item` (object) - information about one sale item in ticket to be purchased
 - `SUM FIELDS:` (section)

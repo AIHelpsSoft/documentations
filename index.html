@@ -589,7 +589,7 @@ pre.code-block code.language-json .token.operator { color: #67cdcc; }
   <summary><a href="#group-locations">Locations</a></summary>
   <ul>
     
-    <li><a href="#locations-get-locations-fields-authorization-database-employee" title="/locations{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/locations{?fields}</code></a></li>
+    <li><a href="#locations-get-locations-fields-active-authorization-database-employee" title="/locations{?fields,active}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/locations{?fields,active}</code></a></li>
     <li><a href="#locations-get-locations-id-fields-active-authorization-database-employee" title="/locations/{id}{?fields,active}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/locations/{id}{?fields,active}</code></a></li>
     <li><a href="#locations-put-locations-id-fields-please-note-that-code-field-can-t-be-updated" title="/locations/{id}{?fields}"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/locations/{id}{?fields}</code></a></li>
     <li><a href="#locations-get-locations-categories-fields-authorization-database-employee" title="/locations/categories{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/locations/categories{?fields}</code></a></li>
@@ -639,7 +639,7 @@ pre.code-block code.language-json .token.operator { color: #67cdcc; }
   <summary><a href="#group-employees">Employees</a></summary>
   <ul>
     
-    <li><a href="#employees-get-employees-fields-location-position-role-service-free-time-free-time-professionals-free-time-skip-appointments-archive-public-client-gender-archive-service-name-authorization-database-employee" title="/employees{?fields,location,position,role,service,free_time,free_time_professionals,free_time_skip_appointments,archive,public,client_gender,archive_service,name}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/employees{?fields,location,position,role,service,free_time,free_time_professionals,free_time_skip_appointments,archive,public,client_gender,archive_service,name}</code></a></li>
+    <li><a href="#employees-get-employees-fields-location-position-role-service-free-time-free-time-skip-appointments-archive-public-client-gender-archive-service-name-authorization-database-employee" title="/employees{?fields,location,position,role,service,free_time,free_time_skip_appointments,archive,public,client_gender,archive_service,name}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/employees{?fields,location,position,role,service,free_time,free_time_skip_appointments,archive,public,client_gender,archive_service,name}</code></a></li>
     <li><a href="#employees-get-employees-id-fields-authorization-database-employee" title="/employees/{id}{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/employees/{id}{?fields}</code></a></li>
     <li><a href="#employees-post-employees-fields-authorization-database-employee" title="/employees{?fields}"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/employees{?fields}</code></a></li>
     <li><a href="#employees-put-employees-id-fields-authorization-database-employee" title="/employees/{id}{?fields}"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/employees/{id}{?fields}</code></a></li>
@@ -647,11 +647,8 @@ pre.code-block code.language-json .token.operator { color: #67cdcc; }
     <li><a href="#employees-get-employees-id-photo-width-height-resize-access-token-authorization-database-employee" title="/employees/{id}/photo{?width,height,resize,access_token}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/employees/{id}/photo{?width,height,resize,access_token}</code></a></li>
     <li><a href="#employees-put-employees-id-photo-set-correct-content-type-header-and-put-image-in-request-body" title="/employees/{id}/photo"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/employees/{id}/photo</code></a></li>
     <li><a href="#employees-get-employees-pick-professional-date-professionals-in-some-cases-there-is-no-difference-which-one-of-selected-list-of-professionals-will-provide-a-service-in-that-case-you-can-let-api-to-select-best-matching-em" title="/employees/pick_professional{?date,professionals}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/employees/pick_professional{?date,professionals}</code></a></li>
-    <li><a href="#employees-get-positions-fields-authorization-database-employee" title="/positions{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/positions{?fields}</code></a></li>
+    <li><a href="#employees-get-positions-fields-role-authorization-database-employee" title="/positions{?fields,role}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/positions{?fields,role}</code></a></li>
     <li><a href="#employees-get-positions-id-fields-authorization-database-employee" title="/positions/{id}{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/positions/{id}{?fields}</code></a></li>
-    <li><a href="#employees-post-positions-fields-authorization-database-employee" title="/positions{?fields}"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/positions{?fields}</code></a></li>
-    <li><a href="#employees-put-positions-id-fields-authorization-database-employee" title="/positions/{id}{?fields}"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/positions/{id}{?fields}</code></a></li>
-    <li><a href="#employees-delete-positions-id-authorization-database-employee" title="/positions/{id}"><span class="method-tag method-DELETE">DELETE</span><code class="toc-endpoint">/positions/{id}</code></a></li>
     <li><a href="#employees-post-employees-id-code-generate-an-invitation-and-send-it-to-an-employee-s-email" title="/employees/{id}/code"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/employees/{id}/code</code></a></li>
     <li><a href="#employees-get-employees-codes-code-validate-an-invitation-code" title="/employees/codes/{code}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/employees/codes/{code}</code></a></li>
     <li><a href="#employees-get-predefinedschedules-fields-authorization-employee" title="/predefinedSchedules/{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/predefinedSchedules/{?fields}</code></a></li>
@@ -683,7 +680,7 @@ pre.code-block code.language-json .token.operator { color: #67cdcc; }
   <summary><a href="#group-services">Services</a></summary>
   <ul>
     
-    <li><a href="#services-get-services-fields-sex-public-position-has-professional-price-professional-client-gender-free-time-free-time-skip-appointments-location-archive-service-by-time-authorization-database-employee" title="/services{?fields,sex,public,position,has_professional_price,professional,client_gender,free_time,free_time_skip_appointments,location,archive,service_by_time}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/services{?fields,sex,public,position,has_professional_price,professional,client_gender,free_time,free_time_skip_appointments,location,archive,service_by_time}</code></a></li>
+    <li><a href="#services-get-services-fields-client-gender-public-position-has-professional-price-professional-free-time-free-time-skip-appointments-location-archive-service-by-time-authorization-database-employee" title="/services{?fields,client_gender,public,position,has_professional_price,professional,free_time,free_time_skip_appointments,location,archive,service_by_time}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/services{?fields,client_gender,public,position,has_professional_price,professional,free_time,free_time_skip_appointments,location,archive,service_by_time}</code></a></li>
     <li><a href="#services-get-services-id-fields-authorization-database-employee" title="/services/{id}{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/services/{id}{?fields}</code></a></li>
     <li><a href="#services-post-services-fields-authorization-database-employee" title="/services{?fields}"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/services{?fields}</code></a></li>
     <li><a href="#services-put-services-id-fields-authorization-database-employee" title="/services/{id}{?fields}"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/services/{id}{?fields}</code></a></li>
@@ -711,7 +708,7 @@ pre.code-block code.language-json .token.operator { color: #67cdcc; }
   <summary><a href="#group-products">Products</a></summary>
   <ul>
     
-    <li><a href="#products-get-products-fields-archive-authorization-database" title="/products{?fields,archive}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/products{?fields,archive}</code></a></li>
+    <li><a href="#products-get-products-fields-archive-name-authorization-database" title="/products{?fields,archive,name}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/products{?fields,archive,name}</code></a></li>
     <li><a href="#products-get-products-id-fields-authorization-database" title="/products/{id}{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/products/{id}{?fields}</code></a></li>
     <li><a href="#products-post-products-fields-authorization-database-employee" title="/products{?fields}"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/products{?fields}</code></a></li>
     <li><a href="#products-put-products-id-fields-authorization-database-employee" title="/products/{id}{?fields}"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/products/{id}{?fields}</code></a></li>
@@ -722,7 +719,7 @@ pre.code-block code.language-json .token.operator { color: #67cdcc; }
     <li><a href="#products-put-products-categories-id-fields-authorization-database-employee" title="/products/categories/{id}{?fields}"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/products/categories/{id}{?fields}</code></a></li>
     <li><a href="#products-delete-products-categories-id-authorization-database-employee" title="/products/categories/{id}"><span class="method-tag method-DELETE">DELETE</span><code class="toc-endpoint">/products/categories/{id}</code></a></li>
     <li><a href="#products-get-products-tree-fields-categories-fields-empty-categories-authorization-database-employee" title="/products/tree{?fields,categories_fields,empty_categories}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/products/tree{?fields,categories_fields,empty_categories}</code></a></li>
-    <li><a href="#products-get-storages-fields-location-products-filter-authorization-database-employee" title="/storages{?fields,location,products_filter}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/storages{?fields,location,products_filter}</code></a></li>
+    <li><a href="#products-get-storages-fields-location-authorization-database-employee" title="/storages{?fields,location}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/storages{?fields,location}</code></a></li>
     <li><a href="#products-get-storages-id-fields-authorization-database-employee" title="/storages/{id}{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/storages/{id}{?fields}</code></a></li>
     <li><a href="#products-post-storages-fields-authorization-database-employee" title="/storages{?fields}"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/storages{?fields}</code></a></li>
     <li><a href="#products-put-storages-id-fields-authorization-database-employee" title="/storages/{id}{?fields}"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/storages/{id}{?fields}</code></a></li>
@@ -825,13 +822,13 @@ pre.code-block code.language-json .token.operator { color: #67cdcc; }
   <summary><a href="#group-appointments">Appointments</a></summary>
   <ul>
     
-    <li><a href="#appointments-get-appointments-fields-from-to-client-professional-location-state-authorization-database-employee" title="/appointments{?fields,from,to,client,professional,location,state}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/appointments{?fields,from,to,client,professional,location,state}</code></a></li>
+    <li><a href="#appointments-get-appointments-fields-from-to-client-employee-location-state-authorization-database-employee" title="/appointments{?fields,from,to,client,employee,location,state}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/appointments{?fields,from,to,client,employee,location,state}</code></a></li>
     <li><a href="#appointments-get-appointments-id-fields-authorization-database-employee" title="/appointments/{id}{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/appointments/{id}{?fields}</code></a></li>
     <li><a href="#appointments-post-appointments-fields-force-copy-skiprequiredprepayment-by-default-if-professional-is-set-method-checks-if-proposed-appointment-do-not-intersects-with-another-appointments-reserves-or-sales" title="/appointments{?fields,force,copy,skipRequiredPrepayment}"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/appointments{?fields,force,copy,skipRequiredPrepayment}</code></a></li>
     <li><a href="#appointments-put-appointments-id-fields-force-skiprequiredprepayment-by-default-if-professional-is-set-method-checks-if-changed-appointment-do-not-intersects-with-another-appointments-reserves-or-sales" title="/appointments/{id}{?fields,force,skipRequiredPrepayment}"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/appointments/{id}{?fields,force,skipRequiredPrepayment}</code></a></li>
     <li><a href="#appointments-delete-appointments-id-authorization-database-employee" title="/appointments/{id}"><span class="method-tag method-DELETE">DELETE</span><code class="toc-endpoint">/appointments/{id}</code></a></li>
     <li><a href="#appointments-post-appointments-id-sendnotification-authorization-database-employee" title="/appointments/{id}:sendNotification"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/appointments/{id}:sendNotification</code></a></li>
-    <li><a href="#appointments-get-appointments-services-fields-from-to-client-professional-location-state-authorization-database-employee" title="/appointments/services{?fields,from,to,client,professional,location,state}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/appointments/services{?fields,from,to,client,professional,location,state}</code></a></li>
+    <li><a href="#appointments-get-appointments-services-fields-from-to-client-professional-location-authorization-database-employee" title="/appointments/services{?fields,from,to,client,professional,location}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/appointments/services{?fields,from,to,client,professional,location}</code></a></li>
     <li><a href="#appointments-get-appointments-services-id-fields-authorization-database-employee" title="/appointments/services/{id}{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/appointments/services/{id}{?fields}</code></a></li>
     <li><a href="#appointments-post-appointments-services-fields-force-skiprequiredprepayment-by-default-if-professional-is-set-method-checks-if-proposed-appointment-do-not-intersects-with-another-appointments-reserves-or-sales" title="/appointments/services{?fields,force,skipRequiredPrepayment}"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/appointments/services{?fields,force,skipRequiredPrepayment}</code></a></li>
     <li><a href="#appointments-put-appointments-services-id-fields-force-skiprequiredprepayment-by-default-if-professional-is-set-method-checks-if-changed-appointment-do-not-intersects-with-another-appointments-reserves-or-sales" title="/appointments/services/{id}{?fields,force,skipRequiredPrepayment}"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/appointments/services/{id}{?fields,force,skipRequiredPrepayment}</code></a></li>
@@ -893,9 +890,9 @@ pre.code-block code.language-json .token.operator { color: #67cdcc; }
     <li><a href="#sales-post-sales-cancel-cancel-provided-list-of-sales" title="/sales:cancel"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/sales:cancel</code></a></li>
     <li><a href="#sales-get-promotions-fields-archive-get-information-about-all-promotions" title="/promotions{?fields,archive}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/promotions{?fields,archive}</code></a></li>
     <li><a href="#sales-get-promotions-id-fields-get-information-about-promotion-with-specified-id" title="/promotions/{id}{?fields}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/promotions/{id}{?fields}</code></a></li>
-    <li><a href="#sales-post-promotions-fields-authorization-todo" title="/promotions{?fields}"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/promotions{?fields}</code></a></li>
-    <li><a href="#sales-put-promotions-id-fields-authorization-todo" title="/promotions/{id}{?fields}"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/promotions/{id}{?fields}</code></a></li>
-    <li><a href="#sales-delete-promotions-id-authorization-todo" title="/promotions/{id}"><span class="method-tag method-DELETE">DELETE</span><code class="toc-endpoint">/promotions/{id}</code></a></li>
+    <li><a href="#sales-post-promotions-fields-authorization-database-employee" title="/promotions{?fields}"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/promotions{?fields}</code></a></li>
+    <li><a href="#sales-put-promotions-id-fields-authorization-database-employee" title="/promotions/{id}{?fields}"><span class="method-tag method-PUT">PUT</span><code class="toc-endpoint">/promotions/{id}{?fields}</code></a></li>
+    <li><a href="#sales-delete-promotions-id-authorization-database-employee" title="/promotions/{id}"><span class="method-tag method-DELETE">DELETE</span><code class="toc-endpoint">/promotions/{id}</code></a></li>
     <li><a href="#sales-post-sales-crossale-report-success-authorization-database-employee" title="/sales/crossale/report_success"><span class="method-tag method-POST">POST</span><code class="toc-endpoint">/sales/crossale/report_success</code></a></li>
     <li><a href="#sales-get-sales-crosssale-recommendations-current-items-client-sex-number-proposed-product-type-authorization-database-employee" title="/sales/crosssale/recommendations{?current_items,client,sex,number,proposed_product_type}"><span class="method-tag method-GET">GET</span><code class="toc-endpoint">/sales/crosssale/recommendations{?current_items,client,sex,number,proposed_product_type}</code></a></li>
   </ul>
@@ -2636,18 +2633,18 @@ locations are not disappeared after payment was not made for specific location, 
   <div class="prose resource-preamble" style="margin-bottom:1rem;"><p><a name="locations"></a></p>
 </div>
 
-<article class="action-card" id="locations-get-locations-fields-authorization-database-employee">
+<article class="action-card" id="locations-get-locations-fields-active-authorization-database-employee">
   <div class="action-human">
-    <h3 class="action-title"><a href="#locations-get-locations-fields-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
+    <h3 class="action-title"><a href="#locations-get-locations-fields-active-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
     <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
 <p><strong>Scope:</strong> <code>full</code>, <code>clients_module</code> (only name, description, category, code, city, street, phone, web_site, geo_position, timezone, pictures_count, active), <code>online_store</code>, <code>reports</code>, <code>services_aggregator</code> (only name, description, category, code, city, street, phone, web_site, geo_position, timezone, pictures_count, active)</p>
 </div>
   </div>
   <div class="action-machine">
-    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/locations{?fields}</code></div>
-<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/locations{?fields}</code></div>
+    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/locations{?fields,active}</code></div>
+<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/locations{?fields,active}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,category,code,city,street,phone,geo_position,timezone,active</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,category,code,city,street,phone,geo_position,timezone,active</code></td></tr><tr><td><code>active</code></td><td>boolean</td><td></td><td>if to show only active/non-active locations.</td><td><code>true</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
     {
         &quot;id&quot;: &quot;2a0516e3-ddc9-432c-80e4-8d5f5e97cce3&quot;,
@@ -2926,14 +2923,14 @@ to get/update location categories.</p>
   <div class="action-human">
     <h3 class="action-title"><a href="#clients-get-clients-fields-location-phone-email-card-number-name-archive-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
     <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
-<p><strong>Scope:</strong> <code>full</code>, <code>online_store</code> (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comment fields), <code>reports</code>, <code>services_aggregator</code> (only name, firstname, middlename, lastname, gender, birthday, card_number, email, photo_exists, photo, postal_code, city, street, building, phone fields and only with phone or email filter), <code>client_access_token</code> (only with filter client)</p>
+<p><strong>Scope:</strong> <code>full</code>, <code>online_store</code> (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comments fields), <code>reports</code>, <code>services_aggregator</code> (only name, firstname, middlename, lastname, gender, birthday, card_number, email, photo_exists, photo, postal_code, city, street, building, phone fields and only with phone or email filter), <code>client_access_token</code> (only with filter client)</p>
 </div>
   </div>
   <div class="action-machine">
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/clients{?fields,location,phone,email,card_number,name,archive}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/clients{?fields,location,phone,email,card_number,name,archive}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,createDate,deposit_client,referral_source,referral_source_name,status,comment,archive,professional</code></td></tr><tr><td><code>location</code></td><td>identifier</td><td></td><td>get clients who enabled in location</td><td><code>0799e1bc-86eb-4e0f-82e2-98dfe2cd55f9</code></td></tr><tr><td><code>phone</code></td><td>string</td><td></td><td>get only client(s) with given phone (several phones can be separated by comma)</td><td><code>+355 (55) 255 55 55</code></td></tr><tr><td><code>email</code></td><td>string</td><td></td><td>get only client(s) with given email (several emails can be separated by comma)</td><td><code>abc@gmail.com</code></td></tr><tr><td><code>card_number</code></td><td>string</td><td></td><td>get only client(s) with given card number (several card numbers can be separated by comma)</td><td><code>1234F</code></td></tr><tr><td><code>name</code></td><td>string</td><td></td><td></td><td><code>John Brown</code></td></tr><tr><td><code>archive</code></td><td>boolean</td><td></td><td>get only archived or non archived clients</td><td><code>false</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional</code></td></tr><tr><td><code>location</code></td><td>identifier</td><td></td><td>get clients who enabled in location</td><td><code>0799e1bc-86eb-4e0f-82e2-98dfe2cd55f9</code></td></tr><tr><td><code>phone</code></td><td>string</td><td></td><td>get only client(s) with given phone (several phones can be separated by comma)</td><td><code>+355 (55) 255 55 55</code></td></tr><tr><td><code>email</code></td><td>string</td><td></td><td>get only client(s) with given email (several emails can be separated by comma)</td><td><code>abc@gmail.com</code></td></tr><tr><td><code>card_number</code></td><td>string</td><td></td><td>get only client(s) with given card number (several card numbers can be separated by comma)</td><td><code>1234F</code></td></tr><tr><td><code>name</code></td><td>string</td><td></td><td></td><td><code>John Brown</code></td></tr><tr><td><code>archive</code></td><td>boolean</td><td></td><td>get only archived or non archived clients</td><td><code>false</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
     {
         &quot;id&quot;: &quot;88d6248d-e5e8-9c40-5296-bb10043eab27&quot;,
@@ -2973,7 +2970,7 @@ to get/update location categories.</p>
         &quot;referral_source&quot;: null,
         &quot;referral_source_name&quot;: &quot;&quot;,
         &quot;status&quot;: &quot;potential&quot;,
-        &quot;comment&quot;: &quot;VIP status&quot;,
+        &quot;comments&quot;: &quot;VIP status&quot;,
         &quot;archive&quot;: false
     },
     {
@@ -3010,7 +3007,7 @@ to get/update location categories.</p>
         &quot;referral_source&quot;: &quot;5382f467-a034-440c-bc7f-3dac9b2c8191&quot;,
         &quot;referral_source_name&quot;: &quot;flyers&quot;,
         &quot;status&quot;, &quot;potential&quot;,
-        &quot;comment&quot;: null,
+        &quot;comments&quot;: null,
         &quot;archive&quot;: false,
         &quot;professional&quot;: &quot;5382f467-a034-440c-bc7f-3dac9b2c8191&quot;
     }
@@ -3022,14 +3019,14 @@ to get/update location categories.</p>
   <div class="action-human">
     <h3 class="action-title"><a href="#clients-get-clients-id-fields-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
     <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
-<p><strong>Scope:</strong> <code>full</code>,<code>online_store</code> (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comment fields),<code>reports</code>,<code>client_access_token</code> (but id field should match client id, <code>me</code> can be used instead of id)</p>
+<p><strong>Scope:</strong> <code>full</code>,<code>online_store</code> (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comments fields),<code>reports</code>,<code>client_access_token</code> (but id field should match client id, <code>me</code> can be used instead of id)</p>
 </div>
   </div>
   <div class="action-machine">
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/clients/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/clients/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)</td><td><code>be0b6712-e680-42a7-8b99-b6b2d9fcb1fe</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,createDate,deposit_client,referral_source,referral_source_name,status,comment,archive,professional</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)</td><td><code>be0b6712-e680-42a7-8b99-b6b2d9fcb1fe</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;id&quot;: &quot;88d6248d-e5e8-9c40-5296-bb10043eab27&quot;,
     &quot;name&quot;: &quot;John Brown&quot;,
@@ -3068,7 +3065,7 @@ to get/update location categories.</p>
     &quot;referral_source&quot;: &quot;5382f467-a034-440c-bc7f-3dac9b2c8191&quot;,
     &quot;referral_source_name&quot;: &quot;flyers&quot;,
     &quot;status&quot;, &quot;potential&quot;,
-    &quot;comment&quot;: &quot;VIP status&quot;,
+    &quot;comments&quot;: &quot;VIP status&quot;,
     &quot;archive&quot;: false,
     &quot;professional&quot;: &quot;5382f467-a034-440c-bc7f-3dac9b2c8191&quot;
 }</code></pre></div></div>
@@ -3079,14 +3076,14 @@ to get/update location categories.</p>
   <div class="action-human">
     <h3 class="action-title"><a href="#clients-post-clients-fields-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
     <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
-<p><strong>Scope:</strong> <code>full</code>, <code>online_store</code> (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comment fields), <code>services_aggregator</code> (only firstname, middlename, lastname, gender, birthday, card_number, phone, email, comment fields)</p>
+<p><strong>Scope:</strong> <code>full</code>, <code>online_store</code> (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comments fields), <code>services_aggregator</code> (only firstname, middlename, lastname, gender, birthday, card_number, phone, email, comments fields)</p>
 </div>
   </div>
   <div class="action-machine">
     <div class="uri-line"><span class="method method-POST">POST</span><code class="uri-template">/clients{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/clients{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,createDate,deposit_client,referral_source,referral_source_name,status,comment,archive,professional</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-POST">POST</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr><tr><td><code>Content-Language</code></td><td><code>en</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;firstname&quot;: &quot;John&quot;,
     &quot;lastname&quot;: &quot; Doe&quot;,
@@ -3109,7 +3106,7 @@ to get/update location categories.</p>
     <div class="uri-line"><span class="method method-PUT">PUT</span><code class="uri-template">/clients/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/clients/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)</td><td><code>be0b6712-e680-42a7-8b99-b6b2d9fcb1fe</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,createDate,deposit_client,referral_source,referral_source_name,status,comment,archive,professional</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)</td><td><code>be0b6712-e680-42a7-8b99-b6b2d9fcb1fe</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-PUT">PUT</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;phone&quot;: [
         &quot;+1 555 123 45 67&quot;,
@@ -3687,18 +3684,18 @@ Some of them can login to program, some not. All employees are grouped into posi
   <div class="prose resource-preamble" style="margin-bottom:1rem;"><p><a name="employees"></a></p>
 </div>
 
-<article class="action-card" id="employees-get-employees-fields-location-position-role-service-free-time-free-time-professionals-free-time-skip-appointments-archive-public-client-gender-archive-service-name-authorization-database-employee">
+<article class="action-card" id="employees-get-employees-fields-location-position-role-service-free-time-free-time-skip-appointments-archive-public-client-gender-archive-service-name-authorization-database-employee">
   <div class="action-human">
-    <h3 class="action-title"><a href="#employees-get-employees-fields-location-position-role-service-free-time-free-time-professionals-free-time-skip-appointments-archive-public-client-gender-archive-service-name-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
+    <h3 class="action-title"><a href="#employees-get-employees-fields-location-position-role-service-free-time-free-time-skip-appointments-archive-public-client-gender-archive-service-name-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
     <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
 <p><strong>Scope:</strong> <code>full</code>,<code>clients_module</code> (available fields: photo_exists,photo,gender,default_appointment_duration,name,name_parts,sex,positions,position_names,roles,archive,public,address,schedules,services), <code>reports</code>, <code>services_aggregator</code> (only photo_exists, gender, default_appointment_duration, name, positions, position_names, roles, archive, public, address, schedules, services, archive)</p>
 </div>
   </div>
   <div class="action-machine">
-    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/employees{?fields,location,position,role,service,free_time,free_time_professionals,free_time_skip_appointments,archive,public,client_gender,archive_service,name}</code></div>
-<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/employees{?fields,location,position,role,service,free_time,free_time_professionals,free_time_skip_appointments,archive,public,client_gender,archive_service,name}</code></div>
+    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/employees{?fields,location,position,role,service,free_time,free_time_skip_appointments,archive,public,client_gender,archive_service,name}</code></div>
+<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/employees{?fields,location,position,role,service,free_time,free_time_skip_appointments,archive,public,client_gender,archive_service,name}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>name,firstname,middlename,lastname,title,phone,email,gender,photo_exists,photo,positions,position_names,roles,permissions,archive,public,address,schedules,all_locations,feedback_count,average_feedback_rating,prepaymentRequired,comments,commentsPlainText</code></td></tr><tr><td><code>location</code></td><td>array[identifier]</td><td></td><td>get only employees which works in given location (several locations can be separated by comma)</td><td><code>73a386aa-dfdd-4bba-be50-084c4104c599</code></td></tr><tr><td><code>position</code></td><td>array[identifier]</td><td></td><td>get only employees with given position (several positions can be separated by comma)</td><td><code>1bd1288c-3457-429a-ab06-5071ca1704c3</code></td></tr><tr><td><code>role</code></td><td>array[string]</td><td></td><td>get only employees of given role (several roles can be separated by comma)</td><td><code>professional</code></td></tr><tr><td><code>service</code></td><td>array[identifier]</td><td></td><td>get only employees that can provide all given services (several services can be separated by comma)</td><td><code>aad32c8c-1cb7-429a-ab06-5071c4debca3</code></td></tr><tr><td><code>free_time</code></td><td>string</td><td></td><td>get only employees who will be free at specified time range. If `location` filter is set, looks only at specified location (otherwise search in all).</td><td><code>2018-11-29T19:30:00.000Z..2018-11-29T20:30:00.000Z</code></td></tr><tr><td><code>free_time_professionals</code></td><td>array[identifier]</td><td></td><td>if free_time filter used, specifies professionals (one or many, several appointments can be separated by comma), for which free time will be calculated (if not set - for all)</td><td><code>71a98638-ef51-497a-88ae-8b4f1efaaa8b</code></td></tr><tr><td><code>free_time_skip_appointments</code></td><td>array[identifier]</td><td></td><td>if free_time filter used, specifies which appointments should be skipped checking (several appointments can be separated by comma) - skipped appointments will be treated as free time</td><td><code>bc4311b8-329c-40a9-a784-04cb5f7fe1aa</code></td></tr><tr><td><code>archive</code></td><td>boolean</td><td></td><td>get only archive or none archive employees</td><td><code>false</code></td></tr><tr><td><code>public</code></td><td>boolean</td><td></td><td>get only public or non public employees</td><td><code>false</code></td></tr><tr><td><code>client_gender</code></td><td>string</td><td></td><td>get only professionals who can provide services for given gender</td><td><code>[object Object]</code></td></tr><tr><td><code>archive_service</code></td><td>boolean</td><td></td><td>if `client_gender` filter used, check only archive/non-archive services for professionals</td><td><code>false</code></td></tr><tr><td><code>name</code></td><td>string</td><td></td><td></td><td><code>John Doe</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>name,firstname,middlename,lastname,title,phone,email,gender,photo_exists,photo,positions,position_names,roles,permissions,archive,public,address,schedules,all_locations,feedback_count,average_feedback_rating,prepaymentRequired,comments,commentsPlainText</code></td></tr><tr><td><code>location</code></td><td>array[identifier]</td><td></td><td>get only employees which works in given location (several locations can be separated by comma)</td><td><code>73a386aa-dfdd-4bba-be50-084c4104c599</code></td></tr><tr><td><code>position</code></td><td>array[identifier]</td><td></td><td>get only employees with given position (several positions can be separated by comma)</td><td><code>1bd1288c-3457-429a-ab06-5071ca1704c3</code></td></tr><tr><td><code>role</code></td><td>array[string]</td><td></td><td>get only employees of given role (several roles can be separated by comma)</td><td><code>professional</code></td></tr><tr><td><code>service</code></td><td>array[identifier]</td><td></td><td>get only employees that can provide all given services (several services can be separated by comma)</td><td><code>aad32c8c-1cb7-429a-ab06-5071c4debca3</code></td></tr><tr><td><code>free_time</code></td><td>string</td><td></td><td>get only employees who will be free at specified time range. If `location` filter is set, looks only at specified location (otherwise search in all).</td><td><code>2018-11-29T19:30:00.000Z..2018-11-29T20:30:00.000Z</code></td></tr><tr><td><code>free_time_skip_appointments</code></td><td>array[identifier]</td><td></td><td>if free_time filter used, specifies which appointments should be skipped checking (several appointments can be separated by comma) - skipped appointments will be treated as free time</td><td><code>bc4311b8-329c-40a9-a784-04cb5f7fe1aa</code></td></tr><tr><td><code>archive</code></td><td>boolean</td><td></td><td>get only archive or none archive employees</td><td><code>false</code></td></tr><tr><td><code>public</code></td><td>boolean</td><td></td><td>get only public or non public employees</td><td><code>false</code></td></tr><tr><td><code>client_gender</code></td><td>string</td><td></td><td>get only professionals who can provide services for given gender</td><td><code>[object Object]</code></td></tr><tr><td><code>archive_service</code></td><td>boolean</td><td></td><td>if `client_gender` filter used, check only archive/non-archive services for professionals</td><td><code>false</code></td></tr><tr><td><code>name</code></td><td>string</td><td></td><td></td><td><code>John Doe</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
     {
         &quot;id&quot;:&quot;88d4d8c0-3830-5b07-7bfe-b80f0650b9f3&quot;,
@@ -3997,29 +3994,28 @@ Current strategy is to select employee which is least busy this day (so API trie
 administrators can be grouped as top-administrators and normal administrators. Each such group is named a <code>position</code>.</p>
 </div>
 
-<article class="action-card" id="employees-get-positions-fields-authorization-database-employee">
+<article class="action-card" id="employees-get-positions-fields-role-authorization-database-employee">
   <div class="action-human">
-    <h3 class="action-title"><a href="#employees-get-positions-fields-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
+    <h3 class="action-title"><a href="#employees-get-positions-fields-role-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
     <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
 <p><strong>Scope:</strong> <code>full</code>, <code>clients_module</code> (only name field), <code>reports</code></p>
 </div>
   </div>
   <div class="action-machine">
-    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/positions{?fields}</code></div>
-<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/positions{?fields}</code></div>
+    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/positions{?fields,role}</code></div>
+<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/positions{?fields,role}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,role,permissions,parent</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,role,permissions,parent</code></td></tr><tr><td><code>role</code></td><td>array[string]</td><td></td><td>get only positions with given role (several roles can be separated by comma)</td><td><code>professional</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
     {
         &quot;id&quot;: &quot;04c5daec-2c11-4ce9-b00d-03a03d50356f&quot;,
         &quot;name&quot;: &quot;Stylists&quot;,
         &quot;role&quot;: &quot;professional&quot;,
-        &quot;rights&quot;:
+        &quot;permissions&quot;:
         [
             &quot;&quot;,
             &quot;&quot;
-        ],
-        &quot;id&quot;: &quot;e28ebfd0-f847-4c3f-b2a1-07f4257b0764&quot;
+        ]
     },
     {
         &quot;id&quot;: &quot;e28ebfd0-f847-4c3f-b2a1-07f4257b0764&quot;
@@ -4046,60 +4042,6 @@ administrators can be grouped as top-administrators and normal administrators. E
   </div>
 </article>
 
-<article class="action-card" id="employees-post-positions-fields-authorization-database-employee">
-  <div class="action-human">
-    <h3 class="action-title"><a href="#employees-post-positions-fields-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
-    <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
-<p><strong>Scope:</strong> <code>full</code></p>
-</div>
-  </div>
-  <div class="action-machine">
-    <div class="uri-line"><span class="method method-POST">POST</span><code class="uri-template">/positions{?fields}</code></div>
-<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/positions{?fields}</code></div>
-<div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,role,permissions,parent</code></td></tr></tbody></table>
-<div class="req-block"><div class="mini-method"><span class="method method-POST">POST</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
-    &quot;name&quot;: &quot;Stylists&quot;,
-    &quot;role&quot;: &quot;professional&quot;
-}</code></pre></div></div><div class="res-block"><div class="mini-method"><span class="status-code">201</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
-    &quot;id&quot;: &quot;f1c7f635-dbf7-4e21-a970-4b1fd7514604&quot;
-}</code></pre></div></div>
-  </div>
-</article>
-
-<article class="action-card" id="employees-put-positions-id-fields-authorization-database-employee">
-  <div class="action-human">
-    <h3 class="action-title"><a href="#employees-put-positions-id-fields-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
-    <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
-<p><strong>Scope:</strong> <code>full</code></p>
-</div>
-  </div>
-  <div class="action-machine">
-    <div class="uri-line"><span class="method method-PUT">PUT</span><code class="uri-template">/positions/{id}{?fields}</code></div>
-<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/positions/{id}{?fields}</code></div>
-<div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id of position</td><td><code>04c5daec-2c11-4ce9-b00d-03a03d50356f</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,role,permissions,parent</code></td></tr></tbody></table>
-<div class="req-block"><div class="mini-method"><span class="method method-PUT">PUT</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
-    &quot;name&quot;: &quot;Top stylists&quot;
-}</code></pre></div></div><div class="res-block"><div class="mini-method"><span class="status-code">204</span><span class="req-label">Response</span></div></div>
-  </div>
-</article>
-
-<article class="action-card" id="employees-delete-positions-id-authorization-database-employee">
-  <div class="action-human">
-    <h3 class="action-title"><a href="#employees-delete-positions-id-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
-    <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
-<p><strong>Scope:</strong> <code>full</code></p>
-</div>
-  </div>
-  <div class="action-machine">
-    <div class="uri-line"><span class="method method-DELETE">DELETE</span><code class="uri-template">/positions/{id}</code></div>
-<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/positions/{id}</code></div>
-<div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id of position</td><td><code>04c5daec-2c11-4ce9-b00d-03a03d50356f</code></td></tr></tbody></table>
-<div class="req-block"><div class="mini-method"><span class="method method-DELETE">DELETE</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">204</span><span class="req-label">Response</span></div></div>
-  </div>
-</article>
 <div class="prose resource-preamble" style="margin-bottom:1rem;"><p>Running application on a new system requires setting up connection to the database.
 To simplify this process, invitation code can be used.</p>
 </div>
@@ -5547,24 +5489,24 @@ activated, employee is removed.</p>
   <div class="prose resource-preamble" style="margin-bottom:1rem;"><p><a name="services"></a></p>
 </div>
 
-<article class="action-card" id="services-get-services-fields-sex-public-position-has-professional-price-professional-client-gender-free-time-free-time-skip-appointments-location-archive-service-by-time-authorization-database-employee">
+<article class="action-card" id="services-get-services-fields-client-gender-public-position-has-professional-price-professional-free-time-free-time-skip-appointments-location-archive-service-by-time-authorization-database-employee">
   <div class="action-human">
-    <h3 class="action-title"><a href="#services-get-services-fields-sex-public-position-has-professional-price-professional-client-gender-free-time-free-time-skip-appointments-location-archive-service-by-time-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
+    <h3 class="action-title"><a href="#services-get-services-fields-client-gender-public-position-has-professional-price-professional-free-time-free-time-skip-appointments-location-archive-service-by-time-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
     <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
-<p><strong>Scope:</strong> <code>full</code>, <code>clients_module</code> (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, pricesInNativeCurrency fields), <code>reports</code>, <code>services_aggregator</code> (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, pricesInNativeCurrency fields)</p>
+<p><strong>Scope:</strong> <code>full</code>, <code>clients_module</code> (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, location_prices_in_native_currency fields), <code>reports</code>, <code>services_aggregator</code> (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, location_prices_in_native_currency fields)</p>
 </div>
   </div>
   <div class="action-machine">
-    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/services{?fields,sex,public,position,has_professional_price,professional,client_gender,free_time,free_time_skip_appointments,location,archive,service_by_time}</code></div>
-<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/services{?fields,sex,public,position,has_professional_price,professional,client_gender,free_time,free_time_skip_appointments,location,archive,service_by_time}</code></div>
+    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/services{?fields,client_gender,public,position,has_professional_price,professional,free_time,free_time_skip_appointments,location,archive,service_by_time}</code></div>
+<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/services{?fields,client_gender,public,position,has_professional_price,professional,free_time,free_time_skip_appointments,location,archive,service_by_time}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,description,descriptionPlaintext,duration,gender,price_currency,no_professional_price,category,picture,pictureUrl,public,location_prices,halls,resources,color,article,barcode,with_assistant,service_by_time,department,archive</code></td></tr><tr><td><code>client_gender</code></td><td>string</td><td></td><td>get only services for given gender</td><td><code>[object Object]</code></td></tr><tr><td><code>public</code></td><td>boolean</td><td></td><td>get only public or non public services</td><td><code>true</code></td></tr><tr><td><code>has_professional_price</code></td><td>boolean</td><td></td><td>get only services which can be provided by some professional (exclude non professional services if true) or only non professional services if false</td><td><code>true</code></td></tr><tr><td><code>position</code></td><td>identifier</td><td></td><td>get only services, which can be provided by given position professionals (several positions can be separated by comma)</td><td><code>6ade5e30-9ec9-4975-9a1b-53fdc4b1bb05</code></td></tr><tr><td><code>professional</code></td><td>identifier</td><td></td><td>get only services, which can be provided by given professionals (several professionals can be separated by comma)</td><td><code>88d44832-8c92-01da-6c10-c5991fd7bb08</code></td></tr><tr><td><code>free_time</code></td><td>date</td><td></td><td>get only services free at specified time start (duration is equal to service duration, custom for each service). If `location` filter is set, looks only at specified location (otherwise search in all).</td><td><code>2018-11-29T19:30:00.000Z</code></td></tr><tr><td><code>free_time_skip_appointments</code></td><td>array[identifier]</td><td></td><td>if free_time filter used, specifies which appointments should be skipped checking (several appointments can be separated by comma) - skipped appointments will be treated as free time</td><td><code>bc4311b8-329c-40a9-a784-04cb5f7fe1aa</code></td></tr><tr><td><code>location</code></td><td>array[identifier]</td><td></td><td>used in `free_time` filter (several locations can be separated by comma)</td><td><code>73a386aa-dfdd-4bba-be50-084c4104c599</code></td></tr><tr><td><code>archive</code></td><td>boolean</td><td></td><td>get only archived or non archived services</td><td><code>false</code></td></tr><tr><td><code>service_by_time</code></td><td>boolean</td><td></td><td>get only services by time (true) or not by time (false)</td><td><code>false</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,description,descriptionPlainText,duration,gender,price_currency,no_professional_price,category,picture,pictureUrl,public,location_prices,halls,resources,color,article,barcode,with_assistant,service_by_time,department,archive</code></td></tr><tr><td><code>client_gender</code></td><td>string</td><td></td><td>get only services for given gender</td><td><code>[object Object]</code></td></tr><tr><td><code>public</code></td><td>boolean</td><td></td><td>get only public or non public services</td><td><code>true</code></td></tr><tr><td><code>has_professional_price</code></td><td>boolean</td><td></td><td>get only services which can be provided by some professional (exclude non professional services if true) or only non professional services if false</td><td><code>true</code></td></tr><tr><td><code>position</code></td><td>identifier</td><td></td><td>get only services, which can be provided by given position professionals (several positions can be separated by comma)</td><td><code>6ade5e30-9ec9-4975-9a1b-53fdc4b1bb05</code></td></tr><tr><td><code>professional</code></td><td>identifier</td><td></td><td>get only services, which can be provided by given professionals (several professionals can be separated by comma)</td><td><code>88d44832-8c92-01da-6c10-c5991fd7bb08</code></td></tr><tr><td><code>free_time</code></td><td>date</td><td></td><td>get only services free at specified time start (duration is equal to service duration, custom for each service). If `location` filter is set, looks only at specified location (otherwise search in all).</td><td><code>2018-11-29T19:30:00.000Z</code></td></tr><tr><td><code>free_time_skip_appointments</code></td><td>array[identifier]</td><td></td><td>if free_time filter used, specifies which appointments should be skipped checking (several appointments can be separated by comma) - skipped appointments will be treated as free time</td><td><code>bc4311b8-329c-40a9-a784-04cb5f7fe1aa</code></td></tr><tr><td><code>location</code></td><td>array[identifier]</td><td></td><td>used in `free_time` filter (several locations can be separated by comma)</td><td><code>73a386aa-dfdd-4bba-be50-084c4104c599</code></td></tr><tr><td><code>archive</code></td><td>boolean</td><td></td><td>get only archived or non archived services</td><td><code>false</code></td></tr><tr><td><code>service_by_time</code></td><td>boolean</td><td></td><td>get only services by time (true) or not by time (false)</td><td><code>false</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
     {
         &quot;id&quot;: &quot;88d60be6-fba7-49c0-3d28-066a5cb5f1b9&quot;,
         &quot;name&quot;: &quot;Compex&quot;,
         &quot;description&quot;: &quot;Complex service&quot;,
-        &quot;descriptionPlaintext&quot;: &quot;Complex service&quot;,
+        &quot;descriptionPlainText&quot;: &quot;Complex service&quot;,
         &quot;duration&quot;: 60,
         &quot;gender&quot;: &quot;both&quot;,
         &quot;price_currency&quot;: &quot;UAH&quot;,
@@ -5600,19 +5542,19 @@ activated, employee is removed.</p>
   <div class="action-human">
     <h3 class="action-title"><a href="#services-get-services-id-fields-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
     <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
-<p><strong>Scope:</strong> <code>full</code>, <code>clients_module</code> (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, pricesInNativeCurrency), <code>reports</code></p>
+<p><strong>Scope:</strong> <code>full</code>, <code>clients_module</code> (only category, name, duration, gender, location_prices, description, descriptionPlainText, sex, price_currency, picture, public, parent, archive, noProfessionalPriceInNativeCurrency, location_prices_in_native_currency), <code>reports</code></p>
 </div>
   </div>
   <div class="action-machine">
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/services/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/services/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>service id</td><td><code>dd9114c8-439c-40a9-a784-04885f7fedab</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,description,descriptionPlaintext,duration,gender,price_currency,no_professional_price,category,picture,pictureUrl,public,location_prices,halls,resources,color,article,barcode,with_assistant,service_by_time,department,archive</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>service id</td><td><code>dd9114c8-439c-40a9-a784-04885f7fedab</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,description,descriptionPlainText,duration,gender,price_currency,no_professional_price,category,picture,pictureUrl,public,location_prices,halls,resources,color,article,barcode,with_assistant,service_by_time,department,archive</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;id&quot;: &quot;88d60be6-fba7-49c0-3d28-066a5cb5f1b9&quot;,
     &quot;name&quot;: &quot;Compex&quot;,
     &quot;description&quot;: &quot;Complex service&quot;,
-    &quot;descriptionPlaintext&quot;: &quot;Complex service&quot;,
+    &quot;descriptionPlainText&quot;: &quot;Complex service&quot;,
     &quot;duration&quot;: 60,
     &quot;gender&quot;: &quot;both&quot;,
     &quot;price_currency&quot;: &quot;UAH&quot;,
@@ -6221,18 +6163,18 @@ activated, employee is removed.</p>
   <div class="group-intro prose"><p>All information about products.</p>
 </div>
   
-<article class="action-card" id="products-get-products-fields-archive-authorization-database">
+<article class="action-card" id="products-get-products-fields-archive-name-authorization-database">
   <div class="action-human">
-    <h3 class="action-title"><a href="#products-get-products-fields-archive-authorization-database" class="permalink" aria-hidden="true">#</a> Authorization: Database</h3>
+    <h3 class="action-title"><a href="#products-get-products-fields-archive-name-authorization-database" class="permalink" aria-hidden="true">#</a> Authorization: Database</h3>
     <div class="prose"><p><strong>Authorization:</strong> <code>Database</code></p>
 <p><strong>Scope:</strong>  <code>full</code>,<code>clients_module</code>,<code>online_store</code>,<code>reports</code></p>
 </div>
   </div>
   <div class="action-machine">
-    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/products{?fields,archive}</code></div>
-<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/products{?fields,archive}</code></div>
+    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/products{?fields,archive,name}</code></div>
+<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/products{?fields,archive,name}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,description,category,picture,pictureUrl,vendor_code,barcode,volume,supply_price,supply_price_currency,supply_price_in_native_currency,units,location_prices,portion_quantity,stocks,package_price_currency,portion_price_currency,unit_price_currency,staff_package_price_currency,staff_portion_price_currency,staff_unit_price_currency,can_sale_package,can_sale_portion,can_sale_units,tare_weight,critical_quantity,requisites,is_receipt,product_receipts,count_as_cost_for_salary,tax,department,price_for_salary_calculation,payed_calculation,consignment_supplier,archive</code></td></tr><tr><td><code>archive</code></td><td>boolean</td><td></td><td>get only archived or non archived products</td><td><code>false</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,description,category,picture,pictureUrl,vendor_code,barcode,volume,supply_price,supply_price_currency,supply_price_in_native_currency,units,location_prices,portion_quantity,stocks,package_price_currency,portion_price_currency,unit_price_currency,staff_package_price_currency,staff_portion_price_currency,staff_unit_price_currency,can_sale_package,can_sale_portion,can_sale_units,tare_weight,critical_quantity,requisites,is_receipt,product_receipts,count_as_cost_for_salary,tax,department,price_for_salary_calculation,payed_calculation,consignment_supplier,archive</code></td></tr><tr><td><code>archive</code></td><td>boolean</td><td></td><td>get only archived or non archived products</td><td><code>false</code></td></tr><tr><td><code>name</code></td><td>string</td><td></td><td>get only products with given name (several names can be separated by comma)</td><td><code>Cotton pads</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 751392d5-a113-44e4-bb30-0d9e190b2f4c</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
     {
         &quot;id&quot;: &quot;88d60d95-aa05-283f-5016-ff2d5d4dc20a&quot;,
@@ -6676,37 +6618,37 @@ activated, employee is removed.</p>
 <div class="prose resource-preamble" style="margin-bottom:1rem;"><p>Storage describes place where products are kept. In each location there can be several storages.</p>
 </div>
 
-<article class="action-card" id="products-get-storages-fields-location-products-filter-authorization-database-employee">
+<article class="action-card" id="products-get-storages-fields-location-authorization-database-employee">
   <div class="action-human">
-    <h3 class="action-title"><a href="#products-get-storages-fields-location-products-filter-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
+    <h3 class="action-title"><a href="#products-get-storages-fields-location-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
     <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
 <p><strong>Scope:</strong> <code>full</code>, <code>clients_module</code>, <code>online_store</code>, <code>reports</code></p>
 </div>
   </div>
   <div class="action-machine">
-    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/storages{?fields,location,products_filter}</code></div>
-<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/storages{?fields,location,products_filter}</code></div>
+    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/storages{?fields,location}</code></div>
+<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/storages{?fields,location}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,sale_unit_types,location,products_filter</code></td></tr><tr><td><code>location</code></td><td>array[identifier]</td><td></td><td>get only storages in given location (several locations can be separated by comma)</td><td><code>12d4b305-e198-f02c-2743-cca93cb16baa</code></td></tr><tr><td><code>products_filter</code></td><td>filter_info</td><td>yes</td><td>Filter that describes which products should be presented.</td><td><code>3f69b533-8288-4847-a7f0-ab4d71e598f6,3f69b533-8288-4847-a7f0-ab4d71e59c21;1,0</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,saleUnitTypes,location,productsFilter</code></td></tr><tr><td><code>location</code></td><td>array[identifier]</td><td></td><td>get only storages in given location (several locations can be separated by comma)</td><td><code>12d4b305-e198-f02c-2743-cca93cb16baa</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
     {
         &quot;id&quot;: &quot;dd9114c8-439c-40a9-a784-04885f7fedab&quot;,
         &quot;name&quot;: &quot;Reception&quot;,
-        &quot;sale_unit_types&quot;: [
-        &quot;Portion&quot;
+        &quot;saleUnitTypes&quot;: [
+        &quot;portion&quot;
         ],
         &quot;location&quot;: &quot;cb1c6ce2-c81f-4d70-ad31-8f627edb41e1&quot;,
-        &quot;products_filter&quot;: &quot;none&quot;
+        &quot;productsFilter&quot;: &quot;none&quot;
     },
     {
         &quot;id&quot;: &quot;71668460-255c-491f-b4e6-90cea3f338a9&quot;,
         &quot;name&quot;: &quot;Backbar&quot;,
-        &quot;sale_unit_types&quot;: [
-        &quot;Portion&quot;,
-        &quot;Package&quot;
+        &quot;saleUnitTypes&quot;: [
+        &quot;portion&quot;,
+        &quot;package&quot;
         ],
         &quot;location&quot;: &quot;cb1c6ce2-c81f-4d70-ad31-8f627edb41e1&quot;,
-        &quot;products_filter&quot;: &quot;all&quot;
+        &quot;productsFilter&quot;: &quot;all&quot;
     }
 ]</code></pre></div></div>
   </div>
@@ -6723,16 +6665,16 @@ activated, employee is removed.</p>
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/storages/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/storages/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>storage id</td><td><code>bd98b869-2e5c-4e0d-be16-ce715a35c741</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,sale_unit_types,location,products_filter</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>storage id</td><td><code>bd98b869-2e5c-4e0d-be16-ce715a35c741</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,saleUnitTypes,location,productsFilter</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;id&quot;: &quot;bb9114c8-439c-40a9-a784-04885f7fedaf&quot;,
     &quot;name&quot;: &quot;Reception&quot;,
-    &quot;sale_unit_types&quot;: [
-    &quot;Portion&quot;,
-    &quot;Package&quot;
+    &quot;saleUnitTypes&quot;: [
+    &quot;portion&quot;,
+    &quot;package&quot;
     ],
     &quot;location&quot;: &quot;bb4c68e2-c81f-4d70-ad31-8f627ed9bcec&quot;,
-    &quot;products_filter&quot;: &quot;all&quot;
+    &quot;productsFilter&quot;: &quot;all&quot;
 }</code></pre></div></div>
   </div>
 </article>
@@ -6748,11 +6690,11 @@ activated, employee is removed.</p>
     <div class="uri-line"><span class="method method-POST">POST</span><code class="uri-template">/storages{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/storages{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,location,products_filter</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,location,productsFilter</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-POST">POST</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bce1</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;name&quot;: &quot;Other&quot;,
     &quot;location&quot;: &quot;bc520f6d-5c0e-4fc9-9768-c4e1af7fbf3c&quot;,
-    &quot;products_filter&quot;: &quot;none&quot;
+    &quot;productsFilter&quot;: &quot;none&quot;
 }</code></pre></div></div><div class="res-block"><div class="mini-method"><span class="status-code">201</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;id&quot;: &quot;fc9114c8-439c-40a9-a784-04885f7fedc1&quot;
 }</code></pre></div></div>
@@ -6770,11 +6712,11 @@ activated, employee is removed.</p>
     <div class="uri-line"><span class="method method-PUT">PUT</span><code class="uri-template">/storages/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/storages/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>storage id</td><td><code>dd9114c8-439c-40a9-a784-04885f7fedab</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,sale_unit_types,location,products_filter</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>storage id</td><td><code>dd9114c8-439c-40a9-a784-04885f7fedab</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,saleUnitTypes,location,productsFilter</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-PUT">PUT</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;name&quot;: &quot;Main storage&quot;,
     &quot;location&quot;: &quot;bc520f6d-5c0e-4fc9-9768-c4e1af7fbf3c&quot;,
-    &quot;products_filter&quot;: &quot;all&quot;
+    &quot;productsFilter&quot;: &quot;all&quot;
 }</code></pre></div></div><div class="res-block"><div class="mini-method"><span class="status-code">204</span><span class="req-label">Response</span></div></div>
   </div>
 </article>
@@ -7975,7 +7917,7 @@ Each client card has name (equal to <code>card</code> name), start and end dates
         [
             {
                 &quot;location&quot;: &quot;88d48bd0-ac0d-ae7f-42ac-dddc77408d38&quot;,
-                &quot;professional&quot;: 
+                &quot;trainers&quot;: 
                 [
                     &quot;88d5933d-5d10-3650-74d8-4f87020a31eb&quot;
                 ]
@@ -8008,7 +7950,7 @@ Each client card has name (equal to <code>card</code> name), start and end dates
         [
             {
                 &quot;location&quot;: &quot;88d48bd0-ac0d-ae7f-42ac-dddc77408d38&quot;,
-                &quot;professional&quot;: 
+                &quot;trainers&quot;: 
                 [
                     &quot;88d48be2-4a37-13d9-5bed-d7e15bd486ee&quot;
                 ]
@@ -8057,7 +7999,7 @@ Each client card has name (equal to <code>card</code> name), start and end dates
         [
             {
                 &quot;location&quot;: &quot;88d48bd0-ac0d-ae7f-42ac-dddc77408d38&quot;,
-                &quot;professional&quot;: 
+                &quot;trainers&quot;: 
                 [
                     &quot;88d5933d-5d10-3650-74d8-4f87020a31eb&quot;
                 ]
@@ -8211,7 +8153,7 @@ Each such <code>groupschedule</code> represents information about lessons start 
             &quot;9e45d349-ee5c-4c37-8d80-866efe72dd8e&quot;,
             &quot;0e968a65-eb76-4966-90c7-d4744c4af333&quot;
         ],
-        &quot;professional_names&quot;: 
+        &quot;professionals_names&quot;: 
         [
             &quot;Kevin&quot;,
             &quot;David&quot;
@@ -8511,7 +8453,7 @@ Each such <code>groupschedule</code> represents information about lessons start 
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/grouplessons{?fields,from,to,location,group,professional,public,has_location_prices,publicProfessional}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/grouplessons{?fields,from,to,location,group,professional,public,has_location_prices,publicProfessional}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>date,duration,location,group,group_name,group_price,group_picture,professional,professional_name,assistant,assistant_name,hall,filled_completely,descriptionPlaintext</code></td></tr><tr><td><code>from</code></td><td>datetime</td><td></td><td>return only lessons started at date or later</td><td><code>2019-01-01T10:00:00.000Z</code></td></tr><tr><td><code>to</code></td><td>datetime</td><td></td><td>return only lessons started at date or earlier</td><td><code>2019-01-01T12:00:00.000Z</code></td></tr><tr><td><code>location</code></td><td>array[identifier]</td><td></td><td>get only lessons in given location (several locations can be separated by comma)</td><td><code>12d4b305-e198-f02c-2743-cca93cb16baa</code></td></tr><tr><td><code>group</code></td><td>array[identifier]</td><td></td><td>get only given groups lessons (several groups can be separated by comma)</td><td><code>8a6b32dd-53bb-4181-b7e5-1afb4e74f0f6</code></td></tr><tr><td><code>professional</code></td><td>array[identifier]</td><td></td><td>get only lessons with given professionals (several professionals can be separated by comma)</td><td><code>5829ad23-0b78-41ed-a3ef-240725e31262</code></td></tr><tr><td><code>public</code></td><td>boolean</td><td>yes</td><td>if group lesson is available for online booking</td><td><code>true</code></td></tr><tr><td><code>has_location_prices</code></td><td>boolean</td><td>yes</td><td>get only group lesson where has price</td><td><code>true</code></td></tr><tr><td><code>publicProfessional</code></td><td>boolean</td><td>yes</td><td>get group lessons with no professionals or with at least one active professional</td><td><code>true</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>date,duration,location,group,group_name,group_price,group_picture,professional,professional_name,assistant,assistant_name,hall,filled_completely,descriptionPlainText</code></td></tr><tr><td><code>from</code></td><td>datetime</td><td></td><td>return only lessons started at date or later</td><td><code>2019-01-01T10:00:00.000Z</code></td></tr><tr><td><code>to</code></td><td>datetime</td><td></td><td>return only lessons started at date or earlier</td><td><code>2019-01-01T12:00:00.000Z</code></td></tr><tr><td><code>location</code></td><td>array[identifier]</td><td></td><td>get only lessons in given location (several locations can be separated by comma)</td><td><code>12d4b305-e198-f02c-2743-cca93cb16baa</code></td></tr><tr><td><code>group</code></td><td>array[identifier]</td><td></td><td>get only given groups lessons (several groups can be separated by comma)</td><td><code>8a6b32dd-53bb-4181-b7e5-1afb4e74f0f6</code></td></tr><tr><td><code>professional</code></td><td>array[identifier]</td><td></td><td>get only lessons with given professionals (several professionals can be separated by comma)</td><td><code>5829ad23-0b78-41ed-a3ef-240725e31262</code></td></tr><tr><td><code>public</code></td><td>boolean</td><td>yes</td><td>if group lesson is available for online booking</td><td><code>true</code></td></tr><tr><td><code>has_location_prices</code></td><td>boolean</td><td>yes</td><td>get only group lesson where has price</td><td><code>true</code></td></tr><tr><td><code>publicProfessional</code></td><td>boolean</td><td>yes</td><td>get group lessons with no professionals or with at least one active professional</td><td><code>true</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
     {
         &quot;id&quot;: &quot;c1efb8e7-00ec-4513-8745-739169e7b251&quot;,
@@ -8528,7 +8470,7 @@ Each such <code>groupschedule</code> represents information about lessons start 
         &quot;assistant_name&quot;: &quot;Bob&quot;,
         &quot;hall&quot;: &quot;b1cac8b2-ebb8-fdef-b212-ccfd2dcb1b1a&quot;,
         &quot;filled_completely&quot;: false,
-        &quot;descriptionPlaintext&quot;: &quot;the best group ever&quot;
+        &quot;descriptionPlainText&quot;: &quot;the best group ever&quot;
     },
     {
         &quot;id&quot;: &quot;c1efb8e7-00ec-4513-8745-739169e7b452&quot;,
@@ -8545,7 +8487,7 @@ Each such <code>groupschedule</code> represents information about lessons start 
         &quot;assistant_name&quot;: &quot;Bob&quot;,
         &quot;hall&quot;: &quot;b1cac8b2-ebb8-fdef-b212-ccfd2dcb1b1a&quot;,
         &quot;filled_completely&quot;: true,
-        &quot;descriptionPlaintext&quot;: &quot;the best group ever&quot;
+        &quot;descriptionPlainText&quot;: &quot;the best group ever&quot;
     }
 ]</code></pre></div></div>
   </div>
@@ -8562,7 +8504,7 @@ Each such <code>groupschedule</code> represents information about lessons start 
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/grouplessons/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/grouplessons/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>group lesson id</td><td><code>adac3979-cf71-47fa-9a39-5f366fd1378e</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>date,duration,location,group,group_name,group_price,group_picture,professional,professional_name,assistant,assistant_name,hall,filled_completely,descriptionPlaintext</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>group lesson id</td><td><code>adac3979-cf71-47fa-9a39-5f366fd1378e</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>date,duration,location,group,group_name,group_price,group_picture,professional,professional_name,assistant,assistant_name,hall,filled_completely,descriptionPlainText</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;id&quot;: &quot;adac3979-cf71-47fa-9a39-5f366fd1378e&quot;,
     &quot;date&quot;: &quot;2019-01-01T10:00:00.000Z&quot;,
@@ -8578,7 +8520,7 @@ Each such <code>groupschedule</code> represents information about lessons start 
     &quot;assistant_name&quot;: &quot;Bob&quot;,
     &quot;hall&quot;: null,
     &quot;filled_completely&quot;: true,
-    &quot;descriptionPlaintext&quot;: &quot;the best group ever&quot;
+    &quot;descriptionPlainText&quot;: &quot;the best group ever&quot;
 }</code></pre></div></div>
   </div>
 </article>
@@ -8598,7 +8540,7 @@ Each such <code>groupschedule</code> represents information about lessons start 
     <div class="uri-line"><span class="method method-POST">POST</span><code class="uri-template">/grouplessons/{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/grouplessons/{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>date,duration,location,group,group_name,group_price,group_picture,professional,professional_name,assistant,assistant_name,hall,filled_completely,descriptionPlaintext</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>date,duration,location,group,group_name,group_price,group_picture,professional,professional_name,assistant,assistant_name,hall,filled_completely,descriptionPlainText</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-POST">POST</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;date&quot;: &quot;2019-01-01T10:00:00.000Z&quot;,
     &quot;duration&quot;: 60,
@@ -8628,7 +8570,7 @@ Each such <code>groupschedule</code> represents information about lessons start 
     <div class="uri-line"><span class="method method-PUT">PUT</span><code class="uri-template">/grouplessons/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/grouplessons/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>group lesson id</td><td><code>bd98b869-2e5c-4e0d-be16-ce715a35c742</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>date,duration,location,group,group_name,group_price,group_picture,professional,professional_name,assistant,assistant_name,hall,descriptionPlaintext</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>group lesson id</td><td><code>bd98b869-2e5c-4e0d-be16-ce715a35c742</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>date,duration,location,group,group_name,group_price,group_picture,professional,professional_name,assistant,assistant_name,hall,descriptionPlainText</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-PUT">PUT</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;duration&quot;: 60,
     &quot;location&quot;: &quot;23c32b29-f871-448a-8646-d235a9b40d22&quot;,
@@ -9079,8 +9021,8 @@ Also, important moment: if you insert/update/get appointment item and requested 
 </div>
   </div>
   <div class="action-machine">
-    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/appointments{?fields,from,to,client,professional,location,state}</code></div>
-<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments{?fields,from,to,client,professional,location,state}</code></div>
+    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/appointments{?fields,from,to,client,employee,location,state}</code></div>
+<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments{?fields,from,to,client,employee,location,state}</code></div>
 <div class="subsection-title">Parameters</div>
 <table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>date,location,client,clientName,clientFirstName,clientMiddleName,clientLastName,employee,employeeName,employeeFirstName,employeeMiddleName,employeeLastName,receptionist,notifySms,services,products,certificates,dentures,cards,cancelDate,cancelReason,cancelReceptionist,createDate,feedback,groupComments(id,appointment,professional,start,text)</code></td></tr><tr><td><code>from</code></td><td>datetime</td><td></td><td>get appointments which starts at or after specified date</td><td><code>2019-01-01T10:00:00.000Z</code></td></tr><tr><td><code>to</code></td><td>datetime</td><td></td><td>get appointments which starts before specified date</td><td><code>2019-01-02T12:00:00.000Z</code></td></tr><tr><td><code>location</code></td><td>identifier</td><td></td><td>get appointments only for given location (several locations can be separated by comma)</td><td><code>12d4b305-e198-f02c-2743-cca93cb16baa</code></td></tr><tr><td><code>state</code></td><td>string</td><td></td><td>get only appointments of specified state (or several states)</td><td><code>reserved</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
@@ -9450,10 +9392,10 @@ But additional notification can be sent manually if needed by this endpoint.</p>
 </div>
   </div>
   <div class="action-machine">
-    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/appointments/services{?fields,from,to,client,professional,location,state}</code></div>
-<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/services{?fields,from,to,client,professional,location,state}</code></div>
+    <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/appointments/services{?fields,from,to,client,professional,location}</code></div>
+<div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/services{?fields,from,to,client,professional,location}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>start,duration,assistant,professional,professionalName,professionalPhone,professionalPhotoExists,service,price,serviceName,quantity,teeth,hall, hallName,customMaterials,recommendedBy,createDate,appointment,state,cancelReason,client,clientName,clientPhone,location,sale</code></td></tr><tr><td><code>from</code></td><td>datetime</td><td></td><td>get appointment services which starts at or after specified date</td><td><code>2019-01-01T10:00:00.000Z</code></td></tr><tr><td><code>to</code></td><td>datetime</td><td></td><td>get appointment services which starts before specified date</td><td><code>2019-01-01T12:00:00.000Z</code></td></tr><tr><td><code>professional</code></td><td>identifier</td><td></td><td>get appointments only for given professional (several professionals can be separated by comma)</td><td><code>f43d9001-fb13-4511-8ca6-d75481e811d4</code></td></tr><tr><td><code>location</code></td><td>identifier</td><td></td><td>get appointment service only for given location. (several locations can be separated by comma)</td><td><code>f43d9001-fb13-4511-8ca6-d75481ad1cdb</code></td></tr><tr><td><code>client</code></td><td>identifier</td><td></td><td>get appointment service only for given client. (several clients can be separated by comma)</td><td><code>f43d9001-fb13-4511-8ca6-d75481ad322b</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>start,duration,assistant,professional,professionalName,professionalPhone,service,price,serviceName,quantity,teeth,hall,hallName,customMaterials,recommendedBy,date,appointment,state,cancelReason,client,clientName,clientPhone,location,sale</code></td></tr><tr><td><code>from</code></td><td>datetime</td><td></td><td>get appointment services which starts at or after specified date</td><td><code>2019-01-01T10:00:00.000Z</code></td></tr><tr><td><code>to</code></td><td>datetime</td><td></td><td>get appointment services which starts before specified date</td><td><code>2019-01-01T12:00:00.000Z</code></td></tr><tr><td><code>professional</code></td><td>identifier</td><td></td><td>get appointments only for given professional (several professionals can be separated by comma)</td><td><code>f43d9001-fb13-4511-8ca6-d75481e811d4</code></td></tr><tr><td><code>location</code></td><td>identifier</td><td></td><td>get appointment service only for given location. (several locations can be separated by comma)</td><td><code>f43d9001-fb13-4511-8ca6-d75481ad1cdb</code></td></tr><tr><td><code>client</code></td><td>identifier</td><td></td><td>get appointment service only for given client. (several clients can be separated by comma)</td><td><code>f43d9001-fb13-4511-8ca6-d75481ad322b</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
     {
         &quot;id&quot;: &quot;e132e1c1-0450-4e50-973e-0d59007331ca&quot;,
@@ -9463,13 +9405,12 @@ But additional notification can be sent manually if needed by this endpoint.</p>
         &quot;professional&quot;: &quot;5acc652b-c762-4eda-983b-59cc86ea4481&quot;,
         &quot;professionalName&quot;: &quot;Bob&quot;,
         &quot;professionalPhone&quot;: &quot;+38(063)1234567&quot;,
-        &quot;professionalPhotoExists&quot;: true,
         &quot;service&quot;: &quot;4b244443-90d3-4182-918a-fe3ac4a03688&quot;,
         &quot;price&quot;: 100,
         &quot;quantity&quot;: 2,
         &quot;hall&quot;: null,
         &quot;hallName&quot;: null,
-        &quot;createDate&quot;: &quot;2019-01-01T10:00:00.000Z&quot;,
+        &quot;date&quot;: &quot;2020-01-01&quot;,
         &quot;appointment&quot;: &quot;4b244443-90d3-4182-918a-fe3ac4a0331b&quot;,
         &quot;cancelReason&quot;: &quot;&quot;,
         &quot;state&quot;: &quot;planned&quot;,
@@ -9487,13 +9428,12 @@ But additional notification can be sent manually if needed by this endpoint.</p>
         &quot;professional&quot;: &quot;5acc652b-c762-4eda-983b-59cc86ea4481&quot;,
         &quot;professionalName&quot;: &quot;3b0070ed-d302-4765-90f9-ce67a848d370&quot;,
         &quot;professionalPhone&quot;: &quot;+38(063)1234567&quot;,
-        &quot;professionalPhotoExists&quot;: true,
         &quot;service&quot;: &quot;3d2f87de-61fb-4f02-9d6c-93dc6a86fb6a&quot;,
         &quot;price&quot;: 100,
         &quot;quantity&quot;: 2,
         &quot;hall&quot;: null,
         &quot;hallName&quot;: null,
-        &quot;createDate&quot;: &quot;2019-01-01T10:00:00.000Z&quot;,
+        &quot;date&quot;: &quot;2020-01-01&quot;,
         &quot;state&quot;: &quot;confirmed&quot;,
         &quot;client&quot;: &quot;4b244443-90d3-4182-918a-fe3ac4a0dc11&quot;,
         &quot;clientName&quot;: &quot;John Doe&quot;.
@@ -9516,7 +9456,7 @@ But additional notification can be sent manually if needed by this endpoint.</p>
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/appointments/services/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/services/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>start,duration,assistant,professional,professionalName,professionalPhone,professionalPhotoExists,service,price,serviceName,quantity,teeth,hall, hallName,customMaterials,recommendedBy,createDate,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>start,duration,assistant,professional,professionalName,professionalPhone,service,price,serviceName,quantity,teeth,hall,hallName,customMaterials,recommendedBy,date,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;id&quot;: &quot;5c05c7a4-74da-42e5-ac5d-dbc489748143&quot;,
     &quot;start&quot;: &quot;10:10:10.000Z&quot;,
@@ -9524,11 +9464,10 @@ But additional notification can be sent manually if needed by this endpoint.</p>
     &quot;assistant&quot;: &quot;4357be34-aa4b-4711-8a4d-34b3059b5b43&quot;,
     &quot;professional&quot;: &quot;5acc652b-c762-4eda-983b-59cc86ea4481&quot;,
     &quot;professionalName&quot;: &quot;Bob&quot;,
-    &quot;professionalPhotoExists&quot;: true,
     &quot;service&quot;: &quot;4b244443-90d3-4182-918a-fe3ac4a03688&quot;,
     &quot;quantity&quot;: 2,
     &quot;hall&quot;: null,
-    &quot;createDate&quot;: &quot;2019-01-01T10:00:00.000Z&quot;,
+    &quot;date&quot;: &quot;2020-01-01&quot;,
     &quot;state&quot;: &quot;planned&quot;,
     &quot;client&quot;: &quot;4b244443-90d3-4182-918a-fe3ac4a0dc11&quot;,
     &quot;location&quot;: &quot;cb244443-90d3-4182-918a-fe3ac4a01311&quot;,
@@ -9555,7 +9494,7 @@ If found, error 409002 returned (list of intersected items also returned as <cod
     <div class="uri-line"><span class="method method-POST">POST</span><code class="uri-template">/appointments/services{?fields,force,skipRequiredPrepayment}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/services{?fields,force,skipRequiredPrepayment}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>start,duration,assistant,professional,professionalName,professionalPhone,professionalPhotoExists,service,price,serviceName,quantity,teeth,hall, hallName,customMaterials,recommendedBy,createDate,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.</td><td><code>true</code></td></tr><tr><td><code>skipRequiredPrepayment</code></td><td>boolean</td><td></td><td>if true, prepayment is not required for services (in case required prepayment is configured).</td><td><code>false</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>start,duration,assistant,professional,professionalName,professionalPhone,service,price,serviceName,quantity,teeth,hall,hallName,customMaterials,recommendedBy,date,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.</td><td><code>true</code></td></tr><tr><td><code>skipRequiredPrepayment</code></td><td>boolean</td><td></td><td>if true, prepayment is not required for services (in case required prepayment is configured).</td><td><code>false</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-POST">POST</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;start&quot;: &quot;10:00:00.000Z&quot;,
     &quot;duration&quot;: 150,
@@ -9584,7 +9523,7 @@ If found, error 409002 returned (list of intersected items also returned as <cod
     <div class="uri-line"><span class="method method-PUT">PUT</span><code class="uri-template">/appointments/services/{id}{?fields,force,skipRequiredPrepayment}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/services/{id}{?fields,force,skipRequiredPrepayment}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>start,duration,assistant,professional,professionalName,professionalPhone,professionalPhotoExists,service,price,serviceName,quantity,teeth,hall, hallName,customMaterials,recommendedBy,createDate,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.</td><td><code>true</code></td></tr><tr><td><code>skipRequiredPrepayment</code></td><td>boolean</td><td></td><td>if true, prepayment is not required for services (in case required prepayment is configured).</td><td><code>false</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>start,duration,assistant,professional,professionalName,professionalPhone,service,price,serviceName,quantity,teeth,hall,hallName,customMaterials,recommendedBy,date,appointment,state,cancelReason,client,clientName,clientPhone,location,sale,timeConflicts,validations</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.</td><td><code>true</code></td></tr><tr><td><code>skipRequiredPrepayment</code></td><td>boolean</td><td></td><td>if true, prepayment is not required for services (in case required prepayment is configured).</td><td><code>false</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-PUT">PUT</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;start&quot;: &quot;2018-01-01T10:00:00.000Z&quot;,
     &quot;duration&quot;: 150,
@@ -9612,7 +9551,7 @@ If found, error 409002 returned (list of intersected items also returned as <cod
 <div class="req-block"><div class="mini-method"><span class="method method-DELETE">DELETE</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">204</span><span class="req-label">Response</span></div></div>
   </div>
 </article>
-<div class="prose resource-preamble" style="margin-bottom:1rem;"><p><a name="appointment_service_products"></a></p>
+<div class="prose resource-preamble" style="margin-bottom:1rem;"><p><a name="appointmentService_products"></a></p>
 <p>Appointment is planned visit of a client for some date for one or several services.</p>
 </div>
 
@@ -9634,14 +9573,14 @@ If found, error 409002 returned (list of intersected items also returned as <cod
         &quot;product&quot;: &quot;d6d3d3d7-f6c6-46eb-a820-5a68f7ea1611&quot;,
         &quot;storage&quot;: &quot;d6d3d3d7-f6c6-46eb-a820-5a68f7ea16aa&quot;,
         &quot;quantity&quot;: 2,
-        &quot;appointment_service&quot;: &quot;f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a&quot;
+        &quot;appointmentService&quot;: &quot;f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a&quot;
     },
     {
         &quot;date&quot;: &quot;2019-01-02&quot;,
         &quot;product&quot;: &quot;d6d3d3d7-f6c6-46eb-a820-5a68f7ea1bbb&quot;,
         &quot;storage&quot;: &quot;d6d3d3d7-f6c6-46eb-a820-5a68f7ea1c1c&quot;,
         &quot;quantity&quot;: 2,
-        &quot;appointment_service&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24a1081c81c&quot;
+        &quot;appointmentService&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24a1081c81c&quot;
     }
 ]</code></pre></div></div>
   </div>
@@ -9658,13 +9597,13 @@ If found, error 409002 returned (list of intersected items also returned as <cod
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/appointments/services/materials/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/services/materials/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>date,product,storage,quantity,appointment_service</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>date,product,storage,quantity,appointmentService</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;date&quot;: &quot;2020-01-01&quot;,
     &quot;product&quot;: &quot;d6d3d3d7-f6c6-46eb-a820-5a68f7ea1611&quot;,
     &quot;storage&quot;: &quot;d6d3d3d7-f6c6-46eb-a820-5a68f7ea16aa&quot;,
     &quot;quantity&quot;: 2,
-    &quot;appointment_service&quot;: &quot;f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a&quot;
+    &quot;appointmentService&quot;: &quot;f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a&quot;
 }</code></pre></div></div>
   </div>
 </article>
@@ -9680,12 +9619,12 @@ If found, error 409002 returned (list of intersected items also returned as <cod
     <div class="uri-line"><span class="method method-POST">POST</span><code class="uri-template">/appointments/services/materials{?fields,force}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/services/materials{?fields,force}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>date,product,storage,quantity,appointment_service</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales should be skipped.</td><td><code>true</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>date,product,storage,quantity,appointmentService</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales should be skipped.</td><td><code>true</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-POST">POST</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;product&quot;: &quot;d6d3d3d7-f6c6-46eb-a820-5a68f7ea1611&quot;,
     &quot;storage&quot;: &quot;d6d3d3d7-f6c6-46eb-a820-5a68f7ea16aa&quot;,
     &quot;quantity&quot;: 2,
-    &quot;appointment_service&quot;: &quot;f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a&quot;
+    &quot;appointmentService&quot;: &quot;f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a&quot;
 }</code></pre></div></div><div class="res-block"><div class="mini-method"><span class="status-code">201</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;id&quot;: &quot;3ab52942-da15-4a20-b14c-b8fca7e4bf1a&quot;
 }</code></pre></div></div>
@@ -9703,12 +9642,12 @@ If found, error 409002 returned (list of intersected items also returned as <cod
     <div class="uri-line"><span class="method method-PUT">PUT</span><code class="uri-template">/appointments/services/materials/{id}{?fields,force}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/services/materials/{id}{?fields,force}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>date,product,storage,quantity,appointment_service</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales should be skipped.</td><td><code>true</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>date,product,storage,quantity,appointmentService</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales should be skipped.</td><td><code>true</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-PUT">PUT</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;product&quot;: &quot;d6d3d3d7-f6c6-46eb-a820-5a68f7ea1611&quot;,
     &quot;storage&quot;: &quot;d6d3d3d7-f6c6-46eb-a820-5a68f7ea16aa&quot;,
     &quot;quantity&quot;: 2,
-    &quot;appointment_service&quot;: &quot;f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a&quot;
+    &quot;appointmentService&quot;: &quot;f2c7ed19-2b49-4c8e-8592-9b26c8ab9f1a&quot;
 }</code></pre></div></div><div class="res-block"><div class="mini-method"><span class="status-code">204</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table></div>
   </div>
 </article>
@@ -10094,13 +10033,13 @@ If found, error 409002 returned (list of intersected items also returned as <cod
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/appointments/dentures{?fields,from,to}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/dentures{?fields,from,to}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>date,denture,laboratory,technican,professional,comments,teeth,appointment,sale</code></td></tr><tr><td><code>from</code></td><td>datetime</td><td></td><td>get appointment denture cards which starts at or after specified date</td><td><code>2019-01-01T10:00:00.000Z</code></td></tr><tr><td><code>to</code></td><td>datetime</td><td></td><td>get appointment denture cards which starts before specified date</td><td><code>2019-01-01T12:00:00.000Z</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>date,denture,laboratory,technician,professional,comments,teeth,appointment,sale</code></td></tr><tr><td><code>from</code></td><td>datetime</td><td></td><td>get appointment denture cards which starts at or after specified date</td><td><code>2019-01-01T10:00:00.000Z</code></td></tr><tr><td><code>to</code></td><td>datetime</td><td></td><td>get appointment denture cards which starts before specified date</td><td><code>2019-01-01T12:00:00.000Z</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
     {
         &quot;date&quot;: &quot;2020-01-01&quot;,
         &quot;denture&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c1c191&quot;,
         &quot;laboratory&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c2b1c2&quot;,
-        &quot;technican&quot;: &quot;some text&quot;,
+        &quot;technician&quot;: &quot;some text&quot;,
         &quot;professional&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c2b1v4&quot;,
         &quot;comments&quot;: &quot;some text comments&quot;,
         &quot;teeth&quot;: &quot;some teeth&quot;,
@@ -10111,7 +10050,7 @@ If found, error 409002 returned (list of intersected items also returned as <cod
         &quot;date&quot;: &quot;2020-01-01T10:10:10.000Z&quot;,
         &quot;denture&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c1cc92&quot;,
         &quot;laboratory&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c2b1c2&quot;,
-        &quot;technican&quot;: &quot;some text&quot;,
+        &quot;technician&quot;: &quot;some text&quot;,
         &quot;professional&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c2b1v5&quot;,
         &quot;comments&quot;: &quot;some text comments&quot;,
         &quot;appointment&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24a1081c89b&quot;,
@@ -10132,12 +10071,12 @@ If found, error 409002 returned (list of intersected items also returned as <cod
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/appointments/dentures/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/dentures/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>date,denture,laboratory,technican,professional,comments,teeth,appointment,sale</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>date,denture,laboratory,technician,professional,comments,teeth,appointment,sale</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;date&quot;: &quot;2020-01-01T10:10:10.000Z&quot;,
     &quot;denture&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c1cc92&quot;,
     &quot;laboratory&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c2b1c2&quot;,
-    &quot;technican&quot;: &quot;some text&quot;,
+    &quot;technician&quot;: &quot;some text&quot;,
     &quot;professional&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c2b1v1&quot;,
     &quot;comments&quot;: &quot;some text comments&quot;,
     &quot;teeth&quot;: &quot;some teeth&quot;,
@@ -10158,11 +10097,11 @@ If found, error 409002 returned (list of intersected items also returned as <cod
     <div class="uri-line"><span class="method method-POST">POST</span><code class="uri-template">/appointments/dentures{?fields,force}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/dentures{?fields,force}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>date,denture,laboratory,technican,professional,comments,teeth,appointment,sale</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.</td><td><code>true</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>date,denture,laboratory,technician,professional,comments,teeth,appointment,sale</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.</td><td><code>true</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-POST">POST</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;denture&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c1cc92&quot;,
     &quot;laboratory&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c2b1c2&quot;,
-    &quot;technican&quot;: &quot;some text&quot;,
+    &quot;technician&quot;: &quot;some text&quot;,
     &quot;professional&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c2b1v2&quot;,
     &quot;comments&quot;: &quot;some text comments&quot;,
     &quot;teeth&quot;: &quot;some teeth&quot;,
@@ -10184,11 +10123,11 @@ If found, error 409002 returned (list of intersected items also returned as <cod
     <div class="uri-line"><span class="method method-PUT">PUT</span><code class="uri-template">/appointments/dentures/{id}{?fields,force}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/appointments/dentures/{id}{?fields,force}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment card id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>date,denture,laboratory,technican,professional,comments,teeth,appointment,sale</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.</td><td><code>true</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>appointment card id</td><td><code>5c05c7a4-74da-42e5-ac5d-dbc489748143</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma)</td><td><code>date,denture,laboratory,technician,professional,comments,teeth,appointment,sale</code></td></tr><tr><td><code>force</code></td><td>boolean</td><td></td><td>Indicates that checking for time conflicts with another appointments, reserves and sales and validations should be skipped.</td><td><code>true</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-PUT">PUT</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;denture&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c1cc92&quot;,
     &quot;laboratory&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c2b1c2&quot;,
-    &quot;technican&quot;: &quot;some text&quot;,
+    &quot;technician&quot;: &quot;some text&quot;,
     &quot;professional&quot;: &quot;cc827fb4-40e9-4a61-bad8-d24ac0c2b1v3&quot;,
     &quot;comments&quot;: &quot;some text comments&quot;,
     &quot;teeth&quot;: &quot;some teeth&quot;,
@@ -10790,7 +10729,7 @@ This section provides information about accounts. Account is place where money i
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/sales{?fields,sale_date_from,sale_date_to,calendar_date_from,calendar_date_to,client,professional,location,type}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/sales{?fields,sale_date_from,sale_date_to,calendar_date_from,calendar_date_to,client,professional,location,type}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>sale_date,calendar_date,duration,location,location2,type,name,client,professional,sum,quantity,product_quantity_type,product_id,product_name,receptionist,item_id,deposit_sum,deposit_client,discount_sum,discount_reason,client_card,client_card_discount,recommended,appointment,cancel,cancelReason,cancelDate,products</code></td></tr><tr><td><code>sale_date_from</code></td><td>datetime</td><td></td><td>get only sales which was made at `sale_date_from` or later</td><td><code>2018-09-16T21:02:00.000Z</code></td></tr><tr><td><code>sale_date_to</code></td><td>datetime</td><td></td><td>get only sales which was made before `sale_date_from`</td><td><code>2018-09-16T21:02:00.000Z</code></td></tr><tr><td><code>calendar_date_from</code></td><td>datetime</td><td></td><td>get only sales which was scheduled to time `sale_date_from` or later</td><td><code>2018-09-16T21:02:00.000Z</code></td></tr><tr><td><code>calendar_date_to</code></td><td>datetime</td><td></td><td>get only sales which was scheduled to time earlier than `sale_date_from`</td><td><code>2018-09-16T21:02:00.000Z</code></td></tr><tr><td><code>client</code></td><td>array[identifier]</td><td></td><td>get only sales for given client (several clients can be separated by comma)</td><td><code>88d4b305-e198-f02c-2743-cca9390c6d9b</code></td></tr><tr><td><code>professional</code></td><td>array[identifier]</td><td></td><td>get only sales for given professional (several professionals can be separated by comma)</td><td><code>88d4b305-e198-f02c-2743-cca9390c6d91</code></td></tr><tr><td><code>location</code></td><td>array[identifier]</td><td></td><td>get only sales from given location (several locations can be separated by comma)</td><td><code>0be9ab15-2569-47e1-96e3-ae3211a7a7ec</code></td></tr><tr><td><code>type</code></td><td>enum</td><td>yes</td><td>get only sales from given type (several types can be separated by comma)</td><td><code>Service</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>sale_date,calendar_date,duration,location,location2,type,name,client,professional,sum,quantity,product_quantity_type,product_id,receptionist,item_id,deposit_sum,deposit_client,discount_sum,discount_reason,client_card,client_card_discount,recommended,appointment,cancel,cancel_reason,cancel_date,products</code></td></tr><tr><td><code>sale_date_from</code></td><td>datetime</td><td></td><td>get only sales which was made at `sale_date_from` or later</td><td><code>2018-09-16T21:02:00.000Z</code></td></tr><tr><td><code>sale_date_to</code></td><td>datetime</td><td></td><td>get only sales which was made before `sale_date_from`</td><td><code>2018-09-16T21:02:00.000Z</code></td></tr><tr><td><code>calendar_date_from</code></td><td>datetime</td><td></td><td>get only sales which was scheduled to time `sale_date_from` or later</td><td><code>2018-09-16T21:02:00.000Z</code></td></tr><tr><td><code>calendar_date_to</code></td><td>datetime</td><td></td><td>get only sales which was scheduled to time earlier than `sale_date_from`</td><td><code>2018-09-16T21:02:00.000Z</code></td></tr><tr><td><code>client</code></td><td>array[identifier]</td><td></td><td>get only sales for given client (several clients can be separated by comma)</td><td><code>88d4b305-e198-f02c-2743-cca9390c6d9b</code></td></tr><tr><td><code>professional</code></td><td>array[identifier]</td><td></td><td>get only sales for given professional (several professionals can be separated by comma)</td><td><code>88d4b305-e198-f02c-2743-cca9390c6d91</code></td></tr><tr><td><code>location</code></td><td>array[identifier]</td><td></td><td>get only sales from given location (several locations can be separated by comma)</td><td><code>0be9ab15-2569-47e1-96e3-ae3211a7a7ec</code></td></tr><tr><td><code>type</code></td><td>enum</td><td>yes</td><td>get only sales from given type (several types can be separated by comma)</td><td><code>Service</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;id&quot;: &quot;88d61289-34c6-0b1e-3b5f-838036bfebfd&quot;,
     &quot;sale_date&quot;: &quot;2018-09-04T20:09:42.000Z&quot;,
@@ -10819,8 +10758,8 @@ This section provides information about accounts. Account is place where money i
     &quot;recommended&quot;: null,
     &quot;appointment&quot;: &quot;88d61289-34c6-0b1e-3b5f-a3f0bc1ce321&quot;,
     &quot;cancel&quot;: false,
-    &quot;cancelReason&quot;: &quot;&quot;,
-    &quot;cancelDate&quot;: null,
+    &quot;cancel_reason&quot;: &quot;&quot;,
+    &quot;cancel_date&quot;: null,
     &quot;payments&quot;: [],
     &quot;products&quot;:
     [
@@ -10866,8 +10805,8 @@ This section provides information about accounts. Account is place where money i
     &quot;recommended&quot;: null,
     &quot;appointment&quot;: &quot;88d61289-34c6-0b1e-3b5f-a3f0bc1ce322&quot;,
     &quot;cancel&quot;: true,
-    &quot;cancelReason&quot;: &quot;client didn't come&quot;,
-    &quot;cancelDate&quot;: &quot;2018-09-04T20:11:22.000Z&quot;,
+    &quot;cancel_reason&quot;: &quot;client didn't come&quot;,
+    &quot;cancel_date&quot;: &quot;2018-09-04T20:11:22.000Z&quot;,
     &quot;payments&quot;: [
         {
             &quot;account&quot;: &quot;88d60c1b-fee3-b8fb-0d12-cab54abbcfc1&quot;,
@@ -10892,7 +10831,7 @@ This section provides information about accounts. Account is place where money i
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/sales/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/sales/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id sale</td><td><code>dd9114c8-439c-40a9-a784-04885f7fedab</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>sale_date,calendar_date,duration,location,location2,type,name,client,professional,sum,quantity,product_quantity_type,product_id,product_name,receptionist,item_id,deposit_sum,deposit_client,discount_sum,discount_reason,client_card,client_card_discount,recommended,appointment,cancel,cancelReason,cancelDate,products</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id sale</td><td><code>dd9114c8-439c-40a9-a784-04885f7fedab</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>sale_date,calendar_date,duration,location,location2,type,name,client,professional,sum,quantity,product_quantity_type,product_id,receptionist,item_id,deposit_sum,deposit_client,discount_sum,discount_reason,client_card,client_card_discount,recommended,appointment,cancel,cancel_reason,cancel_date,products</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;id&quot;: &quot;88d61289-34c6-0b1e-3b5f-838036bfebfd&quot;,
     &quot;sale_date&quot;: &quot;2018-09-04T20:09:42.000Z&quot;,
@@ -10921,8 +10860,8 @@ This section provides information about accounts. Account is place where money i
     &quot;recommended&quot;: null,
     &quot;appointment&quot;: &quot;88d61289-34c6-0b1e-3b5f-a3f0bc1ce322&quot;,
     &quot;cancel&quot;: false,
-    &quot;cancelReason&quot;: &quot;&quot;,
-    &quot;cancelDate&quot;: null,
+    &quot;cancel_reason&quot;: &quot;&quot;,
+    &quot;cancel_date&quot;: null,
     &quot;payments&quot;: 
     [
         {
@@ -11079,8 +11018,8 @@ If some sales can't be cancelled, returns 409 Conflict error with same result as
   <div class="action-human">
     <h3 class="action-title"><a href="#sales-get-promotions-fields-archive-get-information-about-all-promotions" class="permalink" aria-hidden="true">#</a> Get information about all promotions.</h3>
     <div class="prose"><p>Get information about all promotions.</p>
-<p><strong>Authorization:</strong> TODO</p>
-<p><strong>Scope:</strong> TODO</p>
+<p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
+<p><strong>Scope:</strong> <code>full</code></p>
 </div>
   </div>
   <div class="action-machine">
@@ -11112,8 +11051,8 @@ If some sales can't be cancelled, returns 409 Conflict error with same result as
   <div class="action-human">
     <h3 class="action-title"><a href="#sales-get-promotions-id-fields-get-information-about-promotion-with-specified-id" class="permalink" aria-hidden="true">#</a> Get information about promotion with specified id.</h3>
     <div class="prose"><p>Get information about promotion with specified id.</p>
-<p><strong>Authorization:</strong> TODO</p>
-<p><strong>Scope:</strong> TODO</p>
+<p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
+<p><strong>Scope:</strong> <code>full</code></p>
 </div>
   </div>
   <div class="action-machine">
@@ -11139,11 +11078,11 @@ If some sales can't be cancelled, returns 409 Conflict error with same result as
   </div>
 </article>
 
-<article class="action-card" id="sales-post-promotions-fields-authorization-todo">
+<article class="action-card" id="sales-post-promotions-fields-authorization-database-employee">
   <div class="action-human">
-    <h3 class="action-title"><a href="#sales-post-promotions-fields-authorization-todo" class="permalink" aria-hidden="true">#</a> Authorization: TODO</h3>
-    <div class="prose"><p><strong>Authorization:</strong> TODO</p>
-<p><strong>Scope:</strong> TODO</p>
+    <h3 class="action-title"><a href="#sales-post-promotions-fields-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
+    <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
+<p><strong>Scope:</strong> <code>full</code></p>
 </div>
   </div>
   <div class="action-machine">
@@ -11170,11 +11109,11 @@ If some sales can't be cancelled, returns 409 Conflict error with same result as
   </div>
 </article>
 
-<article class="action-card" id="sales-put-promotions-id-fields-authorization-todo">
+<article class="action-card" id="sales-put-promotions-id-fields-authorization-database-employee">
   <div class="action-human">
-    <h3 class="action-title"><a href="#sales-put-promotions-id-fields-authorization-todo" class="permalink" aria-hidden="true">#</a> Authorization: TODO</h3>
-    <div class="prose"><p><strong>Authorization:</strong> TODO</p>
-<p><strong>Scope:</strong> TODO</p>
+    <h3 class="action-title"><a href="#sales-put-promotions-id-fields-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
+    <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
+<p><strong>Scope:</strong> <code>full</code></p>
 </div>
   </div>
   <div class="action-machine">
@@ -11190,11 +11129,11 @@ If some sales can't be cancelled, returns 409 Conflict error with same result as
   </div>
 </article>
 
-<article class="action-card" id="sales-delete-promotions-id-authorization-todo">
+<article class="action-card" id="sales-delete-promotions-id-authorization-database-employee">
   <div class="action-human">
-    <h3 class="action-title"><a href="#sales-delete-promotions-id-authorization-todo" class="permalink" aria-hidden="true">#</a> Authorization: TODO</h3>
-    <div class="prose"><p><strong>Authorization:</strong> TODO</p>
-<p><strong>Scope:</strong> TODO</p>
+    <h3 class="action-title"><a href="#sales-delete-promotions-id-authorization-database-employee" class="permalink" aria-hidden="true">#</a> Authorization: Database, Employee</h3>
+    <div class="prose"><p><strong>Authorization:</strong> <code>Database</code>, <code>Employee</code></p>
+<p><strong>Scope:</strong> <code>full</code></p>
 </div>
   </div>
   <div class="action-machine">
@@ -13349,10 +13288,10 @@ If not detected, country and city can be empty string.</p>
 <article class="action-card type-def-card" id="type-address">
   <div class="action-human">
     <h3 class="action-title"><a href="#type-address" class="permalink" aria-hidden="true">#</a> <code>address</code></h3>
-    <p class="prose muted">Structured postal address: city, street, building and apartment identifiers, and numeric postal (ZIP) code.</p>
+    <p class="prose muted">Structured postal address: city, street, building and apartment identifiers, and postal (ZIP) code.</p>
   </div>
   <div class="action-machine">
-    <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>city</code></td><td><code>string</code></td><td></td><td></td><td>city</td></tr><tr><td><code>street</code></td><td><code>string</code></td><td></td><td></td><td>street</td></tr><tr><td><code>building</code></td><td><code>number</code></td><td></td><td></td><td>building number</td></tr><tr><td><code>apartment</code></td><td><code>string</code></td><td></td><td></td><td>apartment number</td></tr><tr><td><code>postal_code</code></td><td><code>number</code></td><td></td><td></td><td>postal code (ZIP)</td></tr></tbody></table>
+    <table class="params-table attr-table type-table"><thead><tr><th>Field</th><th>Type</th><th></th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>city</code></td><td><code>string</code></td><td></td><td></td><td>city</td></tr><tr><td><code>street</code></td><td><code>string</code></td><td></td><td></td><td>street</td></tr><tr><td><code>building</code></td><td><code>string</code></td><td></td><td></td><td>building number</td></tr><tr><td><code>apartment</code></td><td><code>string</code></td><td></td><td></td><td>apartment number</td></tr><tr><td><code>postal_code</code></td><td><code>string</code></td><td></td><td></td><td>postal code (ZIP)</td></tr></tbody></table>
   </div>
 </article>
 <article class="action-card type-def-card" id="type-item">

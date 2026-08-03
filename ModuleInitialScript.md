@@ -131,8 +131,71 @@ Only parameter `database` is required, all other parameters are optional.
 | designColor      |         HEX          |                 `#6F3BF5 \| #0052F1 \| #F55C3B \| #F53BEE \| #4DC602 \| #CEA206`                 |                   `#6F3BF5`                   | Online module color                                                                                                                                                                                                                                                                                                                                                                               |
 | modulePosition   |        string        |                                `left \| center \| right \| auto`                                 |                    `auto`                     | Online module position when module open (left side of screen, right side of screen, screen center). If `auto` is set: if "Book now!" button is shown, module will be shown left or right depending on `position` property; otherwise (`elementId` is set) module will be shown on the right side of screen. You can use this property if you want to place the module in a non-standard position. |
 | buttonMaxWidth   |        number        |                                            any number                                            | width depends on text entered to field `text` | Possible to set maximum width in pixels for the button                                                                                                                                                                                                                                                                                                                                            |
-| onAnalyticsEvent |       function       |                                           any function                                           |                     null                      | Callback function to call when new analytics event appears for more details _[see](https://github.com/AIHelpsSoft/documentations/blob/master/HowToUseAnalyticsFromOnlineModule.md)_.                                                                                                                                                                                                              |
+| onAnalyticsEvent |       function       |                                           any function                                           |                     null                      | Callback for module analytics events (`message: "Analytics"`). Payload may include `eventCategory`, `eventAction`, `eventLabel`, and optional `utm`. See also _[Analytics docs](https://github.com/AIHelpsSoft/documentations/blob/master/HowToUseAnalyticsFromOnlineModule.md)_.                                                                                                                                                                              |
+| analytics        |       function       |                                           any function                                           |                     null                      | Callback for booking conversion (`message: "Book Appointment"`). Payload may include appointment data and optional `utm` for campaign attribution.                                                                                                                                                                                                                                                                                                               |
 
-## Analytics <a name="settings"></a>
+## Analytics <a name="analytics"></a>
 
-If you want to receive analytics event from Online Module you can read how to do it by the _[link](https://github.com/AIHelpsSoft/documentations/blob/master/HowToUseAnalyticsFromOnlineModule.md)_
+If you want to receive analytics events from Online Module you can read how to do it by the _[link](https://github.com/AIHelpsSoft/documentations/blob/master/HowToUseAnalyticsFromOnlineModule.md)_.
+
+Use `onAnalyticsEvent` for intermediate analytics events and `analytics` for the conversion when a booking is created.
+
+## UTM / Attribution <a name="utm"></a>
+
+The init script reads UTM tags from the **parent page** URL (`window.location.search`) and passes them into the online module iframe via `@@INIT_MODULE`.
+
+Supported keys (only non-empty values):
+
+- `utm_source`
+- `utm_medium`
+- `utm_campaign`
+- `utm_content`
+- `utm_term`
+
+### First-touch within the session
+
+On load, UTM values are stored in the parent page `sessionStorage` (key `aihelps_utm`) using **first-touch** rules: already filled fields are not overwritten by empty or later values. This keeps attribution after in-site navigation that drops UTM from the URL.
+
+### Merge priority
+
+Per key, the first non-empty value wins in this order:
+
+1. Parent page URL
+2. Parent `sessionStorage`
+3. Final UTM returned by the module (`message: "UTM"`)
+
+Empty values never overwrite already filled first-touch fields.
+
+### Messages from the iframe
+
+| Message            | Purpose                                          | Recommended handler  |
+| ------------------ | ------------------------------------------------ | -------------------- |
+| `UTM`              | Module confirmed/merged final UTM                | stored automatically |
+| `Analytics`        | Analytics event (may include `utm`)              | `onAnalyticsEvent`   |
+| `Book Appointment` | Conversion — booking created (may include `utm`) | `analytics`          |
+
+Example: send a conversion to Google Analytics with campaign params from UTM:
+
+```js
+import { init } from "https://beautyprosoftware.com/online-booking-init/index.js";
+
+init({
+  database: 503953,
+  onAnalyticsEvent: (data) => {
+    // data.eventCategory, data.eventAction, data.eventLabel, data.utm?
+    console.log("analytics", data);
+  },
+  analytics: (data) => {
+    const utm = data.utm || {};
+    gtag("event", "conversion", {
+      campaign_source: utm.utm_source,
+      campaign_medium: utm.utm_medium,
+      campaign_name: utm.utm_campaign,
+      campaign_content: utm.utm_content,
+      campaign_term: utm.utm_term,
+    });
+  },
+});
+```
+
+You can map `utm_*` fields to whatever your site analytics already uses (`utm_source` / `campaign_source`, etc.).

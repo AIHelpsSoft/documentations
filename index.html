@@ -2930,7 +2930,7 @@ to get/update location categories.</p>
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/clients{?fields,location,phone,email,card_number,name,archive}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/clients{?fields,location,phone,email,card_number,name,archive}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional</code></td></tr><tr><td><code>location</code></td><td>identifier</td><td></td><td>get clients who enabled in location</td><td><code>0799e1bc-86eb-4e0f-82e2-98dfe2cd55f9</code></td></tr><tr><td><code>phone</code></td><td>string</td><td></td><td>get only client(s) with given phone (several phones can be separated by comma)</td><td><code>+355 (55) 255 55 55</code></td></tr><tr><td><code>email</code></td><td>string</td><td></td><td>get only client(s) with given email (several emails can be separated by comma)</td><td><code>abc@gmail.com</code></td></tr><tr><td><code>card_number</code></td><td>string</td><td></td><td>get only client(s) with given card number (several card numbers can be separated by comma)</td><td><code>1234F</code></td></tr><tr><td><code>name</code></td><td>string</td><td></td><td></td><td><code>John Brown</code></td></tr><tr><td><code>archive</code></td><td>boolean</td><td></td><td>get only archived or non archived clients</td><td><code>false</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional,utm_campaign,utm_source,utm_medium</code></td></tr><tr><td><code>location</code></td><td>identifier</td><td></td><td>get clients who enabled in location</td><td><code>0799e1bc-86eb-4e0f-82e2-98dfe2cd55f9</code></td></tr><tr><td><code>phone</code></td><td>string</td><td></td><td>get only client(s) with given phone (several phones can be separated by comma)</td><td><code>+355 (55) 255 55 55</code></td></tr><tr><td><code>email</code></td><td>string</td><td></td><td>get only client(s) with given email (several emails can be separated by comma)</td><td><code>abc@gmail.com</code></td></tr><tr><td><code>card_number</code></td><td>string</td><td></td><td>get only client(s) with given card number (several card numbers can be separated by comma)</td><td><code>1234F</code></td></tr><tr><td><code>name</code></td><td>string</td><td></td><td></td><td><code>John Brown</code></td></tr><tr><td><code>archive</code></td><td>boolean</td><td></td><td>get only archived or non archived clients</td><td><code>false</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">[
     {
         &quot;id&quot;: &quot;88d6248d-e5e8-9c40-5296-bb10043eab27&quot;,
@@ -2971,7 +2971,10 @@ to get/update location categories.</p>
         &quot;referral_source_name&quot;: &quot;&quot;,
         &quot;status&quot;: &quot;potential&quot;,
         &quot;comments&quot;: &quot;VIP status&quot;,
-        &quot;archive&quot;: false
+        &quot;archive&quot;: false,
+        &quot;utm_campaign&quot;: &quot;summer_sale&quot;,
+        &quot;utm_source&quot;: &quot;google&quot;,
+        &quot;utm_medium&quot;: &quot;cpc&quot;
     },
     {
         &quot;id&quot;: &quot;6b663d27-90f5-4df0-a8c7-5924b9cd1c39&quot;,
@@ -3009,7 +3012,10 @@ to get/update location categories.</p>
         &quot;status&quot;, &quot;potential&quot;,
         &quot;comments&quot;: null,
         &quot;archive&quot;: false,
-        &quot;professional&quot;: &quot;5382f467-a034-440c-bc7f-3dac9b2c8191&quot;
+        &quot;professional&quot;: &quot;5382f467-a034-440c-bc7f-3dac9b2c8191&quot;,
+        &quot;utm_campaign&quot;: &quot;&quot;,
+        &quot;utm_source&quot;: &quot;&quot;,
+        &quot;utm_medium&quot;: &quot;&quot;
     }
 ]</code></pre></div></div>
   </div>
@@ -3026,7 +3032,7 @@ to get/update location categories.</p>
     <div class="uri-line"><span class="method method-GET">GET</span><code class="uri-template">/clients/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/clients/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)</td><td><code>be0b6712-e680-42a7-8b99-b6b2d9fcb1fe</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)</td><td><code>be0b6712-e680-42a7-8b99-b6b2d9fcb1fe</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td>yes</td><td>list of fields to return (separated by comma).</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional,utm_campaign,utm_source,utm_medium</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-GET">GET</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table></div><div class="res-block"><div class="mini-method"><span class="status-code">200</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;id&quot;: &quot;88d6248d-e5e8-9c40-5296-bb10043eab27&quot;,
     &quot;name&quot;: &quot;John Brown&quot;,
@@ -3067,7 +3073,10 @@ to get/update location categories.</p>
     &quot;status&quot;, &quot;potential&quot;,
     &quot;comments&quot;: &quot;VIP status&quot;,
     &quot;archive&quot;: false,
-    &quot;professional&quot;: &quot;5382f467-a034-440c-bc7f-3dac9b2c8191&quot;
+    &quot;professional&quot;: &quot;5382f467-a034-440c-bc7f-3dac9b2c8191&quot;,
+    &quot;utm_campaign&quot;: &quot;summer_sale&quot;,
+    &quot;utm_source&quot;: &quot;google&quot;,
+    &quot;utm_medium&quot;: &quot;cpc&quot;
 }</code></pre></div></div>
   </div>
 </article>
@@ -3083,12 +3092,15 @@ to get/update location categories.</p>
     <div class="uri-line"><span class="method method-POST">POST</span><code class="uri-template">/clients{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/clients{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional,utm_campaign,utm_source,utm_medium</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-POST">POST</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr><tr><td><code>Content-Language</code></td><td><code>en</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;firstname&quot;: &quot;John&quot;,
     &quot;lastname&quot;: &quot; Doe&quot;,
     &quot;phone&quot;: &quot;+1 555 123 45 67&quot;,
-    &quot;email&quot;: &quot;johndoe@gmail.com&quot;
+    &quot;email&quot;: &quot;johndoe@gmail.com&quot;,
+    &quot;utm_campaign&quot;: &quot;summer_sale&quot;,
+    &quot;utm_source&quot;: &quot;google&quot;,
+    &quot;utm_medium&quot;: &quot;cpc&quot;
 }</code></pre></div></div><div class="res-block"><div class="mini-method"><span class="status-code">201</span><span class="req-label">Response</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table><div class="body-label">Body</div><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;id&quot;: &quot;cc903b03-ecaf-46d4-a030-bbfd1882f490&quot;
 }</code></pre></div></div>
@@ -3106,13 +3118,16 @@ to get/update location categories.</p>
     <div class="uri-line"><span class="method method-PUT">PUT</span><code class="uri-template">/clients/{id}{?fields}</code></div>
 <div class="host-hint">Full URL: <code>https://api.aihelps.com/v1/clients/{id}{?fields}</code></div>
 <div class="subsection-title">Parameters</div>
-<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)</td><td><code>be0b6712-e680-42a7-8b99-b6b2d9fcb1fe</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional</code></td></tr></tbody></table>
+<table class="params-table"><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>id</code></td><td>identifier</td><td>yes</td><td>id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)</td><td><code>be0b6712-e680-42a7-8b99-b6b2d9fcb1fe</code></td></tr><tr><td><code>fields</code></td><td>array[string]</td><td></td><td>list of fields to return (separated by comma)</td><td><code>name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional,utm_campaign,utm_source,utm_medium</code></td></tr></tbody></table>
 <div class="req-block"><div class="mini-method"><span class="method method-PUT">PUT</span><span class="req-label">Request</span></div><table class="params-table"><thead><tr><th>Header</th><th>Value</th></tr></thead><tbody><tr><td><code>Authorization</code></td><td><code>Bearer 9c4068e2-c81f-4d70-ad31-8f627ed9bced</code></td></tr></tbody></table><div class="pre-wrap"><button type="button" class="copy-btn" aria-label="Copy">Copy</button><pre class="code-block"><code class="language-json">{
     &quot;phone&quot;: [
         &quot;+1 555 123 45 67&quot;,
         &quot;+1 555 123 45 68&quot;
     ],
-    &quot;gender&quot;: &quot;male&quot;
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;utm_campaign&quot;: &quot;summer_sale&quot;,
+    &quot;utm_source&quot;: &quot;google&quot;,
+    &quot;utm_medium&quot;: &quot;cpc&quot;
 }</code></pre></div></div><div class="res-block"><div class="mini-method"><span class="status-code">204</span><span class="req-label">Response</span></div></div>
   </div>
 </article>

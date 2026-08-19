@@ -1160,6 +1160,7 @@ Here you can see history of changes in API and documentation.
 
 Date|Description
 -:|:-
+2026-08-19|clients: `utm_campaign`, `utm_source`, `utm_medium` fields added
 2021-03-29|Field clientInside added to appointment
 2021-01-25|Fields price, professionalPhone, hallName, clientName, clientPhone, cancelReason added to appointment service
 2021-01-11|Merged and Original fields added to appointments
@@ -2275,6 +2276,9 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
     + archive: false (boolean) - if client was archived and can't be used in new sales
         + Default: `false`
     + professional: '0b646349-e7be-4179-97bd-c7155caab990' (identifier) - id of employee chosen for this client
+    + utm_campaign: `summer_sale` (string) - UTM `utm_campaign` tag. Max length is 200 characters
+    + utm_source: `google` (string) - UTM `utm_source` tag. Max length is 200 characters
+    + utm_medium: `cpc` (string) - UTM `utm_medium` tag. Max length is 200 characters
 
 ### Get all clients [GET /clients{?fields,location,phone,email,card_number,name,archive}]
 
@@ -2283,7 +2287,7 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
 **Scope:** `full`, `online_store` (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comments fields), `reports`, `services_aggregator` (only name, firstname, middlename, lastname, gender, birthday, card_number, email, photo_exists, photo, postal_code, city, street, building, phone fields and only with phone or email filter), `client_access_token` (only with filter client)
 
 + Parameters
-    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional` (array[string], required) - list of fields to return (separated by comma).
+    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional,utm_campaign,utm_source,utm_medium` (array[string], required) - list of fields to return (separated by comma).
     + location: `0799e1bc-86eb-4e0f-82e2-98dfe2cd55f9` (identifier, optional) - get clients who enabled in location
     + phone: `+355 (55) 255 55 55` (string, optional) - get only client(s) with given phone (several phones can be separated by comma)
     + email: `abc@gmail.com` (string, optional) - get only client(s) with given email (several emails can be separated by comma)
@@ -2341,7 +2345,10 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
                     "referral_source_name": "",
                     "status": "potential",
                     "comments": "VIP status",
-                    "archive": false
+                    "archive": false,
+                    "utm_campaign": "summer_sale",
+                    "utm_source": "google",
+                    "utm_medium": "cpc"
                 },
                 {
                     "id": "6b663d27-90f5-4df0-a8c7-5924b9cd1c39",
@@ -2379,7 +2386,10 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
                     "status", "potential",
                     "comments": null,
                     "archive": false,
-                    "professional": "5382f467-a034-440c-bc7f-3dac9b2c8191"
+                    "professional": "5382f467-a034-440c-bc7f-3dac9b2c8191",
+                    "utm_campaign": "",
+                    "utm_source": "",
+                    "utm_medium": ""
                 }
             ]
 
@@ -2391,7 +2401,7 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
 
 + Parameters
     + id: `be0b6712-e680-42a7-8b99-b6b2d9fcb1fe` (identifier, required) - id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)
-    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional` (array[string], required) - list of fields to return (separated by comma).
+    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional,utm_campaign,utm_source,utm_medium` (array[string], required) - list of fields to return (separated by comma).
 
 + Request
 
@@ -2443,7 +2453,10 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
                 "status", "potential",
                 "comments": "VIP status",
                 "archive": false,
-                "professional": "5382f467-a034-440c-bc7f-3dac9b2c8191"
+                "professional": "5382f467-a034-440c-bc7f-3dac9b2c8191",
+                "utm_campaign": "summer_sale",
+                "utm_source": "google",
+                "utm_medium": "cpc"
             }
 
 ### Create new client [POST /clients{?fields}]
@@ -2453,7 +2466,7 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
 **Scope:** `full`, `online_store` (only name, firstname, middlename, lastname, gender, birthday, card_number, phone, email, comments fields), `services_aggregator` (only firstname, middlename, lastname, gender, birthday, card_number, phone, email, comments fields)
 
 + Parameters
-    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional` (array[string], optional) - list of fields to return (separated by comma)
+    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional,utm_campaign,utm_source,utm_medium` (array[string], optional) - list of fields to return (separated by comma)
 
 + Request
 
@@ -2468,7 +2481,10 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
                 "firstname": "John",
                 "lastname": " Doe",
                 "phone": "+1 555 123 45 67",
-                "email": "johndoe@gmail.com"
+                "email": "johndoe@gmail.com",
+                "utm_campaign": "summer_sale",
+                "utm_source": "google",
+                "utm_medium": "cpc"
             }
             
 + Response 201 (application/json)
@@ -2487,7 +2503,7 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
 
 + Parameters
     + id: `be0b6712-e680-42a7-8b99-b6b2d9fcb1fe` (identifier, required) - id of client. If client access token is used, only id of that client can be set here (string identifier `me` can be used instead of id: `/clients/me`)
-    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional` (array[string], optional) - list of fields to return (separated by comma)
+    + fields: `name,firstname,middlename,lastname,title,gender,birthday,location,balance,bonus,card_number,phone,email,photo_exists,photo,postal_code,city,street,building,apartment,categories,categories_names,first_visit,first_visit_description,last_visit,last_visit_description,feedback,additional_fields,do_not_send_sms_notification,do_not_send_sms_promotion,do_not_send_email,create_date,deposit_client,referral_source,referral_source_name,status,comments,archive,professional,utm_campaign,utm_source,utm_medium` (array[string], optional) - list of fields to return (separated by comma)
 
 + Request
 
@@ -2502,7 +2518,10 @@ Clients in context of Beauty Pro/Fitness Pro are beauty salon/fitness gym visito
                     "+1 555 123 45 67",
                     "+1 555 123 45 68"
                 ],
-                "gender": "male"
+                "gender": "male",
+                "utm_campaign": "summer_sale",
+                "utm_source": "google",
+                "utm_medium": "cpc"
             }
             
 + Response 204
